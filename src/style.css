@@ -1,0 +1,7 @@
+.root {
+  min-height: 300px;
+}
+:root, :host {
+  --arcgis-charts-pie-chart-width: 100%;
+  --arcgis-charts-pie-chart-height: 100%;
+}

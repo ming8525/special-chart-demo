@@ -1,0 +1,286 @@
+{
+  "config": {
+    "dataSource": {
+      "type": "inline",
+      "processed": true
+    },
+    "version": "1.0.0",
+    "id": "widget_1-donut",
+    "type": "chart",
+    "series": [
+      {
+        "type": "pieSeries",
+        "colorType": "colorMatch",
+        "id": "value",
+        "name": "Sum of Value",
+        "x": "name",
+        "y": "value",
+        "innerRadius": 60,
+        "startAngle": 0,
+        "endAngle": 360,
+        "displayNumericValueOnDataLabel": true,
+        "displayPercentageOnDataLabel": false,
+        "displayNumericValueOnTooltip": true,
+        "displayPercentageOnTooltip": true,
+        "dataLabelsOffset": 0,
+        "sliceGrouping": {
+          "percentageThreshold": 0,
+          "groupName": "Other"
+        },
+        "numericValueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "decimal",
+            "useGrouping": true,
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 3
+          }
+        },
+        "percentValueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "decimal",
+            "useGrouping": true,
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 3
+          }
+        },
+        "fillSymbol": {
+          "type": "esriSFS",
+          "style": "esriSFSSolid",
+          "color": [
+            214,
+            214,
+            214,
+            255
+          ],
+          "outline": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              240,
+              240,
+              240,
+              255
+            ],
+            "width": 1
+          }
+        },
+        "dataLabels": {
+          "type": "chartText",
+          "visible": false,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              54,
+              54,
+              54,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 10,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top"
+          }
+        },
+        "slices": [
+          {
+            "sliceId": "District",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                94,
+                143,
+                208,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  240,
+                  240,
+                  240,
+                  255
+                ],
+                "width": 1
+              }
+            }
+          },
+          {
+            "sliceId": "Ward",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                119,
+                180,
+                132,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  240,
+                  240,
+                  240,
+                  255
+                ],
+                "width": 1
+              }
+            }
+          },
+          {
+            "sliceId": "Community",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                223,
+                107,
+                53,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  240,
+                  240,
+                  240,
+                  255
+                ],
+                "width": 1
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "background": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": {
+      "type": "chartText",
+      "visible": true,
+      "content": {
+        "type": "esriTS",
+        "color": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "font": {
+          "family": "Avenir Next",
+          "size": 24,
+          "style": "normal",
+          "weight": "normal",
+          "decoration": "none"
+        },
+        "horizontalAlignment": "center",
+        "text": ""
+      }
+    },
+    "footer": {
+      "type": "chartText",
+      "visible": true,
+      "content": {
+        "type": "esriTS",
+        "color": [
+          24,
+          24,
+          24,
+          255
+        ],
+        "font": {
+          "family": "Avenir Next",
+          "size": 14,
+          "style": "normal",
+          "weight": "normal",
+          "decoration": "none"
+        },
+        "horizontalAlignment": "center",
+        "text": ""
+      }
+    },
+    "legend": {
+      "type": "chartLegend",
+      "visible": false,
+      "title": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 20,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": ""
+        }
+      },
+      "body": {
+        "type": "esriTS",
+        "color": [
+          24,
+          24,
+          24,
+          255
+        ],
+        "font": {
+          "family": "Avenir Next",
+          "size": 14,
+          "style": "normal",
+          "weight": "normal",
+          "decoration": "none"
+        },
+        "horizontalAlignment": "center",
+        "text": ""
+      },
+      "position": "right"
+    }
+  },
+  "inlineData": {
+    "inputData": [
+      {
+        "name": "Community",
+        "value": 5565,
+        "FID": "b374e820-a904-11ed-83dc-39bc7f1b9398",
+        "objectid": 0
+      },
+      {
+        "name": "District",
+        "value": 1508,
+        "FID": "b374e821-a904-11ed-83dc-39bc7f1b9398",
+        "objectid": 1
+      },
+      {
+        "name": "Ward",
+        "value": 2892,
+        "FID": "b374e822-a904-11ed-83dc-39bc7f1b9398",
+        "objectid": 2
+      }
+    ],
+    "processed": true
+  }
+}
