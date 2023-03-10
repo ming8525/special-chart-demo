@@ -1,127 +1,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import configs from './config.json'
+import config from './config.json'
 import './style.css';
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
 
 applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const config = configs.config
-const inlineData = configs.inlineData
-
-const newSlices = [
-  {
-    sliceId: 'District',
-    fillSymbol: {
-      type: 'esriSFS',
-      style: 'esriSFSSolid',
-      color: [
-        214,
-        85,
-        139,
-        255
-      ],
-      outline: {
-        type: 'esriSLS',
-        style: 'esriSLSSolid',
-        color: [
-          240,
-          240,
-          240,
-          255
-        ],
-        width: 1
-      }
+const CacheLayers = {}
+const createFeatureLayer = (portalUrl, itemId) => {
+  return new Promise((resolve, reject) => {
+    if (!portalUrl || !itemId) return reject()
+    if (!CacheLayers[itemId]) {
+      const fl = new FeatureLayer({
+        portalItem: {
+          id: itemId,
+          portal: { url: portalUrl }
+        }
+      })
+      fl.load().then((layer) => {
+        CacheLayers[itemId] = layer
+        resolve(layer)
+      })
+    } else {
+      resolve(CacheLayers[itemId])
     }
-  },
-  {
-    sliceId: 'Ward',
-    fillSymbol: {
-      type: 'esriSFS',
-      style: 'esriSFSSolid',
-      color: [
-        119,
-        180,
-        132,
-        255
-      ],
-      outline: {
-        type: 'esriSLS',
-        style: 'esriSLSSolid',
-        color: [
-          240,
-          240,
-          240,
-          255
-        ],
-        width: 1
-      }
-    }
-  },
-  {
-    sliceId: 'Community',
-    fillSymbol: {
-      type: 'esriSFS',
-      style: 'esriSFSSolid',
-      color: [
-        223,
-        107,
-        53,
-        255
-      ],
-      outline: {
-        type: 'esriSLS',
-        style: 'esriSLSSolid',
-        color: [
-          240,
-          240,
-          240,
-          255
-        ],
-        width: 1
-      }
-    }
-  }
-]
-
-const defaultSelectionData = {
-  selectionIndexes: new Map([['indexesToSelect', []]])
+  })
 }
+const portalUrl = 'https://www.arcgis.com/'
+const itemId = 'a3880aef9fee444c84da17c0d3b92630'
 
 const Root = (props) => {
-  const {
-    returnSelectionIndexes = true,
-    returnSelectionOIDs = false
-  } = props
-
   const ref = React.useRef(null)
+  const [featureLayer, setFeatureLayer] = React.useState(null)
 
   React.useEffect(() => {
-    ref.current.config = config
-    ref.current.inlineData = inlineData
-    ref.current.selectionData = defaultSelectionData
+    createFeatureLayer(portalUrl, itemId).then((featureLayer) => {
+      setFeatureLayer(featureLayer)
+    })
   }, [])
 
-
-  const handleUpdateSlicesColor = () => {
-    const newConfig = {
-      ...config,
-      series: [{
-        ...config.series[0],
-        slices: newSlices
-      }]
+  React.useEffect(() => {
+    if(ref.current && featureLayer) {
+      ref.current.config = config
+      ref.current.featureLayer = featureLayer
     }
-    ref.current.config = newConfig
-    ref.current.inlineData = inlineData
-  }
-
-
+  }, [featureLayer])
 
   return <div style={{ height: 400 }}>
-    <arcgis-charts-pie-chart ref={ref} />
-    <button onClick={handleUpdateSlicesColor}>Update slice color</button>
+    {featureLayer && <arcgis-charts-bar-chart ref={ref} />}
   </div>
 }
 
