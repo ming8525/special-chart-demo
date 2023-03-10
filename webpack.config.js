@@ -19,7 +19,8 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.join(__dirname, "src")
+        open: true,
+        host: 'localhost',
     },
     module: {
         rules: [
@@ -32,18 +33,19 @@ module.exports = {
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-                use: ["file-loader"]
+                test: /\.s[ac]ss$/i,
+                use: ["style-loader", 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                type: 'asset'
             }
-        ],
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
         }),
         new CopyWebpackPlugin({ patterns: toBeCopied })
-    ],
-    node: {
-        fs: "empty"
-    }
+    ]
 };
