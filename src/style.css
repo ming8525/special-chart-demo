@@ -4,4 +4,12 @@
 :root, :host {
   --arcgis-charts-bar-chart-width: 100%;
   --arcgis-charts-bar-chart-height: 100%;
+  --arcgis-charts-pie-chart-width: 100%;
+  --arcgis-charts-pie-chart-height: 100%;
+  --arcgis-charts-line-chart-width: 100%;
+  --arcgis-charts-line-chart-height: 100%;
+  --arcgis-charts-histogram-width: 100%;
+  --arcgis-charts-histogram-height: 100%;
+  --arcgis-charts-scatter-plot-width: 100%;
+  --arcgis-charts-scatter-plot-height: 100%;
 }

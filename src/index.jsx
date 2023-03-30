@@ -10,48 +10,51 @@ applyPolyfills().then(() => {
 })
 
 const CacheLayers = {}
-const createFeatureLayer = (portalUrl, itemId) => {
-  return new Promise((resolve, reject) => {
-    if (!portalUrl || !itemId) return reject()
-    if (!CacheLayers[itemId]) {
-      const fl = new FeatureLayer({
-        portalItem: {
-          id: itemId,
-          portal: { url: portalUrl }
-        }
-      })
-      fl.load().then((layer) => {
-        CacheLayers[itemId] = layer
-        resolve(layer)
-      })
-    } else {
-      resolve(CacheLayers[itemId])
-    }
-  })
+const createFeatureLayer = (url) => {
+  if (!url) return
+  if (!CacheLayers[url]) {
+    const fl = new FeatureLayer({ url })
+    return fl
+  } else {
+    return CacheLayers[url]
+  }
 }
-const portalUrl = 'https://www.arcgis.com/'
-const itemId = 'a3880aef9fee444c84da17c0d3b92630'
+
+const HistogramServiceURL = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3'
+const ScatterPlotServiceURL = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA_secure_user1/MapServer/0' // user1/user1
 
 const Root = (props) => {
-  const ref = React.useRef(null)
-  const [featureLayer, setFeatureLayer] = React.useState(null)
+  const scatterRef = React.useRef(null)
+  const histogramRef = React.useRef(null)
+  const scatterPlotLayer = React.useRef(createFeatureLayer(ScatterPlotServiceURL))
+  const histogramLayer = React.useRef(createFeatureLayer(HistogramServiceURL))
 
   React.useEffect(() => {
-    createFeatureLayer(portalUrl, itemId).then((featureLayer) => {
-      setFeatureLayer(featureLayer)
+    scatterRef.current.config = config.scatterPlot
+    scatterRef.current.layer = scatterPlotLayer.current
+    scatterRef.current.addEventListener('arcgisChartsDataProcessError', (e) => {
+      console.log('Scatter Plot Error:')
+      console.log(e)
+    })
+
+    histogramRef.current.config = config.histogram
+    histogramRef.current.layer = histogramLayer.current
+    histogramRef.current.addEventListener('arcgisChartsDataProcessError', (e) => {
+      console.log('Histogram Error:')
+      console.log(e)
     })
   }, [])
 
-  React.useEffect(() => {
-    if(ref.current && featureLayer) {
-      ref.current.config = config
-      ref.current.featureLayer = featureLayer
-    }
-  }, [featureLayer])
-
-  return <div style={{ height: 400 }}>
-    {featureLayer && <arcgis-charts-bar-chart ref={ref} />}
-  </div>
+  return (
+    <div style={{ height: 400, display: 'flex' }}>
+      <div style={{ height: '100%', width: '50%' }}>
+        <arcgis-charts-scatter-plot ref={scatterRef} />
+      </div>
+      <div style={{ height: '100%', width: '50%' }}>
+        <arcgis-charts-histogram ref={histogramRef} />
+      </div>
+    </div>
+  )
 }
 
 ReactDOM.render(<Root />, document.getElementById('root'));
