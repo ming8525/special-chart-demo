@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as ReactRedux from 'react-redux';
-import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { connect } from 'react-redux';
 
@@ -13,7 +12,7 @@ const reducer = (state = { count: 0 }, action) => {
       return state;
   }
 }
-const store = createStore(reducer, { count: 0 });
+export const store = createStore(reducer, { count: 0 });
 
 const mapStateToProps = state => {
   return {
@@ -24,6 +23,9 @@ const mapStateToProps = state => {
 class _Component1 extends React.Component {
   componentDidUpdate() {
     console.log('Component1 update', this.props.count);
+    if(this.props.callback) {
+      this.props.callback();
+    }
   }
 
   render() {
@@ -36,9 +38,9 @@ class _Component1 extends React.Component {
     );
   }
 }
-const Component1 = connect(mapStateToProps)(_Component1);
+export const Component1 = connect(mapStateToProps)(_Component1);
 
-class _Component2 extends React.Component {
+export class Component2 extends React.Component {
   constructor(props) {
     super(props);
 
@@ -47,11 +49,15 @@ class _Component2 extends React.Component {
     };
   }
 
+  increaseStoreCount = () => {
+    store.dispatch({ type: 'INCREASE_COUNT' });
+    console.log('redux count', store.getState().count);
+  }
+
   handleIncreaseCount = () => {
-    this.props.dispatch({ type: 'INCREASE_COUNT' });
+    this.increaseStoreCount()
     this.setState(prevState => ({ count: prevState.count + 1 }));
     console.log('count', this.state.count);
-    console.log('redux count', this.props.count);
   };
 
   render() {
@@ -65,17 +71,3 @@ class _Component2 extends React.Component {
     );
   }
 }
-export const Component2 = connect(mapStateToProps)(_Component2);
-
-const Root = (props) => {
-  return (
-    <Provider store={store}>
-      <div>
-        <Component1 />
-        <Component2 />
-      </div>
-    </Provider>
-  )
-}
-
-ReactDOM.render(<Root />, document.getElementById('root'));

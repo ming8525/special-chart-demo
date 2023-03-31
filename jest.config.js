@@ -6,8 +6,6 @@ module.exports = {
   testEnvironment: "jsdom",
 
   moduleFileExtensions: [
-    'ts',
-    'tsx',
     'js',
     'jsx'
   ],
@@ -20,10 +18,6 @@ module.exports = {
     "/node_modules/"
   ],
 
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.js$': 'ts-jest'
-  },
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect'
   ]
