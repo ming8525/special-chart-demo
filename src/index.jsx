@@ -1,59 +1,63 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import config from './config.json'
-import './style.css';
-import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
+import * as ReactRedux from 'react-redux';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-applyPolyfills().then(() => {
-  defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
-})
-
-const CacheLayers = {}
-const createFeatureLayer = (url) => {
-  if (!url) return
-  if (!CacheLayers[url]) {
-    const fl = new FeatureLayer({ url })
-    return fl
-  } else {
-    return CacheLayers[url]
+const reducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case 'INCREASE_COUNT':
+      return { count: state.count + 1 };
+    default:
+      return state;
   }
 }
+const store = createStore(reducer, { count: 0 });
 
-const HistogramServiceURL = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3'
-const ScatterPlotServiceURL = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA_secure_user1/MapServer/0' // user1/user1
-
-const Root = (props) => {
-  const scatterRef = React.useRef(null)
-  const histogramRef = React.useRef(null)
-  const scatterPlotLayer = React.useRef(createFeatureLayer(ScatterPlotServiceURL))
-  const histogramLayer = React.useRef(createFeatureLayer(HistogramServiceURL))
+const Component1 = ({ }) => {
+  const count = ReactRedux.useSelector(state => state.count)
 
   React.useEffect(() => {
-    scatterRef.current.config = config.scatterPlot
-    scatterRef.current.layer = scatterPlotLayer.current
-    scatterRef.current.addEventListener('arcgisChartsDataProcessError', (e) => {
-      console.log('Scatter Plot Error:')
-      console.log(e)
-    })
-
-    histogramRef.current.config = config.histogram
-    histogramRef.current.layer = histogramLayer.current
-    histogramRef.current.addEventListener('arcgisChartsDataProcessError', (e) => {
-      console.log('Histogram Error:')
-      console.log(e)
-    })
-  }, [])
+    if(count) {
+      console.log('Component1 update')
+    }
+  }, [count])
 
   return (
-    <div style={{ height: 400, display: 'flex' }}>
-      <div style={{ height: '100%', width: '50%' }}>
-        <arcgis-charts-scatter-plot ref={scatterRef} />
-      </div>
-      <div style={{ height: '100%', width: '50%' }}>
-        <arcgis-charts-histogram ref={histogramRef} />
-      </div>
+    <div>
+      <h5>{`Redux store count: ${count}`}</h5>
     </div>
+  )
+}
+
+const Component2 = ({ }) => {
+  const dispatch = ReactRedux.useDispatch()
+  const [count, setCount] = React.useState(0)
+
+  const handleIncreaseCount = () => {
+    dispatch({ type: 'INCREASE_COUNT' })
+    setCount(count + 1)
+    console.log('count', count)
+    console.log('redux count', store.getState().count)
+  }
+  return (
+    <div>
+      <button onClick={handleIncreaseCount}>Increase count</button>
+      <h5>{`State count: ${count}`}</h5>
+    </div>
+  )
+}
+
+
+
+const Root = (props) => {
+  return (
+    <Provider store={store}>
+      <div>
+        <Component1 />
+        <Component2 />
+      </div>
+    </Provider>
   )
 }
 
