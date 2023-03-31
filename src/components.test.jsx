@@ -14,10 +14,10 @@ describe('test components', function () {
         <Component2 ref={ref} />
       </div>
     </Provider>)
-    act(() => {
-      ref.current.handleIncreaseCount()
-    })
-    // ref.current.handleIncreaseCount()
+    // act(() => {
+    //   ref.current.handleIncreaseCount()
+    // })
+    ref.current.handleIncreaseCount()
     expect(callback).toBeCalled()
   })
 })
