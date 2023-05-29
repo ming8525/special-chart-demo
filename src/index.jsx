@@ -60,7 +60,7 @@ const Root = (props) => {
         })
       }
     </div>
-    <button onClick={switchChart}>Siwtch chart</button>
+    <button onClick={switchChart}>Switch chart</button>
   </div>
 }
 
