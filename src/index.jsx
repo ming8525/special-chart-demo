@@ -21,39 +21,48 @@ const createFeatureLayer = (url) => {
   }
 }
 
-let selectionIndex = 0
-const selectionIndexes = new Map()
-selectionIndexes.set(0, { indexesToSelect: []})
-const DefaultSelectionData = { selectionIndexes }
-
-const Root = (props) => {
+const BarChart = ({ style }) => {
   const ref = React.useRef(null)
-  const [selectionData, setSelectionData] = React.useState()
 
   React.useEffect(() => {
     const service = config.service
     const layer = createFeatureLayer(service)
 
     const webChart = config.webChart
-    
     ref.current.config = webChart
     ref.current.layer = layer
   }, [])
 
-  const handleClick = () => {
-    let newSelectionData = selectionData ?? DefaultSelectionData
-    const selectionIndexes = newSelectionData.selectionIndexes
-    selectionIndexes.set(0, { indexesToSelect: [selectionIndex]})
-    ref.current.selectionData = { selectionIndexes }
-    selectionIndex++
-    if(selectionIndex > 4) selectionIndex = 0
+  return <div style={{ height: '100%', width: '100%', ...style }}>
+    <arcgis-charts-bar-chart ref={ref} />
+  </div>
+}
+
+const Charts = ['1', '2']
+
+const Root = (props) => {
+  const [displayIndex, setDisplayIndex] = React.useState(0)
+
+  const switchChart = () => {
+    let newIndex = displayIndex + 1
+    if (newIndex > (Charts.length - 1)) {
+      newIndex = 0
+    }
+    setDisplayIndex(newIndex)
   }
 
-  return <div style={{ height: 400 }}>
-    <arcgis-charts-bar-chart ref={ref} />
-    <button onClick={handleClick}>Update selection</button>
+  return <div style={{ height: 300 }}>
+    <div style={{ height: '100%', width: '1200px' }}>
+      {
+        Charts.map((chart, idx) => {
+          const activate = displayIndex === idx
+          return <BarChart key={idx} style={{ display: activate ? 'flex' : 'none' }}/>
+        })
+      }
+    </div>
+    <button onClick={switchChart}>Siwtch chart</button>
   </div>
 }
 
 const root = ReactDOMClient.createRoot(document.getElementById('root'))
-root.render(<Root/>)
+root.render(<Root />)
