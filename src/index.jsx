@@ -21,8 +21,13 @@ const createFeatureLayer = (url) => {
   }
 }
 
-const BarChart = ({ style }) => {
-  const ref = React.useRef(null)
+let selectionIndex = 0
+const selectionIndexes = new Map()
+selectionIndexes.set(0, { indexesToSelect: []})
+const DefaultSelectionData = { selectionIndexes }
+
+const Root = (props) => {
+  const ref = React.useRef()
 
   React.useEffect(() => {
     const service = config.service
@@ -31,36 +36,13 @@ const BarChart = ({ style }) => {
     const webChart = config.webChart
     ref.current.config = webChart
     ref.current.layer = layer
+    setTimeout(() => {
+      ref.current.selectionData = DefaultSelectionData
+    }, 200)
   }, [])
 
-  return <div style={{ height: '100%', width: '100%', ...style }}>
-    <arcgis-charts-bar-chart ref={ref} />
-  </div>
-}
-
-const Charts = ['1', '2']
-
-const Root = (props) => {
-  const [displayIndex, setDisplayIndex] = React.useState(0)
-
-  const switchChart = () => {
-    let newIndex = displayIndex + 1
-    if (newIndex > (Charts.length - 1)) {
-      newIndex = 0
-    }
-    setDisplayIndex(newIndex)
-  }
-
-  return <div style={{ height: 300 }}>
-    <div style={{ height: '100%', width: '1200px' }}>
-      {
-        Charts.map((chart, idx) => {
-          const activate = displayIndex === idx
-          return <BarChart key={idx} style={{ display: activate ? 'flex' : 'none' }}/>
-        })
-      }
-    </div>
-    <button onClick={switchChart}>Switch chart</button>
+  return <div style={{ height: 500 }}>
+    <arcgis-charts-pie-chart ref={ref} />
   </div>
 }
 
