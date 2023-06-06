@@ -1,5 +1,5 @@
 {
-  "service": "https://services9.arcgis.com/KXpcPstJNATLXPMb/arcgis/rest/services/Knelpunten_V2/FeatureServer",
+  "service": "https://services9.arcgis.com/KXpcPstJNATLXPMb/arcgis/rest/services/Knelpunten_V2/FeatureServer/10",
   "webChart": {
     "version": "6.2.1",
     "id": "widget_56-pie",
@@ -93,9 +93,9 @@
               "type": "esriSFS",
               "style": "esriSFSSolid",
               "color": [
-                255,
-                105,
-                39,
+                225,
+                0,
+                27,
                 255
               ],
               "outline": {

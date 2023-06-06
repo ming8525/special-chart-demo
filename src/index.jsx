@@ -23,26 +23,88 @@ const createFeatureLayer = (url) => {
 
 let selectionIndex = 0
 const selectionIndexes = new Map()
-selectionIndexes.set(0, { indexesToSelect: []})
-const DefaultSelectionData = { selectionIndexes }
+selectionIndexes.set(0, { indexesToSelect: [] })
+const DefaultSelectionData = { selectionIndexes: undefined }
 
-const Root = (props) => {
+const useRegisterEvent = (nodeRef, eventName, callback) => {
+  React.useEffect(() => {
+    const node = nodeRef?.current
+    if (node && eventName && callback) {
+      node.addEventListener(eventName, callback)
+    }
+
+    return () => {
+      if (node && eventName && callback) {
+        node.removeEventListener(eventName, callback)
+      }
+    }
+  }, [eventName, nodeRef, callback])
+}
+
+const PieChart = ({ layer, chartRef }) => {
   const ref = React.useRef()
 
   React.useEffect(() => {
-    const service = config.service
-    const layer = createFeatureLayer(service)
+    chartRef.current = ref.current
 
     const webChart = config.webChart
     ref.current.config = webChart
-    ref.current.layer = layer
     setTimeout(() => {
-      ref.current.selectionData = DefaultSelectionData
-    }, 200)
+      ref.current.layer = layer
+    })
+    ref.current.runtimeDataFilters = { where: "(obstakels = 'beheer_en_onderhoud')" }
+    ref.current.selectionData = DefaultSelectionData
+
+    ref.current.returnSelectionIndexes = true
+    ref.current.returnSelectionOIDs = false
+    ref.current.queueChartCreation = true
+    ref.current.autoDisposeChart = true
+    ref.current.enableResponsiveFeatures = false
+    ref.current.useAnimatedCharts = false
+  }, [layer])
+
+
+  const arcgisChartsDataProcessComplete = React.useCallback((event) => {
+    console.log('arcgisChartsDataProcessComplete', event.detail)
   }, [])
 
+  const arcgisChartsDataProcessError = React.useCallback((event) => {
+    console.log('arcgisChartsDataProcessError')
+  }, [])
+
+  const arcgisChartsSelectionComplete = React.useCallback((event) => {
+    console.log('arcgisChartsSelectionComplete', event.detail)
+  }, [])
+
+
+  useRegisterEvent(ref, 'arcgisChartsDataProcessComplete', arcgisChartsDataProcessComplete)
+  useRegisterEvent(ref, 'arcgisChartsDataProcessError', arcgisChartsDataProcessError)
+  useRegisterEvent(ref, 'arcgisChartsSelectionComplete', arcgisChartsSelectionComplete)
+
+
+  return <arcgis-charts-pie-chart ref={ref} />
+}
+
+const Root = (props) => {
+  const chartRef = React.useRef()
+  const [layer, setLayer] = React.useState(null)
+
+  React.useEffect(() => {
+    const layer = createFeatureLayer(config.service)
+    setLayer(layer)
+  }, [])
+
+
+  React.useEffect(() => {
+    if (chartRef.current) {
+      setTimeout(() => {
+        chartRef.current.refresh()
+      })
+    }
+  }, [layer])
+
   return <div style={{ height: 500 }}>
-    <arcgis-charts-pie-chart ref={ref} />
+    {layer && <PieChart ref={chartRef} layer={layer} />}
   </div>
 }
 
