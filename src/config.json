@@ -1,5 +1,6 @@
 {
-  "service": "https://services9.arcgis.com/KXpcPstJNATLXPMb/arcgis/rest/services/Knelpunten_V2/FeatureServer/10",
+  "portalUrl": "https://www.arcgis.com/",
+  "itemId": "c6a8d919d16b43e4b78b9192e76c2d32",
   "webChart": {
     "version": "6.2.1",
     "id": "widget_56-pie",
