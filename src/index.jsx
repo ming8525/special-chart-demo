@@ -2,6 +2,9 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
+import Portal from '@arcgis/core/portal/Portal'
+import PortalItem from '@arcgis/core/portal/PortalItem'
+import WebMap from '@arcgis/core/WebMap'
 import config from './config.json'
 import './style.css';
 
@@ -21,90 +24,33 @@ const createFeatureLayer = (url) => {
   }
 }
 
-let selectionIndex = 0
-const selectionIndexes = new Map()
-selectionIndexes.set(0, { indexesToSelect: [] })
-const DefaultSelectionData = { selectionIndexes: undefined }
-
-const useRegisterEvent = (nodeRef, eventName, callback) => {
-  React.useEffect(() => {
-    const node = nodeRef?.current
-    if (node && eventName && callback) {
-      node.addEventListener(eventName, callback)
-    }
-
-    return () => {
-      if (node && eventName && callback) {
-        node.removeEventListener(eventName, callback)
-      }
-    }
-  }, [eventName, nodeRef, callback])
+const createWebMapLayer = (portalUrl, itemId) => {
+  const portal = new Portal({
+    url: portalUrl
+  })
+  const map = new WebMap({
+    portalItem: new PortalItem({
+      id: itemId,
+      portal: portal
+    })
+  })
+  return map.layers[0]
 }
 
-const PieChart = React.forwardRef(({ layer }, chartRef) => {
+const Root = (props) => {
   const ref = React.useRef()
 
   React.useEffect(() => {
-    chartRef.current = ref.current
-
+    const layer = createFeatureLayer(config.service)
     const webChart = config.webChart
     ref.current.config = webChart
     setTimeout(() => {
       ref.current.layer = layer
     })
-    ref.current.runtimeDataFilters = { where: "1=1" }
-    ref.current.selectionData = DefaultSelectionData
-
-    ref.current.returnSelectionIndexes = true
-    ref.current.returnSelectionOIDs = false
-    ref.current.queueChartCreation = true
-    ref.current.autoDisposeChart = true
-    ref.current.enableResponsiveFeatures = false
-    ref.current.useAnimatedCharts = false
-  }, [layer])
-
-
-  const arcgisChartsDataProcessComplete = React.useCallback((event) => {
-    console.log('arcgisChartsDataProcessComplete', event.detail)
-  }, [])
-
-  const arcgisChartsDataProcessError = React.useCallback((event) => {
-    console.log('arcgisChartsDataProcessError')
-  }, [])
-
-  const arcgisChartsSelectionComplete = React.useCallback((event) => {
-    console.log('arcgisChartsSelectionComplete', event.detail)
-  }, [])
-
-
-  useRegisterEvent(ref, 'arcgisChartsDataProcessComplete', arcgisChartsDataProcessComplete)
-  useRegisterEvent(ref, 'arcgisChartsDataProcessError', arcgisChartsDataProcessError)
-  useRegisterEvent(ref, 'arcgisChartsSelectionComplete', arcgisChartsSelectionComplete)
-
-
-  return <arcgis-charts-pie-chart ref={ref} />
-})
-
-const Root = (props) => {
-  const chartRef = React.useRef()
-  const [layer, setLayer] = React.useState(null)
-
-  React.useEffect(() => {
-    const layer = createFeatureLayer(config.service)
-    setLayer(layer)
-  }, [])
-
-
-  React.useEffect(() => {
-    if (chartRef.current) {
-      setTimeout(() => {
-        chartRef.current.refresh()
-      })
-    }
   }, [layer])
 
   return <div style={{ height: 500 }}>
-    {layer && <PieChart ref={chartRef} layer={layer} />}
+    <arcgis-charts-pie-chart ref={ref} />
   </div>
 }
 
