@@ -41,7 +41,7 @@ const useRegisterEvent = (nodeRef, eventName, callback) => {
   }, [eventName, nodeRef, callback])
 }
 
-const PieChart = ({ layer, chartRef }) => {
+const PieChart = React.forwardRef(({ layer }, chartRef) => {
   const ref = React.useRef()
 
   React.useEffect(() => {
@@ -52,7 +52,7 @@ const PieChart = ({ layer, chartRef }) => {
     setTimeout(() => {
       ref.current.layer = layer
     })
-    ref.current.runtimeDataFilters = { where: "(obstakels = 'beheer_en_onderhoud')" }
+    ref.current.runtimeDataFilters = { where: "1=1" }
     ref.current.selectionData = DefaultSelectionData
 
     ref.current.returnSelectionIndexes = true
@@ -83,7 +83,7 @@ const PieChart = ({ layer, chartRef }) => {
 
 
   return <arcgis-charts-pie-chart ref={ref} />
-}
+})
 
 const Root = (props) => {
   const chartRef = React.useRef()

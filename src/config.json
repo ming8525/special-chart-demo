@@ -1,8 +1,8 @@
 {
-  "service": "https://services9.arcgis.com/KXpcPstJNATLXPMb/arcgis/rest/services/Knelpunten_V2/FeatureServer/10",
+  "service": "https://services3.arcgis.com/8Ssk6YviBLu2VpNk/arcgis/rest/services/Join_Features_to_Similarity_Value_HotspotAnalysis/FeatureServer/0",
   "webChart": {
     "version": "6.2.1",
-    "id": "widget_56-pie",
+    "id": "widget_343-donut",
     "type": "chart",
     "series": [
       {
@@ -10,13 +10,13 @@
         "colorType": "colorMatch",
         "id": "OBJECTID",
         "name": "OBJECTID",
-        "x": "Status",
+        "x": "CAT_PAIR",
         "y": "OBJECTID_count",
-        "innerRadius": 0,
+        "innerRadius": 60,
         "startAngle": 0,
         "endAngle": 360,
-        "displayNumericValueOnDataLabel": true,
-        "displayPercentageOnDataLabel": false,
+        "displayNumericValueOnDataLabel": false,
+        "displayPercentageOnDataLabel": true,
         "displayNumericValueOnTooltip": true,
         "displayPercentageOnTooltip": true,
         "dataLabelsOffset": 0,
@@ -66,7 +66,7 @@
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": false,
+          "visible": true,
           "content": {
             "type": "esriTS",
             "color": [
@@ -88,14 +88,182 @@
         },
         "slices": [
           {
-            "sliceId": "knelpunt_is_aanwezig",
+            "sliceId": "Cold to Cold",
             "fillSymbol": {
               "type": "esriSFS",
               "style": "esriSFSSolid",
               "color": [
-                225,
-                0,
-                27,
+                94,
+                143,
+                208,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Cold to Not Sig",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                219,
+                207,
+                78,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Hot to Cold",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                214,
+                85,
+                139,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Hot to Hot",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                255,
+                32,
+                60,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Hot to Not Sig",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                119,
+                180,
+                132,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Not Sig to Cold",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                223,
+                107,
+                53,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Not Sig to Hot",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                118,
+                99,
+                58,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          },
+          {
+            "sliceId": "Not Sig to Not Sig",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                130,
+                87,
+                194,
                 255
               ],
               "outline": {
@@ -114,7 +282,7 @@
         ],
         "query": {
           "groupByFieldsForStatistics": [
-            "Status"
+            "CAT_PAIR"
           ],
           "outStatistics": [
             {
@@ -124,7 +292,7 @@
             }
           ],
           "orderByFields": [
-            "Status ASC"
+            "CAT_PAIR ASC"
           ]
         }
       }
@@ -154,7 +322,7 @@
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": ""
+        "text": "Percentage by Clusters"
       }
     },
     "footer": {
@@ -176,7 +344,7 @@
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": "statusvoortgang beheer en onderhoud bestrating (druk toets F5 in om te verversen)"
+        "text": ""
       }
     },
     "legend": {
@@ -201,7 +369,7 @@
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "text": ""
+          "text": "Clusters"
         }
       },
       "body": {
