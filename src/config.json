@@ -1,584 +1,132 @@
 {
-  "service": "https://services2.arcgis.com/vJlmDE1PmdTcJF0N/arcgis/rest/services/Business_SizeCounty/FeatureServer/0",
+  "portalUrl": "https://www.arcgis.com/",
+  "itemId": "c6a8d919d16b43e4b78b9192e76c2d32",
   "webChart": {
     "version": "6.2.1",
-    "id": "widget_3206-column",
+    "id": "widget_56-pie",
     "type": "chart",
-    "rotated": false,
     "series": [
       {
-        "type": "barSeries",
-        "id": "Business_Owner",
-        "name": "Business_Owner",
-        "x": "Size",
-        "y": "Business_Owner_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            94,
-            143,
-            208,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
+        "type": "pieSeries",
+        "colorType": "colorMatch",
+        "id": "OBJECTID",
+        "name": "OBJECTID",
+        "x": "Status",
+        "y": "OBJECTID_count",
+        "innerRadius": 0,
+        "startAngle": 0,
+        "endAngle": 360,
+        "displayNumericValueOnDataLabel": true,
+        "displayPercentageOnDataLabel": false,
+        "displayNumericValueOnTooltip": true,
+        "displayPercentageOnTooltip": true,
+        "dataLabelsOffset": 0,
+        "sliceGrouping": {
+          "percentageThreshold": 0,
+          "sliceId": "__other-slice__",
+          "label": "Other"
         },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top",
-            "text": "{valueY}"
-          }
-        },
-        "rotated": false,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Size"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Business_Owner",
-              "outStatisticFieldName": "Business_Owner_sum"
-            }
-          ],
-          "orderByFields": [
-            "Size ASC"
-          ]
-        }
-      },
-      {
-        "type": "barSeries",
-        "id": "Business_Partner",
-        "name": "Business_Partner",
-        "x": "Size",
-        "y": "Business_Partner_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            119,
-            180,
-            132,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top",
-            "text": "{valueY}"
-          }
-        },
-        "rotated": false,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Size"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Business_Partner",
-              "outStatisticFieldName": "Business_Partner_sum"
-            }
-          ],
-          "orderByFields": [
-            "Size ASC"
-          ]
-        }
-      },
-      {
-        "type": "barSeries",
-        "id": "Full_Time_Staff",
-        "name": "Full_Time_Staff",
-        "x": "Size",
-        "y": "Full_Time_Staff_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            223,
-            107,
-            53,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top",
-            "text": "{valueY}"
-          }
-        },
-        "rotated": false,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Size"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Full_Time_Staff",
-              "outStatisticFieldName": "Full_Time_Staff_sum"
-            }
-          ],
-          "orderByFields": [
-            "Size ASC"
-          ]
-        }
-      },
-      {
-        "type": "barSeries",
-        "id": "Part_Time_Staff",
-        "name": "Part_Time_Staff",
-        "x": "Size",
-        "y": "Part_Time_Staff_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            219,
-            207,
-            78,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top",
-            "text": "{valueY}"
-          }
-        },
-        "rotated": false,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Size"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Part_Time_Staff",
-              "outStatisticFieldName": "Part_Time_Staff_sum"
-            }
-          ],
-          "orderByFields": [
-            "Size ASC"
-          ]
-        }
-      },
-      {
-        "type": "barSeries",
-        "id": "Casual_Staff",
-        "name": "Casual_Staff",
-        "x": "Size",
-        "y": "Casual_Staff_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            65,
-            84,
-            109,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top",
-            "text": "{valueY}"
-          }
-        },
-        "rotated": false,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Size"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Casual_Staff",
-              "outStatisticFieldName": "Casual_Staff_sum"
-            }
-          ],
-          "orderByFields": [
-            "Size ASC"
-          ]
-        }
-      },
-      {
-        "type": "barSeries",
-        "id": "Seasonal_Staff",
-        "name": "Seasonal_Staff",
-        "x": "Size",
-        "y": "Seasonal_Staff_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            130,
-            87,
-            194,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top",
-            "text": "{valueY}"
-          }
-        },
-        "rotated": false,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Size"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Seasonal_Staff",
-              "outStatisticFieldName": "Seasonal_Staff_sum"
-            }
-          ],
-          "orderByFields": [
-            "Size ASC"
-          ]
-        }
-      }
-    ],
-    "axes": [
-      {
-        "type": "chartAxis",
-        "visible": true,
-        "isLogarithmic": false,
-        "title": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              24,
-              24,
-              24,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 12,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle",
-            "text": ""
-          }
-        },
-        "labels": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              68,
-              68,
-              68,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 12,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle",
-            "text": ""
-          }
-        },
-        "valueFormat": {
-          "type": "category",
-          "characterLimit": 11
-        },
-        "lineSymbol": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            139,
-            139,
-            139,
-            255
-          ],
-          "width": 1
-        },
-        "grid": {
-          "type": "esriSLS",
-          "style": "esriSLSDash",
-          "color": [
-            213,
-            213,
-            213,
-            255
-          ],
-          "width": 1
-        }
-      },
-      {
-        "type": "chartAxis",
-        "visible": true,
-        "isLogarithmic": false,
-        "title": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              24,
-              24,
-              24,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 12,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle",
-            "text": "# of respondents"
-          }
-        },
-        "labels": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              68,
-              68,
-              68,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 12,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle",
-            "text": ""
-          }
-        },
-        "valueFormat": {
+        "numericValueFormat": {
           "type": "number",
           "intlOptions": {
             "style": "decimal",
             "useGrouping": true,
             "minimumFractionDigits": 0,
-            "maximumFractionDigits": 0
+            "maximumFractionDigits": 3
           }
         },
-        "lineSymbol": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            139,
-            139,
-            139,
-            255
-          ],
-          "width": 1
+        "percentValueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "decimal",
+            "useGrouping": true,
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 3
+          }
         },
-        "grid": {
-          "type": "esriSLS",
-          "style": "esriSLSDash",
+        "fillSymbol": {
+          "type": "esriSFS",
+          "style": "esriSFSSolid",
           "color": [
-            213,
-            213,
-            213,
+            0,
+            0,
+            0,
             255
           ],
-          "width": 1
+          "outline": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              240,
+              240,
+              240,
+              255
+            ],
+            "width": 1
+          }
+        },
+        "dataLabels": {
+          "type": "chartText",
+          "visible": false,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              54,
+              54,
+              54,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 10,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top"
+          }
+        },
+        "slices": [
+          {
+            "sliceId": "knelpunt_is_aanwezig",
+            "fillSymbol": {
+              "type": "esriSFS",
+              "style": "esriSFSSolid",
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ],
+              "outline": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  130,
+                  130,
+                  130,
+                  255
+                ],
+                "width": 0
+              }
+            }
+          }
+        ],
+        "query": {
+          "groupByFieldsForStatistics": [
+            "Status"
+          ],
+          "outStatistics": [
+            {
+              "statisticType": "count",
+              "onStatisticField": "OBJECTID",
+              "outStatisticFieldName": "OBJECTID_count"
+            }
+          ],
+          "orderByFields": [
+            "Status ASC"
+          ]
         }
       }
     ],
@@ -601,13 +149,13 @@
         ],
         "font": {
           "family": "Avenir Next",
-          "size": 18,
+          "size": 24,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": "Size of Business"
+        "text": ""
       }
     },
     "footer": {
@@ -629,12 +177,12 @@
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": ""
+        "text": "statusvoortgang beheer en onderhoud bestrating (druk toets F5 in om te verversen)"
       }
     },
     "legend": {
       "type": "chartLegend",
-      "visible": true,
+      "visible": false,
       "title": {
         "type": "chartText",
         "visible": true,
@@ -667,7 +215,7 @@
         ],
         "font": {
           "family": "Avenir Next",
-          "size": 12,
+          "size": 14,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
@@ -675,7 +223,7 @@
         "horizontalAlignment": "center",
         "text": ""
       },
-      "position": "bottom"
+      "position": "right"
     }
   }
 }

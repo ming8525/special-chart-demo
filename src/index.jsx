@@ -2,6 +2,9 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
+import Portal from '@arcgis/core/portal/Portal'
+import PortalItem from '@arcgis/core/portal/PortalItem'
+import WebMap from '@arcgis/core/WebMap'
 import config from './config.json'
 import './style.css';
 
@@ -9,58 +12,44 @@ applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const CacheLayers = {}
-const createFeatureLayer = (url) => {
-  if (!url) return null
-  if (!CacheLayers[url]) {
-    const fl = new FeatureLayer({ url })
-    CacheLayers[url] = fl
-    return fl
-  } else {
-    return CacheLayers[url]
-  }
+const createWebMapLayer = (portalUrl, itemId) => {
+  const portal = new Portal({
+    url: portalUrl
+  })
+  const map = new WebMap({
+    portalItem: new PortalItem({
+      id: itemId,
+      portal: portal
+    })
+  })
+  return new Promise((resolve, reject) => {
+    map.load().then(() => {
+      const layers = map.layers.toArray()
+      resolve(layers[3].clone())
+    })
+  })
 }
-
-const BarChart = ({ style }) => {
-  const ref = React.useRef(null)
-
-  React.useEffect(() => {
-    const service = config.service
-    const layer = createFeatureLayer(service)
-
-    const webChart = config.webChart
-    ref.current.config = webChart
-    ref.current.layer = layer
-  }, [])
-
-  return <div style={{ height: '100%', width: '100%', ...style }}>
-    <arcgis-charts-bar-chart ref={ref} />
-  </div>
-}
-
-const Charts = ['1', '2']
 
 const Root = (props) => {
-  const [displayIndex, setDisplayIndex] = React.useState(0)
+  const ref = React.useRef()
+  const [layer, setLayer] = React.useState()
 
-  const switchChart = () => {
-    let newIndex = displayIndex + 1
-    if (newIndex > (Charts.length - 1)) {
-      newIndex = 0
+  React.useEffect(() => {
+    createWebMapLayer(config.portalUrl, config.itemId).then((layer) => {
+      setLayer(layer)
+    })
+  }, [])
+
+  React.useEffect(() => {
+    if (layer) {
+      const webChart = config.webChart
+      ref.current.config = webChart
+      ref.current.layer = layer
     }
-    setDisplayIndex(newIndex)
-  }
+  }, [layer])
 
-  return <div style={{ height: 300 }}>
-    <div style={{ height: '100%', width: '1200px' }}>
-      {
-        Charts.map((chart, idx) => {
-          const activate = displayIndex === idx
-          return <BarChart key={idx} style={{ display: activate ? 'flex' : 'none' }}/>
-        })
-      }
-    </div>
-    <button onClick={switchChart}>Switch chart</button>
+  return <div style={{ height: 500 }}>
+    {layer && <arcgis-charts-pie-chart ref={ref} />}
   </div>
 }
 
