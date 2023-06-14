@@ -30,14 +30,25 @@ const createWebMapLayer = (portalUrl, itemId) => {
   })
 }
 
+const CacheLayers = {}
+const createFeatureLayer = (url) => {
+  if (!url) return null
+  if (!CacheLayers[url]) {
+    const fl = new FeatureLayer({ url })
+    CacheLayers[url] = fl
+    return fl
+  } else {
+    return CacheLayers[url]
+  }
+}
+
 const Root = (props) => {
   const ref = React.useRef()
   const [layer, setLayer] = React.useState()
 
   React.useEffect(() => {
-    createWebMapLayer(config.portalUrl, config.itemId).then((layer) => {
-      setLayer(layer)
-    })
+    const layer = createFeatureLayer(config.service)
+    setLayer(layer)
   }, [])
 
   React.useEffect(() => {
@@ -45,11 +56,20 @@ const Root = (props) => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
+      ref.current.chartLimits = {
+        maxLineChartSeriesCount:100,
+        maxLineChartMarkersCountTotal: 200,
+        behaviorAfterLimit: 'renderUpToTheLimit'
+      }
+      ref.current.addEventListener('arcgisChartsDataProcessComplete', (e) => {
+        const count = e.detail.dataItems.length
+        console.log('item count', count)
+      })
     }
   }, [layer])
 
   return <div style={{ height: 500 }}>
-    {layer && <arcgis-charts-pie-chart ref={ref} />}
+    {layer && <arcgis-charts-line-chart ref={ref} />}
   </div>
 }
 
