@@ -56,20 +56,11 @@ const Root = (props) => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
-      ref.current.chartLimits = {
-        maxLineChartSeriesCount:100,
-        maxLineChartMarkersCountTotal: 200,
-        behaviorAfterLimit: 'renderUpToTheLimit'
-      }
-      ref.current.addEventListener('arcgisChartsDataProcessComplete', (e) => {
-        const count = e.detail.dataItems.length
-        console.log('item count', count)
-      })
     }
   }, [layer])
 
-  return <div style={{ height: 500 }}>
-    {layer && <arcgis-charts-line-chart ref={ref} />}
+  return <div style={{ width: 470, height: 302 }}>
+    {layer && <arcgis-charts-pie-chart ref={ref} />}
   </div>
 }
 
