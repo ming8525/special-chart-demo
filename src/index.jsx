@@ -2,9 +2,6 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
-import Portal from '@arcgis/core/portal/Portal'
-import PortalItem from '@arcgis/core/portal/PortalItem'
-import WebMap from '@arcgis/core/WebMap'
 import config from './config.json'
 import './style.css';
 
@@ -12,23 +9,6 @@ applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const createWebMapLayer = (portalUrl, itemId) => {
-  const portal = new Portal({
-    url: portalUrl
-  })
-  const map = new WebMap({
-    portalItem: new PortalItem({
-      id: itemId,
-      portal: portal
-    })
-  })
-  return new Promise((resolve, reject) => {
-    map.load().then(() => {
-      const layers = map.layers.toArray()
-      resolve(layers[3].clone())
-    })
-  })
-}
 
 const CacheLayers = {}
 const createFeatureLayer = (url) => {
@@ -40,6 +20,12 @@ const createFeatureLayer = (url) => {
   } else {
     return CacheLayers[url]
   }
+}
+
+const getSelectionData = (indexes) => {
+  const selectionIndexes = new Map()
+  selectionIndexes.set(0, { indexesToSelect: indexes})
+  return { selectionIndexes }
 }
 
 const Root = (props) => {
@@ -59,8 +45,20 @@ const Root = (props) => {
     }
   }, [layer])
 
+  const handleSelection = () => {
+    const selectionData = getSelectionData([0])
+    ref.current.selectionData = selectionData
+  }
+
+  const clearSelection = () => {
+    const selectionData = getSelectionData([])
+    ref.current.selectionData = selectionData
+  }
+
   return <div style={{ width: 470, height: 302 }}>
     {layer && <arcgis-charts-pie-chart ref={ref} />}
+    <button onClick={handleSelection}>Select the first piece</button>
+    <button onClick={clearSelection}>Clear selection</button>
   </div>
 }
 

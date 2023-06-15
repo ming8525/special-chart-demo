@@ -155,7 +155,7 @@
     },
     "legend": {
       "type": "chartLegend",
-      "visible": true,
+      "visible": false,
       "title": {
         "type": "chartText",
         "visible": true,
