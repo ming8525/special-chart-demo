@@ -1,7 +1,7 @@
 {
   "service": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3",
   "webChart": {
-    "version": "6.2.1",
+    "version": "3.0.0",
     "id": "widget_1-donut",
     "type": "chart",
     "series": [

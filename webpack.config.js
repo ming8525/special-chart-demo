@@ -47,5 +47,10 @@ module.exports = {
             template: path.join(__dirname, "src", "index.html"),
         }),
         new CopyWebpackPlugin({ patterns: toBeCopied })
-    ]
+    ],
+    resolve: {
+        fallback: {
+            "fs": false
+        },
+    }
 };

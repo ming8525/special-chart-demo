@@ -41,7 +41,7 @@ const Root = (props) => {
     if (layer) {
       const webChart = config.webChart
       ref.current.config = webChart
-      ref.current.layer = layer
+      ref.current.featureLayer = layer
     }
   }, [layer])
 
