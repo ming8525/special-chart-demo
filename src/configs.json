@@ -1,0 +1,859 @@
+[
+  {
+    "service": "https://services3.arcgis.com/8Ssk6YviBLu2VpNk/arcgis/rest/services/Export_Province_CPO_SummarizeWithin/FeatureServer",
+    "webChart": {
+      "version": "6.2.1",
+      "id": "widget_245-scatter",
+      "type": "chart",
+      "series": [
+        {
+          "type": "scatterSeries",
+          "colorType": "singleColor",
+          "id": "MEAN_2017_1",
+          "name": "MEAN_2017_1",
+          "x": "volume_2017",
+          "y": "MEAN_2017_1",
+          "markerSymbol": {
+            "type": "esriSMS",
+            "style": "esriSMSCircle",
+            "color": [
+              214,
+              85,
+              139,
+              255
+            ],
+            "size": 7,
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSSolid",
+              "color": [
+                130,
+                130,
+                130,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "overlays": {
+            "type": "chartOverlays",
+            "trendLine": {
+              "type": "chartOverlay",
+              "created": true,
+              "visible": true,
+              "symbol": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                  223,
+                  107,
+                  53,
+                  255
+                ],
+                "width": 3
+              }
+            }
+          }
+        }
+      ],
+      "axes": [
+        {
+          "type": "chartAxis",
+          "visible": true,
+          "isLogarithmic": false,
+          "title": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                24,
+                24,
+                24,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle",
+              "text": "Volume (Ton)"
+            }
+          },
+          "labels": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                68,
+                68,
+                68,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle"
+            }
+          },
+          "valueFormat": {
+            "type": "number",
+            "intlOptions": {
+              "style": "decimal",
+              "notation": "standard",
+              "minimumFractionDigits": 0,
+              "maximumFractionDigits": 0
+            }
+          },
+          "lineSymbol": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              139,
+              139,
+              139,
+              255
+            ],
+            "width": 1
+          },
+          "grid": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              213,
+              213,
+              213,
+              255
+            ],
+            "width": 0
+          }
+        },
+        {
+          "type": "chartAxis",
+          "visible": true,
+          "isLogarithmic": false,
+          "title": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                24,
+                24,
+                24,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle",
+              "text": "CH4 (ppbv)"
+            }
+          },
+          "labels": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                68,
+                68,
+                68,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle"
+            }
+          },
+          "valueFormat": {
+            "type": "number",
+            "intlOptions": {
+              "style": "decimal",
+              "notation": "standard",
+              "minimumFractionDigits": 0,
+              "maximumFractionDigits": 0
+            }
+          },
+          "lineSymbol": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              139,
+              139,
+              139,
+              255
+            ],
+            "width": 1
+          },
+          "grid": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              213,
+              213,
+              213,
+              255
+            ],
+            "width": 0
+          }
+        }
+      ],
+      "background": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "title": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 24,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": "Relationship between CPO and CH4 in 2017"
+        }
+      },
+      "footer": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": ""
+        }
+      },
+      "legend": {
+        "type": "chartLegend",
+        "visible": true,
+        "title": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              24,
+              24,
+              24,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 20,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "text": ""
+          }
+        },
+        "body": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": ""
+        },
+        "position": "right"
+      }
+    }
+  },
+  {
+    "layerJson": {
+      "id": "188b90a2c10-layer-44",
+      "showLegend": true,
+      "listMode": "show",
+      "disablePopup": false,
+      "title": "CPO and GHG Data by Provinces",
+      "visibility": true,
+      "layerType": "ArcGISFeatureLayer",
+      "refreshInterval": 0,
+      "layerDefinition": {
+        "minScale": 0,
+        "maxScale": 0,
+        "definitionExpression": ""
+      },
+      "timeAnimation": true,
+      "showLabels": true,
+      "popupInfo": {
+        "popupElements": [
+          {
+            "type": "fields"
+          },
+          {
+            "type": "attachments",
+            "displayType": "auto"
+          }
+        ],
+        "showAttachments": true,
+        "fieldInfos": [
+          {
+            "fieldName": "OBJECTID_1",
+            "isEditable": false,
+            "label": "OBJECTID_1",
+            "tooltip": "",
+            "visible": false
+          },
+          {
+            "fieldName": "OBJECTID",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": true,
+            "label": "OBJECTID",
+            "tooltip": "",
+            "visible": false
+          },
+          {
+            "fieldName": "PROVINSI",
+            "isEditable": true,
+            "label": "PROVINSI",
+            "tooltip": "",
+            "visible": true
+          },
+          {
+            "fieldName": "province",
+            "isEditable": true,
+            "label": "province",
+            "tooltip": "",
+            "visible": true
+          },
+          {
+            "fieldName": "year",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": true,
+            "label": "year",
+            "tooltip": "",
+            "visible": true
+          },
+          {
+            "fieldName": "cpo_volume",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": true,
+            "label": "cpo_volume",
+            "tooltip": "",
+            "visible": true
+          },
+          {
+            "fieldName": "mean_ch4",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": true,
+            "label": "mean_ch4",
+            "tooltip": "",
+            "visible": true
+          },
+          {
+            "fieldName": "mean_co2",
+            "format": {
+              "digitSeparator": true,
+              "places": 2
+            },
+            "isEditable": true,
+            "label": "mean_co2",
+            "tooltip": "",
+            "visible": true
+          }
+        ],
+        "title": "export_province_forjoin_formbased: {PROVINSI}"
+      },
+      "screenSizePerspective": true,
+      "source": [
+        {
+          "aggregateGeometries": null,
+          "geometry": null,
+          "symbol": null,
+          "attributes": {
+            "OBJECTID_1": 26,
+            "OBJECTID": 26,
+            "PROVINSI": "Kalimantan Tengah",
+            "province": "Kalimantan Tengah",
+            "year": 2017,
+            "cpo_volume": 5209835,
+            "mean_ch4": 1803.8298808434197,
+            "mean_co2": 40.479150619170056
+          },
+          "popupTemplate": null
+        },
+        {
+          "aggregateGeometries": null,
+          "geometry": null,
+          "symbol": null,
+          "attributes": {
+            "OBJECTID_1": 27,
+            "OBJECTID": 27,
+            "PROVINSI": "Kalimantan Tengah",
+            "province": "Kalimantan Tengah",
+            "year": 2018,
+            "cpo_volume": 7230094,
+            "mean_ch4": 1809.7902714500851,
+            "mean_co2": 40.710975154410285
+          },
+          "popupTemplate": null
+        },
+        {
+          "aggregateGeometries": null,
+          "geometry": null,
+          "symbol": null,
+          "attributes": {
+            "OBJECTID_1": 28,
+            "OBJECTID": 28,
+            "PROVINSI": "Kalimantan Tengah",
+            "province": "Kalimantan Tengah",
+            "year": 2019,
+            "cpo_volume": 7664841,
+            "mean_ch4": 1793.3414060906862,
+            "mean_co2": 40.995593174511946
+          },
+          "popupTemplate": null
+        },
+        {
+          "aggregateGeometries": null,
+          "geometry": null,
+          "symbol": null,
+          "attributes": {
+            "OBJECTID_1": 29,
+            "OBJECTID": 29,
+            "PROVINSI": "Kalimantan Tengah",
+            "province": "Kalimantan Tengah",
+            "year": 2020,
+            "cpo_volume": 8072879,
+            "mean_ch4": 1809.8000556407662,
+            "mean_co2": 41.23512577660257
+          },
+          "popupTemplate": null
+        },
+        {
+          "aggregateGeometries": null,
+          "geometry": null,
+          "symbol": null,
+          "attributes": {
+            "OBJECTID_1": 30,
+            "OBJECTID": 30,
+            "PROVINSI": "Kalimantan Tengah",
+            "province": "Kalimantan Tengah",
+            "year": 2021,
+            "cpo_volume": 7280743,
+            "mean_ch4": 1808.8920327159813,
+            "mean_co2": 41.45650146204359
+          },
+          "popupTemplate": null
+        }
+      ]
+    },
+    "webChart": {
+      "version": "6.2.1",
+      "id": "widget_365-line",
+      "type": "chart",
+      "series": [
+        {
+          "type": "lineSeries",
+          "id": "mean_ch4",
+          "name": "mean_ch4",
+          "x": "year",
+          "y": "mean_ch4_avg",
+          "colorType": "singleColor",
+          "stackedType": "sideBySide",
+          "lineSymbol": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              94,
+              143,
+              208,
+              255
+            ],
+            "width": 2
+          },
+          "dataLabels": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                54,
+                54,
+                54,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 10,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "top"
+            }
+          },
+          "lineSmoothed": false,
+          "showArea": false,
+          "markerVisible": true,
+          "markerSymbol": {
+            "type": "esriSMS",
+            "style": "esriSMSCircle",
+            "color": [
+              94,
+              143,
+              208,
+              255
+            ],
+            "size": 10,
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSSolid",
+              "color": [
+                130,
+                130,
+                130,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "query": {
+            "groupByFieldsForStatistics": [
+              "year"
+            ],
+            "outStatistics": [
+              {
+                "statisticType": "avg",
+                "onStatisticField": "mean_ch4",
+                "outStatisticFieldName": "mean_ch4_avg"
+              }
+            ],
+            "orderByFields": [
+              "year ASC"
+            ]
+          }
+        }
+      ],
+      "axes": [
+        {
+          "type": "chartAxis",
+          "visible": true,
+          "isLogarithmic": false,
+          "title": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                24,
+                24,
+                24,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle",
+              "text": "Year"
+            }
+          },
+          "labels": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                68,
+                68,
+                68,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle"
+            }
+          },
+          "valueFormat": {
+            "type": "category",
+            "characterLimit": 11
+          },
+          "lineSymbol": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              139,
+              139,
+              139,
+              255
+            ],
+            "width": 1
+          },
+          "grid": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              213,
+              213,
+              213,
+              255
+            ],
+            "width": 0
+          }
+        },
+        {
+          "type": "chartAxis",
+          "visible": true,
+          "isLogarithmic": false,
+          "title": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                24,
+                24,
+                24,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle",
+              "text": "CH4 (ppbv)"
+            }
+          },
+          "labels": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                68,
+                68,
+                68,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 14,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle"
+            }
+          },
+          "valueFormat": {
+            "type": "number",
+            "intlOptions": {
+              "style": "decimal",
+              "useGrouping": true,
+              "minimumFractionDigits": 0,
+              "maximumFractionDigits": 0
+            }
+          },
+          "lineSymbol": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              139,
+              139,
+              139,
+              255
+            ],
+            "width": 1
+          },
+          "grid": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              213,
+              213,
+              213,
+              255
+            ],
+            "width": 0
+          },
+          "minimum": 1790,
+          "maximum": 1822
+        }
+      ],
+      "background": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "title": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 24,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": "CH4 Trend"
+        }
+      },
+      "footer": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": ""
+        }
+      },
+      "legend": {
+        "type": "chartLegend",
+        "visible": false,
+        "title": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              24,
+              24,
+              24,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 20,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "text": ""
+          }
+        },
+        "body": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "text": ""
+        },
+        "position": "right"
+      },
+      "rotated": false
+    }
+  }
+]

@@ -2,52 +2,42 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
+import Graphic from '@arcgis/core/Graphic'
 import Portal from '@arcgis/core/portal/Portal'
 import PortalItem from '@arcgis/core/portal/PortalItem'
 import WebMap from '@arcgis/core/WebMap'
-import config from './config.json'
+import configs from './configs.json'
 import './style.css';
 
 applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const createWebMapLayer = (portalUrl, itemId) => {
-  const portal = new Portal({
-    url: portalUrl
-  })
-  const map = new WebMap({
-    portalItem: new PortalItem({
-      id: itemId,
-      portal: portal
+const createFeatureLayer = (url, json) => {
+  if (!url && !json) return null
+  let fl = null
+  if(url) {
+    fl = new FeatureLayer({ url })
+  } else if (json) {
+    let graphics = json.source
+    graphics = graphics.map((graphic) => {
+      return new Graphic({
+        geometry: null,
+        attributes: graphic.attributes
+      })
     })
-  })
-  return new Promise((resolve, reject) => {
-    map.load().then(() => {
-      const layers = map.layers.toArray()
-      resolve(layers[3].clone())
-    })
-  })
-}
-
-const CacheLayers = {}
-const createFeatureLayer = (url) => {
-  if (!url) return null
-  if (!CacheLayers[url]) {
-    const fl = new FeatureLayer({ url })
-    CacheLayers[url] = fl
-    return fl
-  } else {
-    return CacheLayers[url]
+    fl = new FeatureLayer(json)
+    fl.source = graphics
   }
+  return fl
 }
 
-const Root = (props) => {
+const Chart = ({ config }) => {
   const ref = React.useRef()
   const [layer, setLayer] = React.useState()
 
   React.useEffect(() => {
-    const layer = createFeatureLayer(config.service)
+    const layer = createFeatureLayer(config.service, config.layerJson)
     setLayer(layer)
   }, [])
 
@@ -59,8 +49,16 @@ const Root = (props) => {
     }
   }, [layer])
 
-  return <div style={{ width: 470, height: 302 }}>
+  return <div style={{ width: 502, height: 238 }}>
     {layer && <arcgis-charts-pie-chart ref={ref} />}
+  </div>
+}
+
+const Root = (props) => {
+  return <div style={{ width: '100%', display: 'flex' }}>
+    {
+      [...configs, configs[1]].map((config) => (<Chart config={config} />))
+    }
   </div>
 }
 
