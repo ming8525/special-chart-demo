@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const arcgisCharts = require('./webpack-arcgis-charts.config')
 
 const toBeCopied = [
@@ -49,12 +48,6 @@ const main = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin({
-            dry: false,
-            verbose: false,
-            cleanStaleWebpackAssets: false,
-            cleanOnceBeforeBuildPatterns: ['**/*'],
-        }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
         }),
