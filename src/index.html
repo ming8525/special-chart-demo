@@ -8,8 +8,18 @@
   <title>ArcGIS Charts Demo</title>
 </head>
 
+<script src="system.min.js"></script>
+<script type="systemjs-importmap">
+{
+  "imports": {
+    "arcgis-charts": "https://BASE_URL/arcgis-charts/arcgis-charts.js"
+  }
+}
+</script>
+<script type="systemjs-module" src="./index.bundle.js"></script>
+
 <body>
-  <div id="root" class="root"></div>
+  <div id="root" class="root border"></div>
 </body>
 
 </html>

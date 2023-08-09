@@ -1,15 +1,15 @@
 import React from 'react';
 import * as ReactDOMClient from 'react-dom/client'
-import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
 import Portal from '@arcgis/core/portal/Portal'
 import PortalItem from '@arcgis/core/portal/PortalItem'
 import WebMap from '@arcgis/core/WebMap'
+import { applyPolyfills, defineCustomElements } from './arcgis-charts'
 import config from './config.json'
 import './style.css';
 
 applyPolyfills().then(() => {
-  defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
+  defineCustomElements(window, { resourcesUrl: './arcgis-charts/' })
 })
 
 const createWebMapLayer = (portalUrl, itemId) => {
@@ -56,20 +56,11 @@ const Root = (props) => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
-      ref.current.chartLimits = {
-        maxLineChartSeriesCount:100,
-        maxLineChartMarkersCountTotal: 200,
-        behaviorAfterLimit: 'renderUpToTheLimit'
-      }
-      ref.current.addEventListener('arcgisChartsDataProcessComplete', (e) => {
-        const count = e.detail.dataItems.length
-        console.log('item count', count)
-      })
     }
   }, [layer])
 
   return <div style={{ height: 500 }}>
-    {layer && <arcgis-charts-line-chart ref={ref} />}
+    {layer && <arcgis-charts-bar-chart ref={ref} />}
   </div>
 }
 

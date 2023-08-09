@@ -1,16 +1,19 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const arcgisCharts = require('./webpack-arcgis-charts.config')
 
 const toBeCopied = [
-    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/t9n', to: './arcgis-charts/t9n'}
-  ]
+    { from: './system.min.js', to: './system.min.js' },
+]
 
-module.exports = {
+const main = {
     entry: path.join(__dirname, "src", "index.jsx"),
     output: {
         path: path.join(__dirname, "build"),
-        filename: "index.bundle.js"
+        filename: "index.bundle.js",
+        libraryTarget: 'system'
     },
     mode: process.env.NODE_ENV || "development",
     resolve: {
@@ -21,6 +24,9 @@ module.exports = {
     devServer: {
         open: true,
         host: 'localhost',
+        devMiddleware: {
+            writeToDisk: true,
+        }
     },
     module: {
         rules: [
@@ -28,7 +34,7 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
-            },{
+            }, {
                 test: /\.(css|scss)$/,
                 use: ["style-loader", "css-loader"],
             },
@@ -43,9 +49,17 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin({
+            dry: false,
+            verbose: false,
+            cleanStaleWebpackAssets: false,
+            cleanOnceBeforeBuildPatterns: ['**/*'],
+        }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
         }),
         new CopyWebpackPlugin({ patterns: toBeCopied })
     ]
 };
+
+module.exports = [arcgisCharts, main]

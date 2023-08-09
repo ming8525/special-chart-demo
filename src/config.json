@@ -1,29 +1,39 @@
 {
-  "service": "https://services1.arcgis.com/oC086ufSSQ6Avnw2/arcgis/rest/services/WorldCities/FeatureServer/0",
+  "service": "https://services1.arcgis.com/oC086ufSSQ6Avnw2/ArcGIS/rest/services/Balboa%20Park%20San%20Diego/FeatureServer/0",
   "webChart": {
     "version": "6.2.1",
-    "id": "widget_1-line",
+    "id": "widget_1-column",
     "type": "chart",
     "rotated": false,
     "series": [
       {
-        "type": "lineSeries",
-        "id": "FID",
-        "name": "FID",
-        "x": "city_name",
-        "y": "FID_count",
+        "type": "barSeries",
+        "id": "OBJECTID",
+        "name": "OBJECTID",
+        "x": "tempCode",
+        "y": "OBJECTID_count",
         "colorType": "singleColor",
         "stackedType": "sideBySide",
-        "lineSymbol": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
+        "fillSymbol": {
+          "type": "esriSFS",
+          "style": "esriSFSSolid",
           "color": [
             94,
             143,
             208,
             255
           ],
-          "width": 2
+          "outline": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              130,
+              130,
+              130,
+              255
+            ],
+            "width": 0
+          }
         },
         "dataLabels": {
           "type": "chartText",
@@ -48,44 +58,20 @@
           }
         },
         "rotated": false,
-        "lineSmoothed": false,
-        "showArea": false,
-        "markerVisible": true,
-        "markerSymbol": {
-          "type": "esriSMS",
-          "style": "esriSMSCircle",
-          "color": [
-            94,
-            143,
-            208,
-            255
-          ],
-          "size": 6,
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
+        "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "city_name"
+            "tempCode"
           ],
           "outStatistics": [
             {
               "statisticType": "count",
-              "onStatisticField": "FID",
-              "outStatisticFieldName": "FID_count"
+              "onStatisticField": "OBJECTID",
+              "outStatisticFieldName": "OBJECTID_count"
             }
           ],
           "orderByFields": [
-            "city_name ASC"
+            "tempCode DESC"
           ]
         }
       }
