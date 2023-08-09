@@ -29,10 +29,10 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@arcgis/charts-components": "v1.0.0-beta.560",
-    "@arcgis/charts-js": "v1.0.0-beta.560",
-    "@arcgis/charts-shared-utils": "v1.0.0-beta.560",
-    "@arcgis/charts-spec": "v1.0.0-beta.560",
+    "@arcgis/charts-components": "v1.0.0-beta.562",
+    "@arcgis/charts-js": "v1.0.0-beta.562",
+    "@arcgis/charts-shared-utils": "v1.0.0-beta.562",
+    "@arcgis/charts-spec": "v1.0.0-beta.562",
     "@arcgis/core": "^4.27.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
