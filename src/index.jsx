@@ -12,64 +12,40 @@ applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const createWebMapLayer = (portalUrl, itemId) => {
-  const portal = new Portal({
-    url: portalUrl
-  })
-  const map = new WebMap({
-    portalItem: new PortalItem({
-      id: itemId,
-      portal: portal
-    })
-  })
-  return new Promise((resolve, reject) => {
-    map.load().then(() => {
-      const layers = map.layers.toArray()
-      resolve(layers[3].clone())
-    })
-  })
-}
 
-const CacheLayers = {}
 const createFeatureLayer = (url) => {
-  if (!url) return null
-  if (!CacheLayers[url]) {
-    const fl = new FeatureLayer({ url })
-    CacheLayers[url] = fl
-    return fl
-  } else {
-    return CacheLayers[url]
-  }
+  const fl = new FeatureLayer({ url })
+  return fl
 }
 
 const Root = (props) => {
   const ref = React.useRef()
-  const [layer, setLayer] = React.useState()
+  const container1 = React.useRef()
+  const container2 = React.useRef()
 
   React.useEffect(() => {
-    const layer = createFeatureLayer(config.service)
-    setLayer(layer)
-  }, [])
-
-  React.useEffect(() => {
-    if (layer) {
+      const layer = createFeatureLayer(config.service)
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
-      ref.current.chartLimits = {
-        maxLineChartSeriesCount:100,
-        maxLineChartMarkersCountTotal: 200,
-        behaviorAfterLimit: 'renderUpToTheLimit'
-      }
-      ref.current.addEventListener('arcgisChartsDataProcessComplete', (e) => {
-        const count = e.detail.dataItems.length
-        console.log('item count', count)
-      })
-    }
-  }, [layer])
+  }, [])
 
-  return <div style={{ height: 500 }}>
-    {layer && <arcgis-charts-line-chart ref={ref} />}
+  const handleSwitchContainer = () => {
+    if(container1.current.hasChildNodes()) {
+      container2.current.appendChild(ref.current)
+    } else {
+      container1.current.appendChild(ref.current)
+    }
+  }
+
+  return <div>
+    <div style={{ height: 500, width: '100%', display: 'flex' }}>
+      <div className='border' style={{ height: '100%', width: '100%' }} ref={container1}>
+        <arcgis-charts-bar-chart ref={ref} />
+      </div>
+      <div className='border' style={{ height: '100%', width: '100%' }} ref={container2}></div>
+    </div>
+    <button onClick={handleSwitchContainer}>Switch container</button>
   </div>
 }
 
