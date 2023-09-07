@@ -1,8 +1,8 @@
 {
-  "service": "https://services8.arcgis.com/jvZGPVnThMyuYri3/ArcGIS/rest/services/LA_Emergencies_Self_Service_Heat_Map/FeatureServer/0",
+  "service": "https://services8.arcgis.com/jvZGPVnThMyuYri3/arcgis/rest/services/LA_Emergencies_Self_Service_Heat_Map/FeatureServer/0",
   "webChart": {
     "version": "6.2.1",
-    "id": "widget_10-line",
+    "id": "widget_27-line",
     "type": "chart",
     "rotated": false,
     "series": [
@@ -10,7 +10,7 @@
         "type": "lineSeries",
         "id": "ObjectId",
         "name": "ObjectId",
-        "x": "Response_Date",
+        "x": "Response_Time",
         "y": "ObjectId_count",
         "colorType": "singleColor",
         "stackedType": "sideBySide",
@@ -27,7 +27,7 @@
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": true,
+          "visible": false,
           "content": {
             "type": "esriTS",
             "color": [
@@ -74,14 +74,14 @@
           }
         },
         "timeIntervalSize": 1,
-        "timeIntervalUnits": "esriTimeUnitsMonths",
+        "timeIntervalUnits": "esriTimeUnitsHours",
         "timeAggregationType": "equalIntervalsFromStartTime",
         "trimIncompleteTimeInterval": false,
-        "nullPolicy": "null",
+        "nullPolicy": "interpolate",
         "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "Response_Date"
+            "Response_Time"
           ],
           "outStatistics": [
             {
@@ -91,7 +91,7 @@
             }
           ],
           "orderByFields": [
-            "Response_Date ASC"
+            "Response_Time ASC"
           ]
         }
       }
