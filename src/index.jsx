@@ -1,52 +1,51 @@
-import React from 'react';
+import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
-import Portal from '@arcgis/core/portal/Portal'
-import PortalItem from '@arcgis/core/portal/PortalItem'
-import WebMap from '@arcgis/core/WebMap'
 import config from './config.json'
-import './style.css';
+import './style.css'
 
 applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
-
 
 const createFeatureLayer = (url) => {
   const fl = new FeatureLayer({ url })
   return fl
 }
 
+const convertTimeExtent = (timeExtent) => {
+  return {
+    start: new Date(timeExtent[0]),
+    end: new Date(timeExtent[1])
+  }
+}
+
+const timeExtent = convertTimeExtent([1625029260000, 1627621260000])
+
 const Root = (props) => {
   const ref = React.useRef()
-  const container1 = React.useRef()
-  const container2 = React.useRef()
 
   React.useEffect(() => {
-      const layer = createFeatureLayer(config.service)
+    const layer = createFeatureLayer(config.service)
+    layer.load().then(() => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
+      setTimeout(() => {
+        layer.timeExtent = timeExtent
+        ref.current.layer = layer
+        ref.current.refresh()
+      }, 500);
+    })
   }, [])
 
-  const handleSwitchContainer = () => {
-    if(container1.current.hasChildNodes()) {
-      container2.current.appendChild(ref.current)
-    } else {
-      container1.current.appendChild(ref.current)
-    }
-  }
 
-  return <div>
-    <div style={{ height: 500, width: '100%', display: 'flex' }}>
-      <div className='border' style={{ height: '100%', width: '100%' }} ref={container1}>
-        <arcgis-charts-bar-chart ref={ref} />
-      </div>
-      <div className='border' style={{ height: '100%', width: '100%' }} ref={container2}></div>
+  return (
+    <div style={{ height: 500, width: '100%', display: 'flex' }} className='border'>
+      <arcgis-charts-line-chart ref={ref} />
     </div>
-    <button onClick={handleSwitchContainer}>Switch container</button>
-  </div>
+  )
 }
 
 const root = ReactDOMClient.createRoot(document.getElementById('root'))
