@@ -8,3 +8,6 @@
 .border {
   border: 1px solid grey;
 }
+.dragging {
+  opacity: 0.5;
+}
