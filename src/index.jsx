@@ -21,7 +21,7 @@ const convertTimeExtent = (timeExtent) => {
   }
 }
 
-const timeExtent = convertTimeExtent([1625029260000, 1627621260000])
+const timeExtent = convertTimeExtent([1625029260000, 1629621260000])
 
 const Root = (props) => {
   const ref = React.useRef()
