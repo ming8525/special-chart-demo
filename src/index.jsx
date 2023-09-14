@@ -14,17 +14,31 @@ const createFeatureLayer = (url) => {
   return fl
 }
 
-const convertTimeExtent = (timeExtent) => {
-  return {
-    start: new Date(timeExtent[0]),
-    end: new Date(timeExtent[1])
-  }
-}
+export const useRegisterEvent = (nodeRef, eventName, callback) => {
+  React.useEffect(() => {
+    const node = nodeRef?.current
+    if (node && eventName && callback) {
+      node.addEventListener(eventName, callback)
+    }
 
-const timeExtent = convertTimeExtent([1625029260000, 1629621260000])
+    return () => {
+      if (node && eventName && callback) {
+        node.removeEventListener(eventName, callback)
+      }
+    }
+  }, [eventName, nodeRef, callback])
+}
 
 const Root = (props) => {
   const ref = React.useRef()
+  const [data, setData] = React.useState([])
+
+
+  const handleDataProcessComplete = React.useCallback((e) => {
+    const dataItems = e.detail.dataItems
+    const data = dataItems.map((dataItem) => ({ label: dataItem.ZONING, value: dataItem.PERCENTAGE_sum }))
+    setData(data)
+  }, [])
 
   React.useEffect(() => {
     const layer = createFeatureLayer(config.service)
@@ -32,18 +46,25 @@ const Root = (props) => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
-      setTimeout(() => {
-        layer.timeExtent = timeExtent
-        ref.current.layer = layer
-        ref.current.refresh()
-      }, 500);
     })
   }, [])
 
+  useRegisterEvent(ref, 'arcgisChartsDataProcessComplete', handleDataProcessComplete)
+
 
   return (
-    <div style={{ height: 500, width: '100%', display: 'flex' }} className='border'>
-      <arcgis-charts-line-chart ref={ref} />
+    <div className='root d-flex w-100'>
+      <div className='w-50 h-100 border'>
+        <arcgis-charts-pie-chart ref={ref} />
+      </div>
+      <div className='d-flex flex-column w-50 h-100 border'>{
+        data.map(({ label, value }) => {
+          return <div className='d-flex py-1 px-3 w-100'>
+            <div className='w-50'>{label}</div>
+            <div className='w-50'>{value}</div>
+          </div>
+        })
+      }</div>
     </div>
   )
 }
