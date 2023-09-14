@@ -4,7 +4,7 @@ This repository is used to provide some demos about arcgis charts problems that 
 
 # How to start
 
-- Clone this repo and switch to branch `f-line-error`
+- Clone this repo and switch to branch `f-pie-processed-data`
 
 - Run `npm ci`
 
