@@ -29,15 +29,45 @@ export const useRegisterEvent = (nodeRef, eventName, callback) => {
   }, [eventName, nodeRef, callback])
 }
 
+const getAllSelectionIndexes = (selectionIndexes) => {
+  let indexs = []
+  selectionIndexes?.forEach((serie) => {
+    indexs = indexs.concat(serie.indexesToSelect)
+  })
+  return Array.from(new Set(indexs.sort()))
+}
+
 const Root = (props) => {
   const ref = React.useRef()
-  const [data, setData] = React.useState([])
+  const [records, setRecords] = React.useState([])
+  const [selectedRecords, setSelectedRecords] = React.useState([])
+  const recordsRef = React.useRef(records)
+  recordsRef.current = records
 
 
   const handleDataProcessComplete = React.useCallback((e) => {
     const dataItems = e.detail.dataItems
-    const data = dataItems.map((dataItem) => ({ label: dataItem.ZONING, value: dataItem.PERCENTAGE_sum }))
-    setData(data)
+    const records = dataItems.map((dataItem, index) => ({ id: index, label: dataItem.ZONING, value: dataItem.PERCENTAGE_sum }))
+    setRecords(records)
+  }, [])
+
+  const handleSelectionChange = React.useCallback((e) => {
+    // Only trigger selection change message if selection source is from the user operation
+    const selectionByUser =
+    e.detail.selectionSource === 'SelectionByClickOrRange' ||
+    e.detail.selectionSource === 'ClearSelection'
+
+    if (!selectionByUser) return
+
+    const selectedIndexs = getAllSelectionIndexes(e.detail.selectionIndexes) ?? []
+    let sRecords = []
+    if (selectedIndexs?.length) {
+      sRecords = recordsRef.current.filter(record => {
+        const id = record.id
+        return selectedIndexs.includes(id)
+      })
+    }
+    setSelectedRecords(sRecords)
   }, [])
 
   React.useEffect(() => {
@@ -46,11 +76,13 @@ const Root = (props) => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
+      ref.current.returnSelectionIndexes = true
+      ref.current.returnSelectionOIDs = false
     })
   }, [])
 
   useRegisterEvent(ref, 'arcgisChartsDataProcessComplete', handleDataProcessComplete)
-
+  useRegisterEvent(ref, 'arcgisChartsSelectionComplete', handleSelectionChange)
 
   return (
     <div className='root d-flex w-100'>
@@ -58,8 +90,8 @@ const Root = (props) => {
         <arcgis-charts-pie-chart ref={ref} />
       </div>
       <div className='d-flex flex-column w-50 h-100 border'>{
-        data.map(({ label, value }) => {
-          return <div className='d-flex py-1 px-3 w-100'>
+        records.map(({ id, label, value }) => {
+          return <div key={id} className={`d-flex py-1 px-3 w-100 record ${selectedRecords.find(r => r.id === id) ? 'selected' : ''}`}>
             <div className='w-50'>{label}</div>
             <div className='w-50'>{value}</div>
           </div>

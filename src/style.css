@@ -40,3 +40,7 @@
   padding-left: 9px;
   padding-right: 9px;
 }
+
+.record.selected {
+  outline: 1px solid skyblue;
+}
