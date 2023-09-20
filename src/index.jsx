@@ -87,7 +87,7 @@ const Root = (props) => {
   return (
     <div className='root d-flex w-100'>
       <div className='w-50 h-100 border'>
-        <arcgis-charts-pie-chart ref={ref} />
+        <arcgis-charts-bar-chart ref={ref} />
       </div>
       <div className='d-flex flex-column w-50 h-100 border'>{
         records.map(({ id, label, value }) => {

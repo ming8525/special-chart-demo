@@ -1,86 +1,71 @@
 {
-  "service": "https://services.arcgis.com/ptvDyBs1KkcwzQNJ/arcgis/rest/services/SAP_ZoningClip/FeatureServer/15",
-  "webChart": {
-    "version": "6.2.1",
-    "id": "widget_13-pie",
+  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+  "webChart":{
+    "version": "1.0.0",
     "type": "chart",
+    "id": "Bar Chart 1",
+    "background": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "title": {
+      "type": "chartText",
+      "content": {
+        "type": "esriTS",
+        "color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "text": "Comparison of Beat sum by Year",
+        "font": {
+          "size": 20
+        }
+      }
+    },
     "series": [
       {
-        "type": "pieSeries",
-        "colorType": "singleColor",
-        "id": "PERCENTAGE",
-        "name": "PERCENTAGE",
-        "x": "ZONING",
-        "y": "PERCENTAGE_sum",
-        "innerRadius": 0,
-        "startAngle": 0,
-        "endAngle": 360,
-        "displayNumericValueOnDataLabel": false,
-        "displayPercentageOnDataLabel": true,
-        "displayNumericValueOnTooltip": true,
-        "displayPercentageOnTooltip": true,
-        "dataLabelsOffset": 15,
-        "sliceGrouping": {
-          "sliceId": "__other-slice__",
-          "percentageThreshold": 1,
-          "label": "Other",
-          "fillSymbol": {
-            "type": "esriSFS",
-            "style": "esriSFSSolid",
-            "color": [
-              255,
-              204,
-              51,
-              127.5
-            ],
-            "outline": {
-              "type": "esriSLS",
-              "style": "esriSLSSolid",
-              "color": [
-                240,
-                240,
-                240,
-                255
-              ],
-              "width": 1
+        "type": "barSeries",
+        "id": "Assault",
+        "name": "Assault",
+        "query": {
+          "where": "Primary_Ty = 'ASSAULT'",
+          "groupByFieldsForStatistics": [
+            "Year"
+          ],
+          "outStatistics": [
+            {
+              "onStatisticField": "Beat",
+              "statisticType": "sum",
+              "outStatisticFieldName": "Beat_ASSAULT"
             }
-          }
+          ],
+          "orderByFields": [
+            "Year ASC"
+          ]
         },
-        "numericValueFormat": {
-          "type": "number",
-          "intlOptions": {
-            "style": "decimal",
-            "useGrouping": true,
-            "minimumFractionDigits": 0,
-            "maximumFractionDigits": 3
-          }
-        },
-        "percentValueFormat": {
-          "type": "number",
-          "intlOptions": {
-            "style": "percent",
-            "notation": "standard",
-            "minimumFractionDigits": 0,
-            "maximumFractionDigits": 3
-          }
-        },
+        "x": "Year",
+        "y": "Beat_ASSAULT",
+        "colorType": "singleColor",
+        "stackedType": "sideBySide",
         "fillSymbol": {
           "type": "esriSFS",
-          "style": "esriSFSSolid",
           "color": [
-            255,
-            204,
-            51,
-            255
+            116,
+            184,
+            223,
+            200
           ],
           "outline": {
             "type": "esriSLS",
-            "style": "esriSLSSolid",
             "color": [
-              240,
-              240,
-              240,
-              255
+              255,
+              255,
+              255,
+              200
             ],
             "width": 1
           }
@@ -91,136 +76,323 @@
           "content": {
             "type": "esriTS",
             "color": [
-              54,
-              54,
-              54,
+              116,
+              184,
+              223,
               255
             ],
             "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "bold",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top"
+              "size": 14
+            }
           }
-        },
-        "dataTooltipVisible": true,
+        }
+      },
+      {
+        "type": "barSeries",
+        "id": "Battery",
+        "name": "Battery",
         "query": {
+          "where": "Primary_Ty = 'BATTERY'",
           "groupByFieldsForStatistics": [
-            "ZONING"
+            "Year"
           ],
           "outStatistics": [
             {
+              "onStatisticField": "Beat",
               "statisticType": "sum",
-              "onStatisticField": "PERCENTAGE",
-              "outStatisticFieldName": "PERCENTAGE_sum"
+              "outStatisticFieldName": "Beat_BATTERY"
             }
           ],
           "orderByFields": [
-            "PERCENTAGE_sum ASC"
+            "Year ASC"
           ]
+        },
+        "x": "Year",
+        "y": "Beat_BATTERY",
+        "colorType": "singleColor",
+        "stackedType": "sideBySide",
+        "fillSymbol": {
+          "type": "esriSFS",
+          "color": [
+            106,
+            115,
+            225,
+            200
+          ],
+          "outline": {
+            "type": "esriSLS",
+            "color": [
+              255,
+              255,
+              255,
+              200
+            ],
+            "width": 1
+          }
+        },
+        "dataLabels": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              106,
+              115,
+              225,
+              255
+            ],
+            "font": {
+              "size": 14
+            }
+          }
+        }
+      },
+      {
+        "type": "barSeries",
+        "id": "Robbery",
+        "name": "Robbery",
+        "query": {
+          "where": "Primary_Ty = 'ROBBERY'",
+          "groupByFieldsForStatistics": [
+            "Year"
+          ],
+          "outStatistics": [
+            {
+              "onStatisticField": "Beat",
+              "statisticType": "sum",
+              "outStatisticFieldName": "Beat_ROBBERY"
+            }
+          ],
+          "orderByFields": [
+            "Year ASC"
+          ]
+        },
+        "x": "Year",
+        "y": "Beat_ROBBERY",
+        "colorType": "singleColor",
+        "stackedType": "sideBySide",
+        "fillSymbol": {
+          "type": "esriSFS",
+          "color": [
+            159,
+            105,
+            224,
+            200
+          ],
+          "outline": {
+            "type": "esriSLS",
+            "color": [
+              255,
+              255,
+              255,
+              200
+            ],
+            "width": 1
+          }
+        },
+        "dataLabels": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              159,
+              105,
+              224,
+              255
+            ],
+            "font": {
+              "size": 14
+            }
+          }
         }
       }
     ],
-    "background": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "title": {
-      "type": "chartText",
-      "visible": true,
-      "content": {
-        "type": "esriTS",
-        "color": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "font": {
-          "family": "Avenir Next",
-          "size": 24,
-          "style": "normal",
-          "weight": "bold",
-          "decoration": "none"
-        },
-        "horizontalAlignment": "center",
-        "text": ""
-      }
-    },
-    "footer": {
-      "type": "chartText",
-      "visible": true,
-      "content": {
-        "type": "esriTS",
-        "color": [
-          24,
-          24,
-          24,
-          255
-        ],
-        "font": {
-          "family": "Avenir Next",
-          "size": 14,
-          "style": "normal",
-          "weight": "bold",
-          "decoration": "none"
-        },
-        "horizontalAlignment": "center",
-        "text": ""
-      }
-    },
     "legend": {
       "type": "chartLegend",
-      "visible": false,
+      "visible": true,
       "title": {
         "type": "chartText",
         "visible": true,
         "content": {
           "type": "esriTS",
           "color": [
-            24,
-            24,
-            24,
+            255,
+            255,
+            255,
             255
           ],
+          "text": "Primary type",
           "font": {
-            "family": "Avenir Next",
-            "size": 20,
-            "style": "normal",
-            "weight": "bold",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
+            "size": 14,
+            "weight": "bold"
+          }
         }
       },
       "body": {
         "type": "esriTS",
         "color": [
-          24,
-          24,
-          24,
+          255,
+          255,
+          255,
           255
         ],
         "font": {
-          "family": "Avenir Next",
-          "size": 14,
-          "style": "normal",
-          "weight": "bold",
-          "decoration": "none"
-        },
-        "horizontalAlignment": "center",
-        "text": ""
+          "size": 12
+        }
       },
-      "position": "right",
-      "labelMaxWidth": 200
+      "position": "right"
     },
-    "sortLabelsBy": "originalValue"
+    "axes": [
+      {
+        "type": "chartAxis",
+        "visible": true,
+        "title": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "text": "Year",
+            "font": {
+              "size": 14
+            }
+          }
+        },
+        "labels": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "font": {
+              "size": 14
+            }
+          }
+        },
+        "valueFormat": {
+          "type": "category",
+          "characterLimit": 11
+        },
+        "lineSymbol": {
+          "type": "esriSLS",
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "width": 2
+        }
+      },
+      {
+        "type": "chartAxis",
+        "visible": true,
+        "title": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "text": "Sum of Beat",
+            "font": {
+              "size": 14
+            }
+          }
+        },
+        "labels": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "font": {
+              "size": 14
+            }
+          }
+        },
+        "valueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "decimal",
+            "notation": "compact",
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 1
+          }
+        },
+        "grid": {
+          "type": "esriSLS",
+          "color": [
+            128,
+            128,
+            128,
+            200
+          ],
+          "width": 1
+        },
+        "lineSymbol": {
+          "type": "esriSLS",
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "width": 2
+        },
+        "guides": [
+          {
+            "type": "chartGuide",
+            "above": false,
+            "start": 11000,
+            "end": 11500,
+            "style": {
+              "type": "esriSFS",
+              "color": [
+                255,
+                255,
+                255,
+                200
+              ]
+            },
+            "name": "string1",
+            "visible": true,
+            "label": {
+              "type": "esriTS",
+              "color": [
+                34,
+                34,
+                34,
+                255
+              ],
+              "text": "11000-11500",
+              "font": {
+                "size": 14
+              }
+            }
+          }
+        ]
+      }
+    ]
   }
 }
