@@ -1,6 +1,8 @@
 :root, :host {
   --arcgis-charts-pie-chart-width: 100%;
   --arcgis-charts-pie-chart-height: 100%;
+  --arcgis-charts-line-chart-width: 100%;
+  --arcgis-charts-line-chart-height: 100%;
 }
 
 .root {

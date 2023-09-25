@@ -2,7 +2,7 @@ import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
-import config from './config.json'
+import configs from './config.json'
 import './style.css'
 
 applyPolyfills().then(() => {
@@ -36,6 +36,8 @@ const getAllSelectionIndexes = (selectionIndexes) => {
   })
   return Array.from(new Set(indexs.sort()))
 }
+
+const config = configs[0]
 
 const Root = (props) => {
   const ref = React.useRef()
@@ -81,6 +83,16 @@ const Root = (props) => {
     })
   }, [])
 
+
+  const handleChartsJSSeriesColorChange = React.useCallback((e) => {
+    const data = e.detail.data
+    const slices = data.slices
+    const groupedSlices = data.groupedSlices
+    const dataItems = slices.concat(groupedSlices)
+    const records = dataItems.map((dataItem, index) => ({ id: index, label: dataItem.sliceId, value: dataItem.PERCENTAGE_sum }))
+  })
+
+  useRegisterEvent(ref, 'arcgisChartsJSSeriesColorChange', handleChartsJSSeriesColorChange)
   useRegisterEvent(ref, 'arcgisChartsDataProcessComplete', handleDataProcessComplete)
   useRegisterEvent(ref, 'arcgisChartsSelectionComplete', handleSelectionChange)
 
