@@ -1,29 +1,40 @@
 {
-  "service": "https://services8.arcgis.com/jvZGPVnThMyuYri3/arcgis/rest/services/LA_Emergencies_Self_Service_Heat_Map/FeatureServer/0",
+  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
   "webChart": {
     "version": "6.2.1",
-    "id": "widget_27-line",
+    "id": "widget_5-column",
     "type": "chart",
+    "sortLabelsBy": "originalValue",
     "rotated": false,
     "series": [
       {
-        "type": "lineSeries",
-        "id": "ObjectId",
-        "name": "ObjectId",
-        "x": "Response_Time",
-        "y": "ObjectId_count",
+        "type": "barSeries",
+        "id": "FID",
+        "name": "FID",
+        "x": "Case_Numbe",
+        "y": "FID_count",
         "colorType": "singleColor",
         "stackedType": "sideBySide",
-        "lineSymbol": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
+        "fillSymbol": {
+          "type": "esriSFS",
+          "style": "esriSFSSolid",
           "color": [
-            0,
-            64,
-            34,
+            94,
+            143,
+            208,
             255
           ],
-          "width": 2
+          "outline": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              130,
+              130,
+              130,
+              255
+            ],
+            "width": 0
+          }
         },
         "dataLabels": {
           "type": "chartText",
@@ -48,50 +59,20 @@
           }
         },
         "rotated": false,
-        "lineSmoothed": false,
-        "showArea": false,
-        "markerVisible": true,
-        "markerSymbol": {
-          "type": "esriSMS",
-          "style": "esriSMSCircle",
-          "color": [
-            0,
-            64,
-            34,
-            255
-          ],
-          "size": 6,
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "timeIntervalSize": 1,
-        "timeIntervalUnits": "esriTimeUnitsHours",
-        "timeAggregationType": "equalIntervalsFromStartTime",
-        "trimIncompleteTimeInterval": false,
-        "nullPolicy": "interpolate",
         "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "Response_Time"
+            "Case_Numbe"
           ],
           "outStatistics": [
             {
               "statisticType": "count",
-              "onStatisticField": "ObjectId",
-              "outStatisticFieldName": "ObjectId_count"
+              "onStatisticField": "FID",
+              "outStatisticFieldName": "FID_count"
             }
           ],
           "orderByFields": [
-            "Response_Time ASC"
+            "Case_Numbe ASC"
           ]
         }
       }
@@ -146,8 +127,8 @@
           }
         },
         "valueFormat": {
-          "type": "date",
-          "intlOptions": {}
+          "type": "category",
+          "characterLimit": 11
         },
         "lineSymbol": {
           "type": "esriSLS",
@@ -347,7 +328,6 @@
         "text": ""
       },
       "position": "right"
-    },
-    "sortLabelsBy": "originalValue"
+    }
   }
 }
