@@ -1,5 +1,5 @@
 {
-  "service": "https://services8.arcgis.com/jvZGPVnThMyuYri3/ArcGIS/rest/services/LA_Emergencies_Self_Service_Heat_Map/FeatureServer/0",
+  "service": "https://services8.arcgis.com/jvZGPVnThMyuYri3/arcgis/rest/services/LA_Emergencies_Self_Service_Heat_Map/FeatureServer/0",
   "webChart": {
     "version": "6.2.1",
     "id": "widget_10-line",
@@ -18,9 +18,9 @@
           "type": "esriSLS",
           "style": "esriSLSSolid",
           "color": [
-            0,
-            64,
-            34,
+            94,
+            143,
+            208,
             255
           ],
           "width": 2
@@ -75,9 +75,8 @@
         },
         "timeIntervalSize": 1,
         "timeIntervalUnits": "esriTimeUnitsMonths",
-        "timeAggregationType": "equalIntervalsFromStartTime",
+        "timeAggregationType": "equalIntervalsFromEndTime",
         "trimIncompleteTimeInterval": false,
-        "nullPolicy": "null",
         "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
