@@ -1,7 +1,7 @@
 {
   "service": "https://services8.arcgis.com/jvZGPVnThMyuYri3/arcgis/rest/services/LA_Emergencies_Self_Service_Heat_Map/FeatureServer/0",
   "webChart": {
-    "version": "6.2.1",
+    "version": "3.1.0",
     "id": "widget_10-line",
     "type": "chart",
     "rotated": false,
