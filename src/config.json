@@ -1,50 +1,115 @@
 {
-  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+  "service": "https://services6.arcgis.com/Pu6Fai10JE2L2xUd/arcgis/rest/services/Sales_Analysis_071fc731f96f49fca6a93e144c86ae8a/FeatureServer/2",
   "webChart": {
     "version": "6.2.1",
-    "id": "widget_1-column",
+    "id": "widget_103-histogram",
     "type": "chart",
-    "sortLabelsBy": "originalValue",
-    "rotated": false,
     "series": [
       {
-        "type": "barSeries",
-        "id": "FID",
-        "name": "FID",
-        "x": "Year",
-        "y": "FID_count",
+        "type": "histogramSeries",
         "colorType": "singleColor",
-        "stackedType": "sideBySide",
+        "id": "resflrarea",
+        "name": "Residential Floor Area",
+        "x": "resflrarea",
+        "binCount": 8,
+        "overlays": {
+          "type": "chartOverlays",
+          "mean": {
+            "type": "chartOverlay",
+            "visible": true,
+            "created": true,
+            "symbol": {
+              "type": "esriSLS",
+              "style": "esriSLSDash",
+              "color": [
+                8,
+                155,
+                220,
+                255
+              ],
+              "width": 2
+            }
+          },
+          "median": {
+            "type": "chartOverlay",
+            "visible": true,
+            "created": true,
+            "symbol": {
+              "type": "esriSLS",
+              "style": "esriSLSDash",
+              "color": [
+                9,
+                207,
+                116,
+                255
+              ],
+              "width": 2
+            }
+          },
+          "standardDeviation": {
+            "type": "chartOverlay",
+            "visible": true,
+            "created": false,
+            "symbol": {
+              "type": "esriSLS",
+              "style": "esriSLSDash",
+              "color": [
+                178,
+                223,
+                138,
+                255
+              ],
+              "width": 1
+            }
+          },
+          "comparisonDistribution": {
+            "type": "chartOverlay",
+            "visible": true,
+            "created": false,
+            "symbol": {
+              "type": "esriSLS",
+              "style": "esriSLSDash",
+              "color": [
+                227,
+                26,
+                28,
+                255
+              ],
+              "width": 1
+            }
+          }
+        },
+        "dataTransformationType": "none",
         "fillSymbol": {
           "type": "esriSFS",
           "style": "esriSFSSolid",
           "color": [
-            94,
-            143,
-            208,
+            152,
+            152,
+            152,
             255
           ],
           "outline": {
             "type": "esriSLS",
             "style": "esriSLSSolid",
             "color": [
-              130,
-              130,
-              130,
+              101,
+              101,
+              101,
               255
             ],
-            "width": 0
+            "width": 1
           }
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": false,
+          "visible": true,
           "content": {
             "type": "esriTS",
             "color": [
-              54,
-              54,
-              54,
+              47,
+              47,
+              47,
               255
             ],
             "font": {
@@ -55,26 +120,11 @@
               "decoration": "none"
             },
             "horizontalAlignment": "center",
-            "verticalAlignment": "top"
+            "verticalAlignment": "middle"
           }
         },
         "rotated": false,
-        "dataTooltipVisible": true,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Year"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "count",
-              "onStatisticField": "FID",
-              "outStatisticFieldName": "FID_count"
-            }
-          ],
-          "orderByFields": [
-            "Year ASC"
-          ]
-        }
+        "dataTooltipVisible": true
       }
     ],
     "axes": [
@@ -88,9 +138,9 @@
           "content": {
             "type": "esriTS",
             "color": [
-              24,
-              24,
-              24,
+              16,
+              16,
+              16,
               255
             ],
             "font": {
@@ -110,9 +160,9 @@
           "content": {
             "type": "esriTS",
             "color": [
-              68,
-              68,
-              68,
+              62,
+              62,
+              62,
               255
             ],
             "font": {
@@ -130,17 +180,18 @@
           "type": "number",
           "intlOptions": {
             "style": "decimal",
-            "minimumFractionDigits": 1,
-            "maximumFractionDigits": 3
+            "notation": "compact",
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 1
           }
         },
         "lineSymbol": {
           "type": "esriSLS",
           "style": "esriSLSSolid",
           "color": [
-            139,
-            139,
-            139,
+            142,
+            142,
+            142,
             255
           ],
           "width": 1
@@ -149,9 +200,9 @@
           "type": "esriSLS",
           "style": "esriSLSDash",
           "color": [
-            213,
-            213,
-            213,
+            216,
+            216,
+            216,
             255
           ],
           "width": 0
@@ -167,9 +218,9 @@
           "content": {
             "type": "esriTS",
             "color": [
-              24,
-              24,
-              24,
+              16,
+              16,
+              16,
               255
             ],
             "font": {
@@ -189,9 +240,9 @@
           "content": {
             "type": "esriTS",
             "color": [
-              68,
-              68,
-              68,
+              62,
+              62,
+              62,
               255
             ],
             "font": {
@@ -209,7 +260,7 @@
           "type": "number",
           "intlOptions": {
             "style": "decimal",
-            "useGrouping": true,
+            "notation": "compact",
             "minimumFractionDigits": 0,
             "maximumFractionDigits": 0
           }
@@ -218,9 +269,9 @@
           "type": "esriSLS",
           "style": "esriSLSSolid",
           "color": [
-            139,
-            139,
-            139,
+            142,
+            142,
+            142,
             255
           ],
           "width": 1
@@ -229,9 +280,9 @@
           "type": "esriSLS",
           "style": "esriSLSDash",
           "color": [
-            213,
-            213,
-            213,
+            216,
+            216,
+            216,
             255
           ],
           "width": 0
@@ -257,24 +308,24 @@
         ],
         "font": {
           "family": "Avenir Next",
-          "size": 24,
+          "size": 18,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": ""
+        "text": "Structure Sq Footage Distribution"
       }
     },
     "footer": {
       "type": "chartText",
-      "visible": true,
+      "visible": false,
       "content": {
         "type": "esriTS",
         "color": [
-          24,
-          24,
-          24,
+          16,
+          16,
+          16,
           255
         ],
         "font": {
@@ -290,16 +341,16 @@
     },
     "legend": {
       "type": "chartLegend",
-      "visible": false,
+      "visible": true,
       "title": {
         "type": "chartText",
         "visible": true,
         "content": {
           "type": "esriTS",
           "color": [
-            24,
-            24,
-            24,
+            16,
+            16,
+            16,
             255
           ],
           "font": {
@@ -316,9 +367,9 @@
       "body": {
         "type": "esriTS",
         "color": [
-          24,
-          24,
-          24,
+          16,
+          16,
+          16,
           255
         ],
         "font": {
@@ -331,7 +382,8 @@
         "horizontalAlignment": "center",
         "text": ""
       },
-      "position": "right"
-    }
+      "position": "bottom"
+    },
+    "sortLabelsBy": "originalValue"
   }
 }

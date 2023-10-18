@@ -19,6 +19,7 @@ const createFeatureLayer = (url) => {
 
 const Root = (props) => {
   const ref = React.useRef()
+  const [activated, setActivated] = React.useState('first')
 
   React.useEffect(() => {
     const layer = createFeatureLayer(config.service)
@@ -34,12 +35,18 @@ const Root = (props) => {
   }
 
   return (
-    <div
-      style={{ height: 500, width: '100%', display: 'flex' }}
-      className='border'
-    >
-      <arcgis-charts-bar-chart ref={ref} />
-      <button onClick={handleRefresh}>Refresh</button>
+    <div className='container border'>
+      <div className='header border-bottom' style={{ width: '100%', display: 'flex' }}>
+        <button onClick={() => setActivated('first')}>First</button>
+        <button onClick={() => setActivated('second')}>Second</button>
+      </div>
+      <div className='contents border'>
+        <div className='content first-content' style={{ display: activated === 'first' ? 'block' : 'none' }}></div>
+        <div className='content second-content' style={{ display: activated === 'second' ? 'block' : 'none' }}>
+          <arcgis-charts-histogram ref={ref} />
+        </div>
+      </div>
+
     </div>
   )
 }
