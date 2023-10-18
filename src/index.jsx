@@ -17,15 +17,6 @@ const createFeatureLayer = (url) => {
   return fl
 }
 
-const convertTimeExtent = (timeExtent) => {
-  return {
-    start: new Date(timeExtent[0]),
-    end: new Date(timeExtent[1]),
-  }
-}
-
-const timeExtent = convertTimeExtent([1630472401000, 1633064401000])
-
 const Root = (props) => {
   const ref = React.useRef()
 
@@ -35,20 +26,20 @@ const Root = (props) => {
       const webChart = config.webChart
       ref.current.config = webChart
       ref.current.layer = layer
-      
-      setTimeout(() => {
-        layer.timeExtent = timeExtent
-        ref.current.refresh() 
-      }, [500])
     })
   }, [])
+
+  const handleRefresh = () => {
+    ref.current.refresh()
+  }
 
   return (
     <div
       style={{ height: 500, width: '100%', display: 'flex' }}
       className='border'
     >
-      <arcgis-charts-line-chart ref={ref} />
+      <arcgis-charts-bar-chart ref={ref} />
+      <button onClick={handleRefresh}>Refresh</button>
     </div>
   )
 }
