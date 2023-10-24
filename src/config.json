@@ -1,7 +1,7 @@
 {
   "service": "https://services5.arcgis.com/bPacKTm9cauMXVfn/arcgis/rest/services/service_1fb418c51ed54c84a4bd1992c990920a/FeatureServer/0",
   "webChart": {
-    "version": "7.3.1",
+    "version": "3.1.0",
     "id": "widget_1192-column",
     "type": "chart",
     "series": [
