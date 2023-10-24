@@ -1,27 +1,25 @@
 {
-  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+  "service": "https://services5.arcgis.com/bPacKTm9cauMXVfn/arcgis/rest/services/service_1fb418c51ed54c84a4bd1992c990920a/FeatureServer/0",
   "webChart": {
-    "version": "6.2.1",
-    "id": "widget_1-column",
+    "version": "7.3.1",
+    "id": "widget_1192-column",
     "type": "chart",
-    "sortLabelsBy": "originalValue",
-    "rotated": false,
     "series": [
       {
         "type": "barSeries",
-        "id": "FID",
-        "name": "FID",
-        "x": "Year",
-        "y": "FID_count",
+        "id": "objectid",
+        "name": "ObjectID",
+        "x": "Park",
+        "y": "objectid_count",
         "colorType": "singleColor",
         "stackedType": "sideBySide",
         "fillSymbol": {
           "type": "esriSFS",
           "style": "esriSFSSolid",
           "color": [
-            94,
-            143,
-            208,
+            119,
+            180,
+            132,
             255
           ],
           "outline": {
@@ -38,7 +36,7 @@
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": false,
+          "visible": true,
           "content": {
             "type": "esriTS",
             "color": [
@@ -49,7 +47,7 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 10,
+              "size": 14,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
@@ -58,21 +56,20 @@
             "verticalAlignment": "top"
           }
         },
-        "rotated": false,
         "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "Year"
+            "Park"
           ],
           "outStatistics": [
             {
               "statisticType": "count",
-              "onStatisticField": "FID",
-              "outStatisticFieldName": "FID_count"
+              "onStatisticField": "objectid",
+              "outStatisticFieldName": "objectid_count"
             }
           ],
           "orderByFields": [
-            "Year ASC"
+            "Park ASC"
           ]
         }
       }
@@ -117,22 +114,19 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 14,
+              "size": 16,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
             },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle"
+            "horizontalAlignment": "left",
+            "verticalAlignment": "middle",
+            "text": ""
           }
         },
         "valueFormat": {
-          "type": "number",
-          "intlOptions": {
-            "style": "decimal",
-            "minimumFractionDigits": 1,
-            "maximumFractionDigits": 3
-          }
+          "type": "category",
+          "characterLimit": 60
         },
         "lineSymbol": {
           "type": "esriSLS",
@@ -196,13 +190,14 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 14,
+              "size": 16,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
             },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle"
+            "horizontalAlignment": "left",
+            "verticalAlignment": "middle",
+            "text": ""
           }
         },
         "valueFormat": {
@@ -332,6 +327,8 @@
         "text": ""
       },
       "position": "right"
-    }
+    },
+    "rotated": false,
+    "sortLabelsBy": "originalValue"
   }
 }

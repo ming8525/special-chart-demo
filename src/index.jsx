@@ -29,17 +29,12 @@ const Root = (props) => {
     })
   }, [])
 
-  const handleRefresh = () => {
-    ref.current.refresh()
-  }
-
   return (
     <div
       style={{ height: 500, width: '100%', display: 'flex' }}
       className='border'
     >
       <arcgis-charts-bar-chart ref={ref} />
-      <button onClick={handleRefresh}>Refresh</button>
     </div>
   )
 }
