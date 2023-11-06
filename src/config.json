@@ -1,7 +1,7 @@
 {
   "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
   "webChart": {
-    "version": "7.3.1",
+    "version": "3.1.0",
     "id": "widget_1-column",
     "type": "chart",
     "sortLabelsBy": "originalValue",
