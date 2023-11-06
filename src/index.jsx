@@ -29,12 +29,32 @@ const Root = (props) => {
     })
   }, [])
 
+  const handleClick = () => {
+    let legendTitle = config.webChart.legend.title
+    legendTitle = {
+      ...legendTitle,
+      content: {
+        ...legendTitle.content,
+        text: 'Legend title'
+      }
+    }
+    const webChart = {
+      ...config.webChart,
+      legend: {
+        ...config.webChart.legend,
+        title: legendTitle
+      }
+    }
+    ref.current.config = webChart
+  }
+
   return (
     <div
       style={{ height: 500, width: '100%', display: 'flex' }}
       className='border'
     >
       <arcgis-charts-bar-chart ref={ref} />
+      <button onClick={handleClick}>Add legend title</button>
     </div>
   )
 }

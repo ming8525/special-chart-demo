@@ -1,16 +1,87 @@
 {
-  "service": "https://services5.arcgis.com/bPacKTm9cauMXVfn/arcgis/rest/services/service_1fb418c51ed54c84a4bd1992c990920a/FeatureServer/0",
+  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
   "webChart": {
     "version": "7.3.1",
-    "id": "widget_1192-column",
+    "id": "widget_1-column",
     "type": "chart",
+    "sortLabelsBy": "originalValue",
+    "rotated": false,
     "series": [
       {
         "type": "barSeries",
-        "id": "objectid",
-        "name": "ObjectID",
-        "x": "Park",
-        "y": "objectid_count",
+        "id": "District",
+        "name": "District Alias",
+        "x": "Year",
+        "y": "District_sum",
+        "colorType": "singleColor",
+        "stackedType": "sideBySide",
+        "fillSymbol": {
+          "type": "esriSFS",
+          "style": "esriSFSSolid",
+          "color": [
+            94,
+            143,
+            208,
+            255
+          ],
+          "outline": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              130,
+              130,
+              130,
+              255
+            ],
+            "width": 0
+          }
+        },
+        "dataLabels": {
+          "type": "chartText",
+          "visible": false,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              54,
+              54,
+              54,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 10,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "top"
+          }
+        },
+        "rotated": false,
+        "dataTooltipVisible": true,
+        "query": {
+          "groupByFieldsForStatistics": [
+            "Year"
+          ],
+          "outStatistics": [
+            {
+              "statisticType": "sum",
+              "onStatisticField": "District",
+              "outStatisticFieldName": "District_sum"
+            }
+          ],
+          "orderByFields": [
+            "Year ASC"
+          ]
+        }
+      },
+      {
+        "type": "barSeries",
+        "id": "Ward",
+        "name": "Ward Alias",
+        "x": "Year",
+        "y": "Ward_sum",
         "colorType": "singleColor",
         "stackedType": "sideBySide",
         "fillSymbol": {
@@ -36,7 +107,7 @@
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": true,
+          "visible": false,
           "content": {
             "type": "esriTS",
             "color": [
@@ -47,7 +118,7 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 14,
+              "size": 10,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
@@ -56,20 +127,21 @@
             "verticalAlignment": "top"
           }
         },
+        "rotated": false,
         "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "Park"
+            "Year"
           ],
           "outStatistics": [
             {
-              "statisticType": "count",
-              "onStatisticField": "objectid",
-              "outStatisticFieldName": "objectid_count"
+              "statisticType": "sum",
+              "onStatisticField": "Ward",
+              "outStatisticFieldName": "Ward_sum"
             }
           ],
           "orderByFields": [
-            "Park ASC"
+            "Year ASC"
           ]
         }
       }
@@ -114,19 +186,18 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 16,
+              "size": 14,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
             },
-            "horizontalAlignment": "left",
-            "verticalAlignment": "middle",
-            "text": ""
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
           }
         },
         "valueFormat": {
           "type": "category",
-          "characterLimit": 60
+          "characterLimit": 11
         },
         "lineSymbol": {
           "type": "esriSLS",
@@ -190,14 +261,13 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 16,
+              "size": 14,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
             },
-            "horizontalAlignment": "left",
-            "verticalAlignment": "middle",
-            "text": ""
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
           }
         },
         "valueFormat": {
@@ -285,7 +355,7 @@
     },
     "legend": {
       "type": "chartLegend",
-      "visible": false,
+      "visible": true,
       "title": {
         "type": "chartText",
         "visible": true,
@@ -327,8 +397,6 @@
         "text": ""
       },
       "position": "right"
-    },
-    "rotated": false,
-    "sortLabelsBy": "originalValue"
+    }
   }
 }
