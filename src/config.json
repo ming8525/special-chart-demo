@@ -1,20 +1,49 @@
 {
-  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+  "service": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/Alternate_Fuel/FeatureServer/0",
   "webChart": {
     "version": "7.3.1",
-    "id": "widget_1-column",
+    "id": "widget_1-donut",
     "type": "chart",
     "sortLabelsBy": "originalValue",
-    "rotated": false,
     "series": [
       {
-        "type": "barSeries",
-        "id": "District",
-        "name": "District Alias",
-        "x": "Year",
-        "y": "District_sum",
+        "type": "pieSeries",
         "colorType": "singleColor",
-        "stackedType": "sideBySide",
+        "id": "OBJECTID",
+        "name": " OBJECTID",
+        "x": "Ownership_Type",
+        "y": "OBJECTID_count",
+        "innerRadius": 60,
+        "startAngle": 0,
+        "endAngle": 360,
+        "displayNumericValueOnDataLabel": true,
+        "displayPercentageOnDataLabel": false,
+        "displayNumericValueOnTooltip": true,
+        "displayPercentageOnTooltip": true,
+        "dataLabelsOffset": 0,
+        "sliceGrouping": {
+          "sliceId": "__other-slice__",
+          "percentageThreshold": 0,
+          "label": "Other"
+        },
+        "numericValueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "decimal",
+            "useGrouping": true,
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 3
+          }
+        },
+        "percentValueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "percent",
+            "notation": "standard",
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 3
+          }
+        },
         "fillSymbol": {
           "type": "esriSFS",
           "style": "esriSFSSolid",
@@ -28,17 +57,17 @@
             "type": "esriSLS",
             "style": "esriSLSSolid",
             "color": [
-              130,
-              130,
-              130,
+              240,
+              240,
+              240,
               255
             ],
-            "width": 0
+            "width": 1
           }
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": false,
+          "visible": true,
           "content": {
             "type": "esriTS",
             "color": [
@@ -49,7 +78,7 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 10,
+              "size": 16,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
@@ -58,248 +87,23 @@
             "verticalAlignment": "top"
           }
         },
-        "rotated": false,
         "dataTooltipVisible": true,
+        "alignDataLabels": true,
+        "optimizeDataLabelsOverlapping": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "Year"
+            "Ownership_Type"
           ],
           "outStatistics": [
             {
-              "statisticType": "sum",
-              "onStatisticField": "District",
-              "outStatisticFieldName": "District_sum"
+              "statisticType": "count",
+              "onStatisticField": "OBJECTID",
+              "outStatisticFieldName": "OBJECTID_count"
             }
           ],
           "orderByFields": [
-            "Year ASC"
+            "Ownership_Type ASC"
           ]
-        }
-      },
-      {
-        "type": "barSeries",
-        "id": "Ward",
-        "name": "Ward Alias",
-        "x": "Year",
-        "y": "Ward_sum",
-        "colorType": "singleColor",
-        "stackedType": "sideBySide",
-        "fillSymbol": {
-          "type": "esriSFS",
-          "style": "esriSFSSolid",
-          "color": [
-            119,
-            180,
-            132,
-            255
-          ],
-          "outline": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              130,
-              130,
-              130,
-              255
-            ],
-            "width": 0
-          }
-        },
-        "dataLabels": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              54,
-              54,
-              54,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 10,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "top"
-          }
-        },
-        "rotated": false,
-        "dataTooltipVisible": true,
-        "query": {
-          "groupByFieldsForStatistics": [
-            "Year"
-          ],
-          "outStatistics": [
-            {
-              "statisticType": "sum",
-              "onStatisticField": "Ward",
-              "outStatisticFieldName": "Ward_sum"
-            }
-          ],
-          "orderByFields": [
-            "Year ASC"
-          ]
-        }
-      }
-    ],
-    "axes": [
-      {
-        "type": "chartAxis",
-        "visible": true,
-        "isLogarithmic": false,
-        "title": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              24,
-              24,
-              24,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 14,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle"
-          }
-        },
-        "labels": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              68,
-              68,
-              68,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 14,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle"
-          }
-        },
-        "valueFormat": {
-          "type": "category",
-          "characterLimit": 11
-        },
-        "lineSymbol": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            139,
-            139,
-            139,
-            255
-          ],
-          "width": 1
-        },
-        "grid": {
-          "type": "esriSLS",
-          "style": "esriSLSDash",
-          "color": [
-            213,
-            213,
-            213,
-            255
-          ],
-          "width": 0
-        }
-      },
-      {
-        "type": "chartAxis",
-        "visible": true,
-        "isLogarithmic": false,
-        "title": {
-          "type": "chartText",
-          "visible": false,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              24,
-              24,
-              24,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 14,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle"
-          }
-        },
-        "labels": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              68,
-              68,
-              68,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 14,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "verticalAlignment": "middle"
-          }
-        },
-        "valueFormat": {
-          "type": "number",
-          "intlOptions": {
-            "style": "decimal",
-            "useGrouping": true,
-            "minimumFractionDigits": 0,
-            "maximumFractionDigits": 0
-          }
-        },
-        "lineSymbol": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            139,
-            139,
-            139,
-            255
-          ],
-          "width": 1
-        },
-        "grid": {
-          "type": "esriSLS",
-          "style": "esriSLSDash",
-          "color": [
-            213,
-            213,
-            213,
-            255
-          ],
-          "width": 0
         }
       }
     ],
@@ -355,7 +159,7 @@
     },
     "legend": {
       "type": "chartLegend",
-      "visible": true,
+      "visible": false,
       "title": {
         "type": "chartText",
         "visible": true,
@@ -396,7 +200,8 @@
         "horizontalAlignment": "center",
         "text": ""
       },
-      "position": "right"
+      "position": "right",
+      "labelMaxWidth": 200
     }
   }
 }
