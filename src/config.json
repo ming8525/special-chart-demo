@@ -1,9 +1,19 @@
 {
-  "service": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/Alternate_Fuel/FeatureServer/0",
   "webChart": {
     "version": "7.3.1",
     "id": "widget_1-donut",
     "type": "chart",
+    "dataSource": {
+      "type": "layer",
+      "layer": {
+        "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/Alternate_Fuel/FeatureServer/0",
+        "layerType": "ArcGISFeatureLayer",
+        "id": "",
+        "layerDefinition": {
+          "id": 0
+        }
+      }
+    },
     "sortLabelsBy": "originalValue",
     "series": [
       {
