@@ -1,59 +1,30 @@
 {
   "webChart": {
     "version": "7.3.1",
-    "id": "widget_1-donut",
+    "id": "widget_2-column",
     "type": "chart",
+    "sortLabelsBy": "originalValue",
+    "rotated": false,
     "dataSource": {
       "type": "layer",
       "layer": {
-        "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/Alternate_Fuel/FeatureServer/0",
+        "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2",
         "layerType": "ArcGISFeatureLayer",
         "id": "",
         "layerDefinition": {
-          "id": 0
+          "id": 2
         }
       }
     },
-    "sortLabelsBy": "originalValue",
     "series": [
       {
-        "type": "pieSeries",
+        "type": "barSeries",
+        "id": "objectid",
+        "name": "OBJECTID",
+        "x": "ss6.gdb.States.area",
+        "y": "count_of_objectid",
         "colorType": "singleColor",
-        "id": "OBJECTID",
-        "name": " OBJECTID",
-        "x": "Ownership_Type",
-        "y": "OBJECTID_count",
-        "innerRadius": 60,
-        "startAngle": 0,
-        "endAngle": 360,
-        "displayNumericValueOnDataLabel": true,
-        "displayPercentageOnDataLabel": false,
-        "displayNumericValueOnTooltip": true,
-        "displayPercentageOnTooltip": true,
-        "dataLabelsOffset": 0,
-        "sliceGrouping": {
-          "sliceId": "__other-slice__",
-          "percentageThreshold": 0,
-          "label": "Other"
-        },
-        "numericValueFormat": {
-          "type": "number",
-          "intlOptions": {
-            "style": "decimal",
-            "useGrouping": true,
-            "minimumFractionDigits": 0,
-            "maximumFractionDigits": 3
-          }
-        },
-        "percentValueFormat": {
-          "type": "number",
-          "intlOptions": {
-            "style": "percent",
-            "notation": "standard",
-            "minimumFractionDigits": 0,
-            "maximumFractionDigits": 3
-          }
-        },
+        "stackedType": "sideBySide",
         "fillSymbol": {
           "type": "esriSFS",
           "style": "esriSFSSolid",
@@ -67,17 +38,17 @@
             "type": "esriSLS",
             "style": "esriSLSSolid",
             "color": [
-              240,
-              240,
-              240,
+              130,
+              130,
+              130,
               255
             ],
-            "width": 1
+            "width": 0
           }
         },
         "dataLabels": {
           "type": "chartText",
-          "visible": true,
+          "visible": false,
           "content": {
             "type": "esriTS",
             "color": [
@@ -88,7 +59,7 @@
             ],
             "font": {
               "family": "Avenir Next",
-              "size": 16,
+              "size": 10,
               "style": "normal",
               "weight": "normal",
               "decoration": "none"
@@ -97,23 +68,179 @@
             "verticalAlignment": "top"
           }
         },
+        "rotated": false,
         "dataTooltipVisible": true,
-        "alignDataLabels": true,
-        "optimizeDataLabelsOverlapping": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "Ownership_Type"
+            "ss6.gdb.States.area"
           ],
           "outStatistics": [
             {
               "statisticType": "count",
-              "onStatisticField": "OBJECTID",
-              "outStatisticFieldName": "OBJECTID_count"
+              "onStatisticField": "objectid",
+              "outStatisticFieldName": "count_of_objectid"
             }
           ],
           "orderByFields": [
-            "Ownership_Type ASC"
+            "ss6.gdb.States.area DESC"
           ]
+        }
+      }
+    ],
+    "axes": [
+      {
+        "type": "chartAxis",
+        "visible": true,
+        "isLogarithmic": false,
+        "title": {
+          "type": "chartText",
+          "visible": false,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              24,
+              24,
+              24,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 14,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          }
+        },
+        "labels": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              68,
+              68,
+              68,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 14,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          }
+        },
+        "valueFormat": {
+          "type": "category",
+          "characterLimit": 11
+        },
+        "lineSymbol": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            139,
+            139,
+            139,
+            255
+          ],
+          "width": 1
+        },
+        "grid": {
+          "type": "esriSLS",
+          "style": "esriSLSDash",
+          "color": [
+            213,
+            213,
+            213,
+            255
+          ],
+          "width": 0
+        }
+      },
+      {
+        "type": "chartAxis",
+        "visible": true,
+        "isLogarithmic": false,
+        "title": {
+          "type": "chartText",
+          "visible": false,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              24,
+              24,
+              24,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 14,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          }
+        },
+        "labels": {
+          "type": "chartText",
+          "visible": true,
+          "content": {
+            "type": "esriTS",
+            "color": [
+              68,
+              68,
+              68,
+              255
+            ],
+            "font": {
+              "family": "Avenir Next",
+              "size": 14,
+              "style": "normal",
+              "weight": "normal",
+              "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          }
+        },
+        "valueFormat": {
+          "type": "number",
+          "intlOptions": {
+            "style": "decimal",
+            "useGrouping": true,
+            "minimumFractionDigits": 0,
+            "maximumFractionDigits": 0
+          }
+        },
+        "lineSymbol": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            139,
+            139,
+            139,
+            255
+          ],
+          "width": 1
+        },
+        "grid": {
+          "type": "esriSLS",
+          "style": "esriSLSDash",
+          "color": [
+            213,
+            213,
+            213,
+            255
+          ],
+          "width": 0
         }
       }
     ],
@@ -210,8 +337,7 @@
         "horizontalAlignment": "center",
         "text": ""
       },
-      "position": "right",
-      "labelMaxWidth": 200
+      "position": "right"
     }
   }
 }

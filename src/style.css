@@ -2,8 +2,8 @@
   min-height: 300px;
 }
 :root, :host {
-  --arcgis-charts-pie-chart-width: 100%;
-  --arcgis-charts-pie-chart-height: 100%;
+  --arcgis-charts-bar-chart-width: 100%;
+  --arcgis-charts-bar-chart-height: 100%;
 }
 .border {
   border: 1px solid grey;
