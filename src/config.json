@@ -1,28 +1,17 @@
 {
   "webChart": {
     "version": "7.3.1",
-    "id": "widget_2-column",
+    "id": "widget_8-column",
     "type": "chart",
     "sortLabelsBy": "originalValue",
     "rotated": false,
-    "dataSource": {
-      "type": "layer",
-      "layer": {
-        "url": "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2",
-        "layerType": "ArcGISFeatureLayer",
-        "id": "",
-        "layerDefinition": {
-          "id": 2
-        }
-      }
-    },
     "series": [
       {
         "type": "barSeries",
-        "id": "objectid",
-        "name": "OBJECTID",
-        "x": "ss6.gdb.States.area",
-        "y": "count_of_objectid",
+        "id": "FID",
+        "name": "FID",
+        "x": "Year",
+        "y": "count_of_FID",
         "colorType": "singleColor",
         "stackedType": "sideBySide",
         "fillSymbol": {
@@ -72,17 +61,17 @@
         "dataTooltipVisible": true,
         "query": {
           "groupByFieldsForStatistics": [
-            "ss6.gdb.States.area"
+            "Year"
           ],
           "outStatistics": [
             {
               "statisticType": "count",
-              "onStatisticField": "objectid",
-              "outStatisticFieldName": "count_of_objectid"
+              "onStatisticField": "FID",
+              "outStatisticFieldName": "count_of_FID"
             }
           ],
           "orderByFields": [
-            "ss6.gdb.States.area DESC"
+            "Year ASC"
           ]
         }
       }

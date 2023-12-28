@@ -9,7 +9,6 @@ import './style.css'
 import WebMap from '@arcgis/core/WebMap'
 import MapView from '@arcgis/core/views/MapView'
 import esriConfig from '@arcgis/core/config'
-import env from '../.env'
 import '@arcgis/core/assets/esri/themes/light/main.css'
 
 applyPolyfills().then(() => {
@@ -21,21 +20,27 @@ const Root = (props) => {
   const mapDivRef = React.useRef()
 
   React.useEffect(() => {
-    esriConfig.apiKey = env.APIKEY
-    const webmap = new WebMap({
-      portalItem: {
-        id: 'f41763f3ec144ac4b771c7b8d17cca11',
-      },
-    })
-    const view = new MapView({
-      container: mapDivRef.current,
-      map: webmap,
-    })
-  }, [])
-
-  React.useEffect(() => {
-    const webChart = config.webChart
-    chartRef.current.config = webChart
+    (async () => {
+      const webmap = new WebMap({
+        portalItem: {
+          id: 'f41763f3ec144ac4b771c7b8d17cca11',
+        },
+      })
+      const view = new MapView({
+        container: mapDivRef.current,
+        map: webmap,
+        zoom: 10,
+        center: [-87.85, 41.80]
+      })
+      await view.when()
+      const layer = view.map.layers.toArray()[0]
+      const layerVeiw = await view.whenLayerView(layer)
+      const webChart = config.webChart
+      chartRef.current.config = config.webChart
+      // chartRef.current.layer = layerVeiw 
+      chartRef.current.layer = layer
+      chartRef.current.view = view
+    })()
   }, [])
 
   return (
