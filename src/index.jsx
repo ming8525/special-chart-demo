@@ -19,28 +19,36 @@ const Root = (props) => {
   const chartRef = React.useRef()
   const mapDivRef = React.useRef()
 
+  const handleViewChange = React.useCallback(async (view) => {
+    await view.when()
+
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(null)
+      }, 150)
+    })
+
+    const layer = view.map.layers.toArray()[0]
+    const layerVeiw = await view.whenLayerView(layer)
+    
+    chartRef.current.config = config.webChart
+    chartRef.current.layer = layer
+    chartRef.current.view = view
+  }, [chartRef])
+
   React.useEffect(() => {
-    (async () => {
-      const webmap = new WebMap({
-        portalItem: {
-          id: 'f41763f3ec144ac4b771c7b8d17cca11',
-        },
-      })
-      const view = new MapView({
-        container: mapDivRef.current,
-        map: webmap,
-        zoom: 10,
-        center: [-87.85, 41.80]
-      })
-      await view.when()
-      const layer = view.map.layers.toArray()[0]
-      const layerVeiw = await view.whenLayerView(layer)
-      const webChart = config.webChart
-      chartRef.current.config = config.webChart
-      // chartRef.current.layer = layerVeiw 
-      chartRef.current.layer = layer
-      chartRef.current.view = view
-    })()
+    const webmap = new WebMap({
+      portalItem: {
+        id: 'f41763f3ec144ac4b771c7b8d17cca11',
+      },
+    })
+    const view = new MapView({
+      container: mapDivRef.current,
+      map: webmap,
+      zoom: 10,
+      center: [-87.85, 41.80]
+    })
+    handleViewChange(view)
   }, [])
 
   return (
