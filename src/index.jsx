@@ -41,7 +41,7 @@ const Root = (props) => {
         <button onClick={() => setActivated('second')}>Second</button>
       </div>
       <div className='contents border'>
-        <div className='content first-content' style={{ display: activated === 'first' ? 'block' : 'none' }}></div>
+        <div className='content first-content' style={{ display: activated === 'first' ? 'block' : 'none' }}>Please switch to the second tab content</div>
         <div className='content second-content' style={{ display: activated === 'second' ? 'block' : 'none' }}>
           <arcgis-charts-histogram ref={ref} />
         </div>

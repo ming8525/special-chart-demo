@@ -1,5 +1,5 @@
 {
-  "service": "https://services6.arcgis.com/Pu6Fai10JE2L2xUd/arcgis/rest/services/Sales_Analysis_071fc731f96f49fca6a93e144c86ae8a/FeatureServer/2",
+  "service": "https://services6.arcgis.com/Pu6Fai10JE2L2xUd/arcgis/rest/services/Sales_Analysis_bd2b4e2cdc3e425a87f25063ad88f252/FeatureServer/2",
   "webChart": {
     "version": "6.2.1",
     "id": "widget_103-histogram",
