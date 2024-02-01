@@ -35,6 +35,7 @@ const Root = (props) => {
       >
         <arcgis-charts-bar-chart ref={chartRef} />
       </div>
+      <pre className='border' style={{ width: 360, wordBreak: 'break-word' }}>{JSON.stringify(ChartLimits, null, " ")}</pre>
     </div>
   )
 }
