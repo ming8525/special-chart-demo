@@ -2,57 +2,28 @@
   "dataSource": {
     "type": "layer",
     "layer": {
-      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+      "url": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/ArcGIS/rest/services/query_append_PI_county/FeatureServer/1",
       "layerType": "ArcGISFeatureLayer",
       "id": 0,
       "layerDefinition": {
-        "id": 0
+        "id": 1
       }
     }
   },
   "version": "7.3.1",
-  "id": "widget_1-donut",
+  "id": "widget_6289-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
+  "rotated": false,
   "series": [
     {
-      "type": "pieSeries",
+      "type": "barSeries",
+      "id": "Partic_1718",
+      "name": "2017-2018",
+      "x": "Lcontent_STEM",
+      "y": "Partic_1718_sum",
       "colorType": "singleColor",
-      "id": "FID",
-      "name": "FID",
-      "x": "FID",
-      "y": "count_of_FID",
-      "innerRadius": 60,
-      "startAngle": 0,
-      "endAngle": 360,
-      "displayNumericValueOnDataLabel": true,
-      "displayPercentageOnDataLabel": false,
-      "displayNumericValueOnTooltip": true,
-      "displayPercentageOnTooltip": true,
-      "dataLabelsOffset": 0,
-      "sliceGrouping": {
-        "sliceId": "__other-slice__",
-        "percentageThreshold": 0,
-        "label": "Other"
-      },
-      "numericValueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "decimal",
-          "useGrouping": true,
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 3
-        }
-      },
-      "percentValueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "percent",
-          "notation": "standard",
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 3
-        }
-      },
+      "stackedType": "sideBySide",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
@@ -66,12 +37,12 @@
           "type": "esriSLS",
           "style": "esriSLSSolid",
           "color": [
-            240,
-            240,
-            240,
+            5,
+            5,
+            5,
             255
           ],
-          "width": 1
+          "width": 0.5
         }
       },
       "dataLabels": {
@@ -80,13 +51,13 @@
         "content": {
           "type": "esriTS",
           "color": [
-            54,
-            54,
-            54,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 10,
             "style": "normal",
             "weight": "normal",
@@ -96,21 +67,528 @@
           "verticalAlignment": "top"
         }
       },
+      "rotated": false,
       "dataTooltipVisible": true,
       "query": {
         "groupByFieldsForStatistics": [
-          "FID"
+          "Lcontent_STEM"
         ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID"
+            "statisticType": "sum",
+            "onStatisticField": "Partic_1718",
+            "outStatisticFieldName": "Partic_1718_sum"
           }
         ],
         "orderByFields": [
-          "FID ASC"
+          "Lcontent_STEM ASC"
         ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_1819",
+      "name": "2018-2019",
+      "x": "Lcontent_STEM",
+      "y": "Partic_1819_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          215,
+          63,
+          9,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_1819",
+            "outStatisticFieldName": "Partic_1819_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_1920",
+      "name": "2019-2020",
+      "x": "Lcontent_STEM",
+      "y": "Partic_1920_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          211,
+          131,
+          43,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_1920",
+            "outStatisticFieldName": "Partic_1920_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_2021",
+      "name": "2020-2021",
+      "x": "Lcontent_STEM",
+      "y": "Partic_2021_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          74,
+          119,
+          60,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_2021",
+            "outStatisticFieldName": "Partic_2021_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_2122",
+      "name": "2021-2022",
+      "x": "Lcontent_STEM",
+      "y": "Partic_2122_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          196,
+          214,
+          164,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_2122",
+            "outStatisticFieldName": "Partic_2122_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_2223",
+      "name": "2022-2023",
+      "x": "Lcontent_STEM",
+      "y": "Partic_2223_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          170,
+          157,
+          46,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_2223",
+            "outStatisticFieldName": "Partic_2223_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    }
+  ],
+  "axes": [
+    {
+      "type": "chartAxis",
+      "visible": true,
+      "isLogarithmic": false,
+      "title": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "text": ""
+        }
+      },
+      "labels": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "text": ""
+        }
+      },
+      "valueFormat": {
+        "type": "category",
+        "characterLimit": 11
+      },
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+          72,
+          72,
+          72,
+          255
+        ],
+        "width": 1
+      },
+      "grid": {
+        "type": "esriSLS",
+        "style": "esriSLSDash",
+        "color": [
+          72,
+          72,
+          72,
+          255
+        ],
+        "width": 0
+      }
+    },
+    {
+      "type": "chartAxis",
+      "visible": true,
+      "isLogarithmic": false,
+      "title": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "text": ""
+        }
+      },
+      "labels": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "text": ""
+        }
+      },
+      "valueFormat": {
+        "type": "number",
+        "intlOptions": {
+          "style": "decimal",
+          "useGrouping": true,
+          "minimumFractionDigits": 0,
+          "maximumFractionDigits": 0
+        }
+      },
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+          72,
+          72,
+          72,
+          255
+        ],
+        "width": 1
+      },
+      "grid": {
+        "type": "esriSLS",
+        "style": "esriSLSDash",
+        "color": [
+          72,
+          72,
+          72,
+          255
+        ],
+        "width": 0
       }
     }
   ],
@@ -122,7 +600,7 @@
   ],
   "title": {
     "type": "chartText",
-    "visible": true,
+    "visible": false,
     "content": {
       "type": "esriTS",
       "color": [
@@ -132,7 +610,7 @@
         255
       ],
       "font": {
-        "family": "Avenir Next",
+        "family": "Georgia",
         "size": 24,
         "style": "normal",
         "weight": "normal",
@@ -148,13 +626,13 @@
     "content": {
       "type": "esriTS",
       "color": [
-        24,
-        24,
-        24,
+        0,
+        0,
+        0,
         255
       ],
       "font": {
-        "family": "Avenir Next",
+        "family": "Georgia",
         "size": 14,
         "style": "normal",
         "weight": "normal",
@@ -166,40 +644,40 @@
   },
   "legend": {
     "type": "chartLegend",
-    "visible": false,
+    "visible": true,
     "title": {
       "type": "chartText",
       "visible": true,
       "content": {
         "type": "esriTS",
         "color": [
-          24,
-          24,
-          24,
+          0,
+          0,
+          0,
           255
         ],
         "font": {
-          "family": "Avenir Next",
-          "size": 20,
+          "family": "Georgia",
+          "size": 14,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": ""
+        "text": "Legend"
       }
     },
     "body": {
       "type": "esriTS",
       "color": [
-        24,
-        24,
-        24,
+        0,
+        0,
+        0,
         255
       ],
       "font": {
-        "family": "Avenir Next",
-        "size": 14,
+        "family": "Georgia",
+        "size": 12,
         "style": "normal",
         "weight": "normal",
         "decoration": "none"
@@ -207,7 +685,6 @@
       "horizontalAlignment": "center",
       "text": ""
     },
-    "position": "right",
-    "labelMaxWidth": 200
+    "position": "left"
   }
 }
