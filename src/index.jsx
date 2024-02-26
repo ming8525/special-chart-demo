@@ -18,17 +18,9 @@ const Root = (props) => {
     chartRef.current.config = config
   }, [])
 
-
-  return (
-    <div className='d-flex'>
-      <div
-        style={{ height: 500, width: 700 }}
-        className='border'
-      >
-        <arcgis-charts-bar-chart ref={chartRef} />
-      </div>
-    </div>
-  )
+  return (<div className='container'>
+    <arcgis-charts-pie-chart ref={chartRef} />
+  </div>)
 }
 
 const root = ReactDOMClient.createRoot(document.getElementById('root'))
