@@ -11,3 +11,7 @@
 .d-flex {
   display: flex;
 }
+.container {
+  width: 378px;
+  height: 154px;
+}
