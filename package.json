@@ -28,11 +28,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@arcgis/charts-components": "v1.0.0-beta.541",
-    "@arcgis/charts-js": "v1.0.0-beta.541",
-    "@arcgis/charts-shared-utils": "v1.0.0-beta.541",
-    "@arcgis/charts-spec": "v1.0.0-beta.541",
-    "@arcgis/core": "next",
+    "@arcgis/charts-components": "4.29.2",
+    "@arcgis/core": "^4.29.0-next.20231205",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
