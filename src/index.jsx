@@ -22,18 +22,12 @@ const Root = (props) => {
   const handleViewChange = React.useCallback(async (view) => {
     await view.when()
 
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(null)
-      }, 150)
-    })
-
     const layer = view.map.layers.toArray()[0]
-    const layerVeiw = await view.whenLayerView(layer)
-    
+  
     chartRef.current.config = config.webChart
     chartRef.current.layer = layer
     chartRef.current.view = view
+  
     chartRef.current.refreshOnViewExtentChange = false
     chartRef.current.refreshOnLayerRendererChange = false
   }, [chartRef])
