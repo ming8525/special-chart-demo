@@ -34,6 +34,8 @@ const Root = (props) => {
     chartRef.current.config = config.webChart
     chartRef.current.layer = layer
     chartRef.current.view = view
+    chartRef.current.refreshOnViewExtentChange = false
+    chartRef.current.refreshOnLayerRendererChange = false
   }, [chartRef])
 
   React.useEffect(() => {
