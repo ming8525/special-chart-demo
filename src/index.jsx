@@ -4,56 +4,32 @@ import {
   applyPolyfills,
   defineCustomElements,
 } from '@arcgis/charts-components/dist/loader'
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
 import config from './config.json'
 import './style.css'
-import WebMap from '@arcgis/core/WebMap'
-import MapView from '@arcgis/core/views/MapView'
-import esriConfig from '@arcgis/core/config'
-import '@arcgis/core/assets/esri/themes/light/main.css'
 
 applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
+const createFeatureLayer = (url) => {
+  const fl = new FeatureLayer({ url })
+  return fl
+}
+
 const Root = (props) => {
   const chartRef = React.useRef()
-  const mapDivRef = React.useRef()
-
-  const handleViewChange = React.useCallback(async (view) => {
-    await view.when()
-
-    const layer = view.map.layers.toArray()[0]
-  
-    chartRef.current.config = config.webChart
-    chartRef.current.layer = layer
-    chartRef.current.view = view
-  
-    chartRef.current.refreshOnViewExtentChange = true
-    chartRef.current.refreshOnLayerRendererChange = true
-  }, [chartRef])
 
   React.useEffect(() => {
-    const webmap = new WebMap({
-      portalItem: {
-        id: 'f41763f3ec144ac4b771c7b8d17cca11',
-      },
+    const layer = createFeatureLayer(config.service)
+    layer.load().then(() => {
+      const webChart = config.webChart
+      chartRef.current.config = webChart
+      chartRef.current.layer = layer
     })
-    const view = new MapView({
-      container: mapDivRef.current,
-      map: webmap,
-      zoom: 10,
-      center: [-87.85, 41.80]
-    })
-    handleViewChange(view)
   }, [])
-
   return (
     <div className='d-flex'>
-      <div
-        style={{ height: 600, width: 600 }}
-        className='border'
-        ref={mapDivRef}
-      />
       <div
         style={{ height: 600, width: 600 }}
         className='border'

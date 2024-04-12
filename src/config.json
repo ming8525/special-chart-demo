@@ -1,7 +1,8 @@
 {
+  "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
   "webChart": {
-    "version": "7.3.1",
-    "id": "widget_8-column",
+    "version": "9.4.0",
+    "id": "widget_1-column",
     "type": "chart",
     "sortLabelsBy": "originalValue",
     "rotated": false,
@@ -71,7 +72,7 @@
             }
           ],
           "orderByFields": [
-            "Year ASC"
+            "Year DESC"
           ]
         }
       }
@@ -139,17 +140,6 @@
             255
           ],
           "width": 1
-        },
-        "grid": {
-          "type": "esriSLS",
-          "style": "esriSLSDash",
-          "color": [
-            213,
-            213,
-            213,
-            255
-          ],
-          "width": 0
         }
       },
       {
@@ -219,17 +209,6 @@
             255
           ],
           "width": 1
-        },
-        "grid": {
-          "type": "esriSLS",
-          "style": "esriSLSDash",
-          "color": [
-            213,
-            213,
-            213,
-            255
-          ],
-          "width": 0
         }
       }
     ],
