@@ -11,19 +11,11 @@ applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const ChartLimits = {
-  maxBarChartSeriesCount: 100,
-  maxBarThreePlusSeriesCountTotal: 2000,
-  maxBarThreePlusSeriesCountPerSeries: 2,
-  behaviorAfterLimit: 'renderUpToTheLimit'
-}
-
 const Root = (props) => {
   const chartRef = React.useRef()
 
   React.useEffect(() => {
     chartRef.current.config = config
-    chartRef.current.chartLimits = ChartLimits
   }, [])
 
 
@@ -35,7 +27,6 @@ const Root = (props) => {
       >
         <arcgis-charts-bar-chart ref={chartRef} />
       </div>
-      <pre className='border' style={{ width: 360, wordBreak: 'break-word' }}>{JSON.stringify(ChartLimits, null, " ")}</pre>
     </div>
   )
 }
