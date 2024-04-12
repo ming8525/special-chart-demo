@@ -28,8 +28,8 @@ const Root = (props) => {
     chartRef.current.layer = layer
     chartRef.current.view = view
   
-    chartRef.current.refreshOnViewExtentChange = false
-    chartRef.current.refreshOnLayerRendererChange = false
+    chartRef.current.refreshOnViewExtentChange = true
+    chartRef.current.refreshOnLayerRendererChange = true
   }, [chartRef])
 
   React.useEffect(() => {
