@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@arcgis/charts-components": "^4.30.0-next.10",
-    "@arcgis/core": "^4.30.0-next.20240330",
+    "@arcgis/core": "^4.30.0-next.20240415",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
