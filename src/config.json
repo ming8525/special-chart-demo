@@ -2,7 +2,7 @@
   "dataSource": {
     "type": "layer",
     "layer": {
-      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+      "url": "https://services1.arcgis.com/oC086ufSSQ6Avnw2/ArcGIS/rest/services/large_pts_test_WFL1/FeatureServer/0",
       "layerType": "ArcGISFeatureLayer",
       "id": 0,
       "layerDefinition": {
@@ -10,29 +10,28 @@
       }
     }
   },
-  "version": "9.4.0",
-  "id": "widget_1-column",
+  "version": "7.3.1",
+  "id": "widget_1-scatter",
   "type": "chart",
   "sortLabelsBy": "originalValue",
-  "rotated": false,
   "series": [
     {
-      "type": "barSeries",
-      "id": "FID",
-      "name": "FID",
-      "x": "Year",
-      "y": "count_of_FID",
+      "type": "scatterSeries",
       "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
+      "id": "y",
+      "name": "y",
+      "x": "x",
+      "y": "y",
+      "markerSymbol": {
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
         "color": [
           94,
           143,
           208,
           255
         ],
+        "size": 7,
         "outline": {
           "type": "esriSLS",
           "style": "esriSLSSolid",
@@ -45,45 +44,26 @@
           "width": 0
         }
       },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
+      "overlays": {
+        "type": "chartOverlays",
+        "trendLine": {
+          "type": "chartOverlay",
+          "created": true,
+          "visible": true,
+          "symbol": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              223,
+              107,
+              53,
+              255
+            ],
+            "width": 3
+          }
         }
       },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID"
-          }
-        ],
-        "orderByFields": [
-          "Year DESC"
-        ]
-      }
+      "dataTooltipVisible": true
     }
   ],
   "axes": [
@@ -136,8 +116,13 @@
         }
       },
       "valueFormat": {
-        "type": "category",
-        "characterLimit": 11
+        "type": "number",
+        "intlOptions": {
+          "style": "decimal",
+          "notation": "standard",
+          "minimumFractionDigits": 0,
+          "maximumFractionDigits": 0
+        }
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -203,7 +188,7 @@
         "type": "number",
         "intlOptions": {
           "style": "decimal",
-          "useGrouping": true,
+          "notation": "standard",
           "minimumFractionDigits": 0,
           "maximumFractionDigits": 0
         }
@@ -273,7 +258,7 @@
   },
   "legend": {
     "type": "chartLegend",
-    "visible": false,
+    "visible": true,
     "title": {
       "type": "chartText",
       "visible": true,
