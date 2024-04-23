@@ -18,18 +18,18 @@ applyPolyfills().then(() => {
 const Root = (props) => {
   const chartRef = React.useRef()
   const mapDivRef = React.useRef()
+  const [refreshOnViewExtentChange, setRefreshOnViewExtentChange] = React.useState(true)
 
   const handleViewChange = React.useCallback(async (view) => {
     await view.when()
 
     const layer = view.map.layers.toArray()[0]
-  
+
     chartRef.current.config = config.webChart
     chartRef.current.layer = layer
     chartRef.current.view = view
-  
-    chartRef.current.refreshOnViewExtentChange = true
-    chartRef.current.refreshOnLayerRendererChange = true
+
+    chartRef.current.refreshOnViewExtentChange = refreshOnViewExtentChange
   }, [chartRef])
 
   React.useEffect(() => {
@@ -47,6 +47,12 @@ const Root = (props) => {
     handleViewChange(view)
   }, [])
 
+  const handleRefreshOnViewExtentChange = (e) => {
+    const checked = e.target.checked
+    chartRef.current.refreshOnViewExtentChange = checked
+    setRefreshOnViewExtentChange(checked)
+  }
+
   return (
     <div className='d-flex'>
       <div
@@ -59,6 +65,10 @@ const Root = (props) => {
         className='border'
       >
         <arcgis-charts-bar-chart ref={chartRef} />
+      </div>
+      <div>
+        <input type="checkbox" id="refreshOnViewExtentChange" checked={refreshOnViewExtentChange} onChange={handleRefreshOnViewExtentChange} />
+        <label htmlFor="refreshOnViewExtentChange">RefreshOnViewExtentChange</label>
       </div>
     </div>
   )
