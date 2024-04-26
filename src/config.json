@@ -28,9 +28,9 @@
         "type": "esriSFS",
         "style": "esriSFSSolid",
         "color": [
-          94,
-          143,
-          208,
+          255,
+          0,
+          0,
           255
         ],
         "outline": {
@@ -47,7 +47,7 @@
       },
       "dataLabels": {
         "type": "chartText",
-        "visible": false,
+        "visible": true,
         "content": {
           "type": "esriTS",
           "color": [

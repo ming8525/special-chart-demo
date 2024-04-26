@@ -30,11 +30,19 @@ const Root = (props) => {
   return (
     <div className='d-flex'>
       <div
-        style={{ height: 600, width: 600 }}
+        style={{ height: 600, width: 800 }}
         className='border'
       >
         <arcgis-charts-bar-chart ref={chartRef} />
       </div>
+      <pre
+          style={{ height: 600, width: 600 }}
+          className='border'
+        >
+        {
+          JSON.stringify(ChartLimits, null, 2)
+        }
+      </pre>
     </div>
   )
 }
