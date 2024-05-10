@@ -2,523 +2,26 @@
   "dataSource": {
     "type": "layer",
     "layer": {
-      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+      "url": "https://services1.arcgis.com/CD5mKowwN6nIaqd8/ArcGIS/rest/services/query_append_PI_county/FeatureServer/1",
       "layerType": "ArcGISFeatureLayer",
       "id": 0,
       "layerDefinition": {
-        "id": 0
+        "id": 1
       }
     }
   },
   "version": "7.3.1",
-  "id": "widget_1-column",
+  "id": "widget_6289-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
   "rotated": false,
   "series": [
     {
       "type": "barSeries",
-      "id": "031A",
-      "name": "031A",
-      "x": "Year",
-      "y": "count_of_FID_of_031A",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          255,
-          0,
-          0,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='031A'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_031A"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "031B",
-      "name": "031B",
-      "x": "Year",
-      "y": "count_of_FID_of_031B",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          119,
-          180,
-          132,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='031B'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_031B"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "033A",
-      "name": "033A",
-      "x": "Year",
-      "y": "count_of_FID_of_033A",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          223,
-          107,
-          53,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='033A'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_033A"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "041A",
-      "name": "041A",
-      "x": "Year",
-      "y": "count_of_FID_of_041A",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          219,
-          207,
-          78,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='041A'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_041A"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "051A",
-      "name": "051A",
-      "x": "Year",
-      "y": "count_of_FID_of_051A",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          65,
-          84,
-          109,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='051A'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_051A"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "312",
-      "name": "312",
-      "x": "Year",
-      "y": "count_of_FID_of_312",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          130,
-          87,
-          194,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='312'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_312"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "313",
-      "name": "313",
-      "x": "Year",
-      "y": "count_of_FID_of_313",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          214,
-          85,
-          139,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='313'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_313"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "320",
-      "name": "320",
-      "x": "Year",
-      "y": "count_of_FID_of_320",
+      "id": "Partic_1718",
+      "name": "2017-2018",
+      "x": "Lcontent_STEM",
+      "y": "Partic_1718_sum",
       "colorType": "singleColor",
       "stackedType": "sideBySide",
       "fillSymbol": {
@@ -534,6 +37,75 @@
           "type": "esriSLS",
           "style": "esriSLSSolid",
           "color": [
+            5,
+            5,
+            5,
+            255
+          ],
+          "width": 0.5
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_1718",
+            "outStatisticFieldName": "Partic_1718_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_1819",
+      "name": "2018-2019",
+      "x": "Lcontent_STEM",
+      "y": "Partic_1819_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          215,
+          63,
+          9,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
             130,
             130,
             130,
@@ -548,13 +120,13 @@
         "content": {
           "type": "esriTS",
           "color": [
-            54,
-            54,
-            54,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 10,
             "style": "normal",
             "weight": "normal",
@@ -567,38 +139,105 @@
       "rotated": false,
       "dataTooltipVisible": true,
       "query": {
-        "where": "IUCR='320'",
         "groupByFieldsForStatistics": [
-          "Year"
+          "Lcontent_STEM"
         ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_320"
+            "statisticType": "sum",
+            "onStatisticField": "Partic_1819",
+            "outStatisticFieldName": "Partic_1819_sum"
           }
         ],
         "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
+          "Lcontent_STEM ASC"
+        ]
       }
     },
     {
       "type": "barSeries",
-      "id": "325",
-      "name": "325",
-      "x": "Year",
-      "y": "count_of_FID_of_325",
+      "id": "Partic_1920",
+      "name": "2019-2020",
+      "x": "Lcontent_STEM",
+      "y": "Partic_1920_sum",
       "colorType": "singleColor",
       "stackedType": "sideBySide",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
         "color": [
+          211,
+          131,
+          43,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "font": {
+            "family": "Georgia",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "Lcontent_STEM"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Partic_1920",
+            "outStatisticFieldName": "Partic_1920_sum"
+          }
+        ],
+        "orderByFields": [
+          "Lcontent_STEM ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Partic_2021",
+      "name": "2020-2021",
+      "x": "Lcontent_STEM",
+      "y": "Partic_2021_sum",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          74,
           119,
-          180,
-          132,
+          60,
           255
         ],
         "outline": {
@@ -619,13 +258,13 @@
         "content": {
           "type": "esriTS",
           "color": [
-            54,
-            54,
-            54,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 10,
             "style": "normal",
             "weight": "normal",
@@ -638,38 +277,36 @@
       "rotated": false,
       "dataTooltipVisible": true,
       "query": {
-        "where": "IUCR='325'",
         "groupByFieldsForStatistics": [
-          "Year"
+          "Lcontent_STEM"
         ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_325"
+            "statisticType": "sum",
+            "onStatisticField": "Partic_2021",
+            "outStatisticFieldName": "Partic_2021_sum"
           }
         ],
         "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
+          "Lcontent_STEM ASC"
+        ]
       }
     },
     {
       "type": "barSeries",
-      "id": "326",
-      "name": "326",
-      "x": "Year",
-      "y": "count_of_FID_of_326",
+      "id": "Partic_2122",
+      "name": "2021-2022",
+      "x": "Lcontent_STEM",
+      "y": "Partic_2122_sum",
       "colorType": "singleColor",
       "stackedType": "sideBySide",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
         "color": [
-          223,
-          107,
-          53,
+          196,
+          214,
+          164,
           255
         ],
         "outline": {
@@ -690,13 +327,13 @@
         "content": {
           "type": "esriTS",
           "color": [
-            54,
-            54,
-            54,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 10,
             "style": "normal",
             "weight": "normal",
@@ -709,38 +346,36 @@
       "rotated": false,
       "dataTooltipVisible": true,
       "query": {
-        "where": "IUCR='326'",
         "groupByFieldsForStatistics": [
-          "Year"
+          "Lcontent_STEM"
         ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_326"
+            "statisticType": "sum",
+            "onStatisticField": "Partic_2122",
+            "outStatisticFieldName": "Partic_2122_sum"
           }
         ],
         "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
+          "Lcontent_STEM ASC"
+        ]
       }
     },
     {
       "type": "barSeries",
-      "id": "330",
-      "name": "330",
-      "x": "Year",
-      "y": "count_of_FID_of_330",
+      "id": "Partic_2223",
+      "name": "2022-2023",
+      "x": "Lcontent_STEM",
+      "y": "Partic_2223_sum",
       "colorType": "singleColor",
       "stackedType": "sideBySide",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
         "color": [
-          219,
-          207,
-          78,
+          170,
+          157,
+          46,
           255
         ],
         "outline": {
@@ -761,13 +396,13 @@
         "content": {
           "type": "esriTS",
           "color": [
-            54,
-            54,
-            54,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 10,
             "style": "normal",
             "weight": "normal",
@@ -780,949 +415,20 @@
       "rotated": false,
       "dataTooltipVisible": true,
       "query": {
-        "where": "IUCR='330'",
         "groupByFieldsForStatistics": [
-          "Year"
+          "Lcontent_STEM"
         ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_330"
+            "statisticType": "sum",
+            "onStatisticField": "Partic_2223",
+            "outStatisticFieldName": "Partic_2223_sum"
           }
         ],
         "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
+          "Lcontent_STEM ASC"
+        ]
       }
-    },
-    {
-      "type": "barSeries",
-      "id": "337",
-      "name": "337",
-      "x": "Year",
-      "y": "count_of_FID_of_337",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          65,
-          84,
-          109,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='337'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_337"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "340",
-      "name": "340",
-      "x": "Year",
-      "y": "count_of_FID_of_340",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          130,
-          87,
-          194,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='340'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_340"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "420",
-      "name": "420",
-      "x": "Year",
-      "y": "count_of_FID_of_420",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          214,
-          85,
-          139,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='420'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_420"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "430",
-      "name": "430",
-      "x": "Year",
-      "y": "count_of_FID_of_430",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          94,
-          143,
-          208,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='430'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_430"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "479",
-      "name": "479",
-      "x": "Year",
-      "y": "count_of_FID_of_479",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          119,
-          180,
-          132,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='479'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_479"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "482",
-      "name": "482",
-      "x": "Year",
-      "y": "count_of_FID_of_482",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          223,
-          107,
-          53,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='482'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_482"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "496",
-      "name": "496",
-      "x": "Year",
-      "y": "count_of_FID_of_496",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          219,
-          207,
-          78,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='496'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_496"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "497",
-      "name": "497",
-      "x": "Year",
-      "y": "count_of_FID_of_497",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          65,
-          84,
-          109,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='497'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_497"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "498",
-      "name": "498",
-      "x": "Year",
-      "y": "count_of_FID_of_498",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          130,
-          87,
-          194,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='498'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_498"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      }
-    },
-    {
-      "type": "barSeries",
-      "id": "520",
-      "name": "520",
-      "x": "Year",
-      "y": "count_of_FID_of_520",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          214,
-          214,
-          214,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='520'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_520"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      },
-      "deletable": false
-    },
-    {
-      "type": "barSeries",
-      "id": "530",
-      "name": "530",
-      "x": "Year",
-      "y": "count_of_FID_of_530",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          214,
-          214,
-          214,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='530'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_530"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      },
-      "deletable": false
-    },
-    {
-      "type": "barSeries",
-      "id": "553",
-      "name": "553",
-      "x": "Year",
-      "y": "count_of_FID_of_553",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          214,
-          214,
-          214,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='553'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_553"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      },
-      "deletable": false
-    },
-    {
-      "type": "barSeries",
-      "id": "558",
-      "name": "558",
-      "x": "Year",
-      "y": "count_of_FID_of_558",
-      "colorType": "singleColor",
-      "stackedType": "sideBySide",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
-        "color": [
-          214,
-          214,
-          214,
-          255
-        ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
-        }
-      },
-      "rotated": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "where": "IUCR='558'",
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID_of_558"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ],
-        "num": 3
-      },
-      "deletable": false
     }
   ],
   "axes": [
@@ -1736,20 +442,21 @@
         "content": {
           "type": "esriTS",
           "color": [
-            24,
-            24,
-            24,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 14,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "labels": {
@@ -1758,20 +465,21 @@
         "content": {
           "type": "esriTS",
           "color": [
-            68,
-            68,
-            68,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 14,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "valueFormat": {
@@ -1782,9 +490,9 @@
         "type": "esriSLS",
         "style": "esriSLSSolid",
         "color": [
-          139,
-          139,
-          139,
+          72,
+          72,
+          72,
           255
         ],
         "width": 1
@@ -1793,9 +501,9 @@
         "type": "esriSLS",
         "style": "esriSLSDash",
         "color": [
-          213,
-          213,
-          213,
+          72,
+          72,
+          72,
           255
         ],
         "width": 0
@@ -1811,20 +519,21 @@
         "content": {
           "type": "esriTS",
           "color": [
-            24,
-            24,
-            24,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 14,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "labels": {
@@ -1833,20 +542,21 @@
         "content": {
           "type": "esriTS",
           "color": [
-            68,
-            68,
-            68,
+            0,
+            0,
+            0,
             255
           ],
           "font": {
-            "family": "Avenir Next",
+            "family": "Georgia",
             "size": 14,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "valueFormat": {
@@ -1862,9 +572,9 @@
         "type": "esriSLS",
         "style": "esriSLSSolid",
         "color": [
-          139,
-          139,
-          139,
+          72,
+          72,
+          72,
           255
         ],
         "width": 1
@@ -1873,9 +583,9 @@
         "type": "esriSLS",
         "style": "esriSLSDash",
         "color": [
-          213,
-          213,
-          213,
+          72,
+          72,
+          72,
           255
         ],
         "width": 0
@@ -1890,7 +600,7 @@
   ],
   "title": {
     "type": "chartText",
-    "visible": true,
+    "visible": false,
     "content": {
       "type": "esriTS",
       "color": [
@@ -1900,7 +610,7 @@
         255
       ],
       "font": {
-        "family": "Avenir Next",
+        "family": "Georgia",
         "size": 24,
         "style": "normal",
         "weight": "normal",
@@ -1916,13 +626,13 @@
     "content": {
       "type": "esriTS",
       "color": [
-        24,
-        24,
-        24,
+        0,
+        0,
+        0,
         255
       ],
       "font": {
-        "family": "Avenir Next",
+        "family": "Georgia",
         "size": 14,
         "style": "normal",
         "weight": "normal",
@@ -1934,40 +644,40 @@
   },
   "legend": {
     "type": "chartLegend",
-    "visible": false,
+    "visible": true,
     "title": {
       "type": "chartText",
       "visible": true,
       "content": {
         "type": "esriTS",
         "color": [
-          24,
-          24,
-          24,
+          0,
+          0,
+          0,
           255
         ],
         "font": {
-          "family": "Avenir Next",
-          "size": 20,
+          "family": "Georgia",
+          "size": 14,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
         },
         "horizontalAlignment": "center",
-        "text": ""
+        "text": "Legend"
       }
     },
     "body": {
       "type": "esriTS",
       "color": [
-        24,
-        24,
-        24,
+        0,
+        0,
+        0,
         255
       ],
       "font": {
-        "family": "Avenir Next",
-        "size": 14,
+        "family": "Georgia",
+        "size": 12,
         "style": "normal",
         "weight": "normal",
         "decoration": "none"
@@ -1975,6 +685,6 @@
       "horizontalAlignment": "center",
       "text": ""
     },
-    "position": "right"
+    "position": "left"
   }
 }

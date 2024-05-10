@@ -4,7 +4,7 @@ This repository is used to provide some demos about arcgis charts problems that 
 
 # How to start
 
-- Clone this repo and switch to branch `f-split-by-categories`
+- Clone this repo and switch to branch `f-demo-hide-legend`
 
 - Run `npm ci`
 
