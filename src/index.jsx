@@ -13,12 +13,21 @@ applyPolyfills().then(() => {
 
 const Root = (props) => {
   const chartRef = React.useRef()
+  const [hideEmptySeriesInLegend, setHideEmptySeriesInLegend] = React.useState(false)
 
   React.useEffect(() => {
     chartRef.current.config = config
-    chartRef.current.hideEmptySeriesInLegend = false
+    chartRef.current.hideEmptySeriesInLegend = hideEmptySeriesInLegend
   }, [])
 
+  React.useEffect(() => {
+    if(!chartRef.current) return
+    chartRef.current.hideEmptySeriesInLegend = hideEmptySeriesInLegend
+  }, [hideEmptySeriesInLegend])
+
+  const handleHideEmptySeriesInLegendChange = (e) => {
+    setHideEmptySeriesInLegend(e.checked)
+  }
 
   return (
     <div className='d-flex'>
@@ -28,6 +37,10 @@ const Root = (props) => {
       >
         <arcgis-charts-bar-chart ref={chartRef} />
       </div>
+      <div>
+      <input type="checkbox" id="hideEmptySeriesInLegend" name="scales" checked={hideEmptySeriesInLegend} onChange={handleHideEmptySeriesInLegendChange} />
+      <label for="hideEmptySeriesInLegend">hideEmptySeriesInLegend</label>
+    </div>
     </div>
   )
 }
