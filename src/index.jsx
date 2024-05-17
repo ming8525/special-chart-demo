@@ -4,43 +4,39 @@ import {
   applyPolyfills,
   defineCustomElements,
 } from '@arcgis/charts-components/dist/loader'
-import config from './config.json'
+import config1 from './config1.json'
+import config2 from './config2.json'
+import config3 from './config3.json'
 import './style.css'
 
 applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
-const Root = (props) => {
+const Chart = ({ config }) => {
   const chartRef = React.useRef()
-  const [hideEmptySeriesInLegend, setHideEmptySeriesInLegend] = React.useState(false)
 
   React.useEffect(() => {
     chartRef.current.config = config
-    chartRef.current.hideEmptySeriesInLegend = hideEmptySeriesInLegend
-  }, [])
-
-  React.useEffect(() => {
-    if(!chartRef.current) return
-    chartRef.current.hideEmptySeriesInLegend = hideEmptySeriesInLegend
-  }, [hideEmptySeriesInLegend])
-
-  const handleHideEmptySeriesInLegendChange = (e) => {
-    setHideEmptySeriesInLegend(e.checked)
-  }
+  }, [config])
 
   return (
     <div className='d-flex'>
-      <div
-        style={{ height: 600, width: 800 }}
-        className='border'
-      >
-        <arcgis-charts-bar-chart ref={chartRef} />
+      <div style={{ height: 262, width: 450 }} className='border'>
+        <arcgis-charts-gauge ref={chartRef} />
       </div>
       <div>
-      <input type="checkbox" id="hideEmptySeriesInLegend" name="scales" checked={hideEmptySeriesInLegend} onChange={handleHideEmptySeriesInLegendChange} />
-      <label for="hideEmptySeriesInLegend">hideEmptySeriesInLegend</label>
     </div>
+    </div>
+  )
+}
+
+const Root = (props) => {
+  return (
+    <div className='d-flex'>
+      <Chart config={config1} />
+      <Chart config={config2} />
+      <Chart config={config3} />
     </div>
   )
 }

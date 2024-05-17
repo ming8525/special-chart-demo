@@ -1,0 +1,215 @@
+{
+  "dataSource": {
+    "type": "layer",
+    "layer": {
+      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+      "layerType": "ArcGISFeatureLayer",
+      "id": 0,
+      "layerDefinition": {
+        "id": 0
+      }
+    }
+  },
+  "version": "9.4.0",
+  "id": "widget_2-gauge",
+  "type": "chart",
+  "innerRadius": 70,
+  "startAngle": -180,
+  "endAngle": 0,
+  "series": [
+    {
+      "type": "gaugeSeries",
+      "id": "FID",
+      "name": "FID",
+      "x": "count_of_FID",
+      "featureIndex": 0,
+      "query": {
+        "outStatistics": [
+          {
+            "statisticType": "count",
+            "onStatisticField": "FID",
+            "outStatisticFieldName": "count_of_FID"
+          }
+        ]
+      }
+    }
+  ],
+  "axes": [
+    {
+      "type": "chartAxis",
+      "visible": true,
+      "title": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        }
+      },
+      "labels": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            68,
+            68,
+            68,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 13,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        }
+      },
+      "innerLabel": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 36,
+            "style": "normal",
+            "weight": "bold",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "bottom",
+          "yoffset": "0%"
+        }
+      },
+      "needle": {
+        "type": "gaugeNeedle",
+        "visible": true,
+        "startWidth": 12,
+        "endWidth": 2,
+        "innerRadius": 0,
+        "displayPin": false,
+        "symbol": {
+          "type": "esriSFS",
+          "color": [
+            7,
+            111,
+            229,
+            255
+          ],
+          "outline": {
+            "type": "esriSLS",
+            "style": "esriSLSSolid",
+            "color": [
+              130,
+              130,
+              130,
+              255
+            ],
+            "width": 0
+          }
+        }
+      },
+      "ticks": {
+        "type": "gaugeAxisTick",
+        "visible": true
+      },
+      "guides": [],
+      "valueFormat": {
+        "type": "number",
+        "intlOptions": {
+          "style": "decimal",
+          "notation": "standard",
+          "minimumFractionDigits": 0,
+          "maximumFractionDigits": 2
+        }
+      },
+      "minimum": 0,
+      "maximum": 1000,
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+          182,
+          182,
+          182,
+          255
+        ],
+        "width": 3
+      }
+    }
+  ],
+  "background": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": {
+    "type": "chartText",
+    "visible": true,
+    "content": {
+      "type": "esriTS",
+      "color": [
+        0,
+        0,
+        0,
+        255
+      ],
+      "font": {
+        "family": "Avenir Next",
+        "size": 24,
+        "style": "normal",
+        "weight": "normal",
+        "decoration": "none"
+      },
+      "horizontalAlignment": "center",
+      "text": "With title"
+    }
+  },
+  "footer": {
+    "type": "chartText",
+    "visible": false,
+    "content": {
+      "type": "esriTS",
+      "color": [
+        24,
+        24,
+        24,
+        255
+      ],
+      "font": {
+        "family": "Avenir Next",
+        "size": 14,
+        "style": "normal",
+        "weight": "normal",
+        "decoration": "none"
+      },
+      "horizontalAlignment": "center",
+      "text": ""
+    }
+  }
+}
