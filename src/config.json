@@ -10,7 +10,7 @@
       }
     }
   },
-  "version": "7.1.0",
+  "version": "9.4.0",
   "id": "widget_1-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
