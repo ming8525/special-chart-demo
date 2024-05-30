@@ -24,7 +24,7 @@ const Root = (props) => {
         style={{ height: 600, width: 800 }}
         className='border'
       >
-        <arcgis-charts-bar-chart ref={chartRef} />
+        <arcgis-charts-pie-chart ref={chartRef} />
       </div>
     </div>
   )
