@@ -16,6 +16,7 @@ const Root = (props) => {
 
   React.useEffect(() => {
     chartRef.current.config = config
+    chartRef.current.timeZone = 'Indian/Comoro'
   }, [])
 
   return (
@@ -24,7 +25,7 @@ const Root = (props) => {
         style={{ height: 600, width: 800 }}
         className='border'
       >
-        <arcgis-charts-pie-chart ref={chartRef} />
+        <arcgis-charts-bar-chart ref={chartRef} />
       </div>
     </div>
   )

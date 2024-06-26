@@ -1,119 +1,29 @@
 {
-  "version": "9.4.0",
-  "id": "widget_249-pie",
-  "type": "chart",
   "dataSource": {
-    "type": "inline",
-    "processed": true,
-    "data": {
-      "dataItems": [
-        {
-          "OBJECTID_max": 15,
-          "Name_Eng": "Arevshat",
-          "objectid": 0
-        },
-        {
-          "OBJECTID_max": 6,
-          "Name_Eng": "Askeran",
-          "objectid": 1
-        },
-        {
-          "OBJECTID_max": 14,
-          "Name_Eng": "Dsaghgaberd",
-          "objectid": 2
-        },
-        {
-          "OBJECTID_max": 12,
-          "Name_Eng": "Haberk",
-          "objectid": 3
-        },
-        {
-          "OBJECTID_max": 5,
-          "Name_Eng": "Hadrut",
-          "objectid": 4
-        },
-        {
-          "OBJECTID_max": 13,
-          "Name_Eng": "Ishkhanamor",
-          "objectid": 5
-        },
-        {
-          "OBJECTID_max": 10,
-          "Name_Eng": "Jermajur",
-          "objectid": 6
-        },
-        {
-          "OBJECTID_max": 9,
-          "Name_Eng": "Karvajar",
-          "objectid": 7
-        },
-        {
-          "OBJECTID_max": 3,
-          "Name_Eng": "Martakert",
-          "objectid": 8
-        },
-        {
-          "OBJECTID_max": 8,
-          "Name_Eng": "Martuni",
-          "objectid": 9
-        },
-        {
-          "OBJECTID_max": 4,
-          "Name_Eng": "Shushi",
-          "objectid": 10
-        },
-        {
-          "OBJECTID_max": 1,
-          "Name_Eng": "Stepanakert\t",
-          "objectid": 11
-        },
-        {
-          "OBJECTID_max": 7,
-          "Name_Eng": "Vorotan",
-          "objectid": 12
-        }
-      ]
+    "type": "layer",
+    "layer": {
+      "url": "https://services1.arcgis.com/oC086ufSSQ6Avnw2/arcgis/rest/services/Coastal_tourism_sites/FeatureServer/0",
+      "layerType": "ArcGISFeatureLayer",
+      "id": 0,
+      "layerDefinition": {
+        "id": 0
+      }
     }
   },
+  "version": "9.4.0",
+  "id": "widget_2-column",
+  "type": "chart",
+  "sortLabelsBy": "originalValue",
+  "rotated": false,
   "series": [
     {
-      "type": "pieSeries",
-      "colorType": "singleColor",
+      "type": "barSeries",
       "id": "OBJECTID",
-      "name": "Maximum of OBJECTID",
-      "x": "Name_Eng",
-      "y": "OBJECTID_max",
-      "innerRadius": 0,
-      "startAngle": 0,
-      "endAngle": 360,
-      "displayNumericValueOnDataLabel": true,
-      "displayPercentageOnDataLabel": false,
-      "displayNumericValueOnTooltip": true,
-      "displayPercentageOnTooltip": true,
-      "dataLabelsOffset": 0,
-      "sliceGrouping": {
-        "percentageThreshold": 0,
-        "sliceId": "__other-slice__",
-        "label": "Other"
-      },
-      "numericValueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "decimal",
-          "useGrouping": true,
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 3
-        }
-      },
-      "percentValueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "decimal",
-          "useGrouping": true,
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 3
-        }
-      },
+      "name": "OBJECTID",
+      "x": "Date",
+      "y": "count_of_OBJECTID",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
@@ -127,12 +37,12 @@
           "type": "esriSLS",
           "style": "esriSLSSolid",
           "color": [
-            5,
-            5,
-            5,
+            130,
+            130,
+            130,
             255
           ],
-          "width": 1
+          "width": 0
         }
       },
       "dataLabels": {
@@ -141,9 +51,9 @@
         "content": {
           "type": "esriTS",
           "color": [
-            197,
-            197,
-            197,
+            54,
+            54,
+            54,
             255
           ],
           "font": {
@@ -157,21 +67,181 @@
           "verticalAlignment": "top"
         }
       },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
       "dataTooltipVisible": true,
       "query": {
         "groupByFieldsForStatistics": [
-          "Name_Eng"
+          "Date"
         ],
         "outStatistics": [
           {
-            "statisticType": "max",
+            "statisticType": "count",
             "onStatisticField": "OBJECTID",
-            "outStatisticFieldName": "OBJECTID_max"
+            "outStatisticFieldName": "count_of_OBJECTID"
           }
         ],
         "orderByFields": [
-          "Name_Eng DESC"
-        ]
+          "Date ASC"
+        ],
+        "num": 1
+      }
+    }
+  ],
+  "axes": [
+    {
+      "type": "chartAxis",
+      "visible": true,
+      "isLogarithmic": false,
+      "title": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        }
+      },
+      "labels": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            68,
+            68,
+            68,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        }
+      },
+      "valueFormat": {
+        "type": "date",
+        "intlOptions": {}
+      },
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+          139,
+          139,
+          139,
+          255
+        ],
+        "width": 1
+      },
+      "grid": {
+        "type": "esriSLS",
+        "style": "esriSLSDash",
+        "color": [
+          213,
+          213,
+          213,
+          255
+        ],
+        "width": 0
+      }
+    },
+    {
+      "type": "chartAxis",
+      "visible": true,
+      "isLogarithmic": false,
+      "title": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            24,
+            24,
+            24,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        }
+      },
+      "labels": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            68,
+            68,
+            68,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 14,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle"
+        }
+      },
+      "valueFormat": {
+        "type": "number",
+        "intlOptions": {
+          "style": "decimal",
+          "useGrouping": true,
+          "minimumFractionDigits": 0,
+          "maximumFractionDigits": 0
+        }
+      },
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+          139,
+          139,
+          139,
+          255
+        ],
+        "width": 1
+      },
+      "grid": {
+        "type": "esriSLS",
+        "style": "esriSLSDash",
+        "color": [
+          213,
+          213,
+          213,
+          255
+        ],
+        "width": 0
       }
     }
   ],
@@ -187,9 +257,9 @@
     "content": {
       "type": "esriTS",
       "color": [
-        255,
-        255,
-        255,
+        0,
+        0,
+        0,
         255
       ],
       "font": {
@@ -209,9 +279,9 @@
     "content": {
       "type": "esriTS",
       "color": [
-        227,
-        227,
-        227,
+        24,
+        24,
+        24,
         255
       ],
       "font": {
@@ -234,9 +304,9 @@
       "content": {
         "type": "esriTS",
         "color": [
-          227,
-          227,
-          227,
+          24,
+          24,
+          24,
           255
         ],
         "font": {
@@ -253,9 +323,9 @@
     "body": {
       "type": "esriTS",
       "color": [
-        227,
-        227,
-        227,
+        24,
+        24,
+        24,
         255
       ],
       "font": {
@@ -268,8 +338,6 @@
       "horizontalAlignment": "center",
       "text": ""
     },
-    "position": "right",
-    "labelMaxWidth": 200
-  },
-  "sortLabelsBy": "originalValue"
+    "position": "right"
+  }
 }
