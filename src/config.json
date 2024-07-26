@@ -2,26 +2,26 @@
   "dataSource": {
     "type": "layer",
     "layer": {
-      "url": "https://services1.arcgis.com/oC086ufSSQ6Avnw2/arcgis/rest/services/Coastal_tourism_sites/FeatureServer/0",
+      "url": "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Census_2020_DHC_Housing_Units/FeatureServer/2",
       "layerType": "ArcGISFeatureLayer",
-      "id": 0,
+      "id": 2,
       "layerDefinition": {
-        "id": 0
+        "id": 2
       }
     }
   },
   "version": "9.4.0",
-  "id": "widget_2-column",
+  "id": "widget_6-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
   "rotated": false,
   "series": [
     {
       "type": "barSeries",
-      "id": "OBJECTID",
-      "name": "OBJECTID",
-      "x": "Date",
-      "y": "count_of_OBJECTID",
+      "id": "00023901",
+      "name": "00023901",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
       "colorType": "singleColor",
       "stackedType": "sideBySide",
       "fillSymbol": {
@@ -71,20 +71,1169 @@
       "hideOversizedStackedLabels": false,
       "dataTooltipVisible": true,
       "query": {
-        "groupByFieldsForStatistics": [
-          "Date"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "count",
-            "onStatisticField": "OBJECTID",
-            "outStatisticFieldName": "count_of_OBJECTID"
-          }
-        ],
+        "where": "COUNTYNS='00023901'",
         "orderByFields": [
-          "Date ASC"
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025441",
+      "name": "00025441",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          119,
+          180,
+          132,
+          255
         ],
-        "num": 1
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025441'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025442",
+      "name": "00025442",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          223,
+          107,
+          53,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025442'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025443",
+      "name": "00025443",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          219,
+          207,
+          78,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025443'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025444",
+      "name": "00025444",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          65,
+          84,
+          109,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025444'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025445",
+      "name": "00025445",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          130,
+          87,
+          194,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025445'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025446",
+      "name": "00025446",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          214,
+          85,
+          139,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025446'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00025447",
+      "name": "00025447",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          94,
+          143,
+          208,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00025447'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00037026",
+      "name": "00037026",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          119,
+          180,
+          132,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00037026'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00040471",
+      "name": "00040471",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          223,
+          107,
+          53,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00040471'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00040472",
+      "name": "00040472",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          219,
+          207,
+          78,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00040472'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00042807",
+      "name": "00042807",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          65,
+          84,
+          109,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00042807'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00042808",
+      "name": "00042808",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          130,
+          87,
+          194,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00042808'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00042809",
+      "name": "00042809",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          214,
+          85,
+          139,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00042809'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00043540",
+      "name": "00043540",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          94,
+          143,
+          208,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00043540'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00063755",
+      "name": "00063755",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          119,
+          180,
+          132,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00063755'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00063756",
+      "name": "00063756",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          223,
+          107,
+          53,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00063756'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00063757",
+      "name": "00063757",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          219,
+          207,
+          78,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00063757'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00063758",
+      "name": "00063758",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          65,
+          84,
+          109,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00063758'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "00063759",
+      "name": "00063759",
+      "x": "OBJECTID",
+      "y": "H003_calc_pct0003",
+      "colorType": "singleColor",
+      "stackedType": "sideBySide",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          130,
+          87,
+          194,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "rotated": false,
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "where": "COUNTYNS='00063759'",
+        "orderByFields": [
+          "OBJECTID ASC"
+        ]
       }
     }
   ],
@@ -138,8 +1287,8 @@
         }
       },
       "valueFormat": {
-        "type": "date",
-        "intlOptions": {}
+        "type": "category",
+        "characterLimit": 11
       },
       "lineSymbol": {
         "type": "esriSLS",

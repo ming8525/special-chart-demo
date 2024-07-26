@@ -16,7 +16,18 @@ const Root = (props) => {
 
   React.useEffect(() => {
     chartRef.current.config = config
-    chartRef.current.timeZone = 'Indian/Comoro'
+    chartRef.current.chartLimits = {
+      maxBarChartSeriesCount: 100,
+      maxBarThreePlusSeriesCountTotal: 2000,
+      maxBarThreePlusSeriesCountPerSeries: 100,
+      behaviorAfterLimit: 'reject'
+    }
+    chartRef.current.runtimeDataFilters = {
+      where: "((P0010001 IN (104357)))"
+    }
+    chartRef.current.selectionData = {
+      selectionItems: []
+  }
   }, [])
 
   return (
