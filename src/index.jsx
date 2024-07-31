@@ -16,6 +16,10 @@ const Root = (props) => {
 
   React.useEffect(() => {
     chartRef.current.config = config
+    chartRef.current.selectionData = {selectionItems: []}
+    setTimeout(() => {
+      chartRef.current.refresh(false, false)
+    }, 500)
   }, [])
 
   return (
@@ -24,7 +28,7 @@ const Root = (props) => {
         style={{ height: 600, width: 800 }}
         className='border'
       >
-        <arcgis-charts-pie-chart ref={chartRef} />
+        <arcgis-charts-histogram ref={chartRef} />
       </div>
     </div>
   )
