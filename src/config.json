@@ -2,7 +2,7 @@
   "dataSource": {
     "type": "layer",
     "layer": {
-      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+      "url": "https://services9.arcgis.com/LMjydzYxR6YFiqk8/arcgis/rest/services/03680577_test_layer2/FeatureServer/0",
       "layerType": "ArcGISFeatureLayer",
       "id": 0,
       "layerDefinition": {
@@ -11,85 +11,17 @@
     }
   },
   "version": "9.7.0",
-  "id": "widget_1-histogram",
+  "id": "widget_5-stacked-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
+  "rotated": false,
   "series": [
     {
-      "type": "histogramSeries",
-      "colorType": "singleColor",
-      "id": "Beat",
-      "name": "Beat",
-      "x": "Beat",
-      "binCount": 15,
-      "overlays": {
-        "type": "chartOverlays",
-        "mean": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              166,
-              206,
-              227,
-              255
-            ],
-            "width": 1
-          }
-        },
-        "median": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              51,
-              160,
-              44,
-              255
-            ],
-            "width": 1
-          }
-        },
-        "standardDeviation": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              178,
-              223,
-              138,
-              255
-            ],
-            "width": 1
-          }
-        },
-        "comparisonDistribution": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              227,
-              26,
-              28,
-              255
-            ],
-            "width": 1
-          }
-        }
-      },
-      "dataTransformationType": "none",
+      "type": "barSeries",
+      "id": "Field4",
+      "name": "Field4",
+      "x": "name",
+      "y": "Field4",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
@@ -130,11 +62,823 @@
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "top"
         }
       },
-      "rotated": false,
-      "dataTooltipVisible": true
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field3",
+      "name": "Field3",
+      "x": "name",
+      "y": "Field3",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          119,
+          180,
+          132,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field2",
+      "name": "Field2",
+      "x": "name",
+      "y": "Field2",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          223,
+          107,
+          53,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field1",
+      "name": "Field1",
+      "x": "name",
+      "y": "Field1",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          219,
+          207,
+          78,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field10",
+      "name": "Field10",
+      "x": "name",
+      "y": "Field10",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          65,
+          84,
+          109,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field11",
+      "name": "Field11",
+      "x": "name",
+      "y": "Field11",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          130,
+          87,
+          194,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field12",
+      "name": "Field12",
+      "x": "name",
+      "y": "Field12",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          214,
+          85,
+          139,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field13",
+      "name": "Field13",
+      "x": "name",
+      "y": "Field13",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          94,
+          143,
+          208,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field7",
+      "name": "Field7",
+      "x": "name",
+      "y": "Field7",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          119,
+          180,
+          132,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field6",
+      "name": "Field6",
+      "x": "name",
+      "y": "Field6",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          223,
+          107,
+          53,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field5",
+      "name": "Field5",
+      "x": "name",
+      "y": "Field5",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          219,
+          207,
+          78,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
+    },
+    {
+      "type": "barSeries",
+      "id": "Field",
+      "name": "Field",
+      "x": "name",
+      "y": "Field",
+      "fillSymbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+          65,
+          84,
+          109,
+          255
+        ],
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
+      "dataLabels": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+          "type": "esriTS",
+          "color": [
+            54,
+            54,
+            54,
+            255
+          ],
+          "font": {
+            "family": "Avenir Next",
+            "size": 10,
+            "style": "normal",
+            "weight": "normal",
+            "decoration": "none"
+          },
+          "horizontalAlignment": "center",
+          "verticalAlignment": "top"
+        }
+      },
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "orderByFields": [
+          "name ASC"
+        ],
+        "outFields": [
+          "name",
+          "Field4",
+          "Field3",
+          "Field2",
+          "Field1",
+          "Field10",
+          "Field11",
+          "Field12",
+          "Field13",
+          "Field7",
+          "Field6",
+          "Field5",
+          "Field"
+        ]
+      }
     }
   ],
   "axes": [
@@ -187,13 +931,8 @@
         }
       },
       "valueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "decimal",
-          "notation": "standard",
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 2
-        }
+        "type": "category",
+        "characterLimit": 11
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -270,9 +1009,9 @@
         "type": "number",
         "intlOptions": {
           "style": "decimal",
-          "notation": "standard",
+          "useGrouping": true,
           "minimumFractionDigits": 0,
-          "maximumFractionDigits": 0
+          "maximumFractionDigits": 3
         }
       },
       "lineSymbol": {
@@ -393,5 +1132,7 @@
       "text": ""
     },
     "position": "right"
-  }
+  },
+  "colorMatch": false,
+  "stackedType": "stacked"
 }

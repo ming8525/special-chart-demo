@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const toBeCopied = [
-    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/t9n', to: './arcgis-charts/t9n'}
+    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/assets', to: './arcgis-charts/assets'}
   ]
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },{
-                test: /\.(css|scss)$/,
+                test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
             {
