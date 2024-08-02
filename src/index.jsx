@@ -1,7 +1,7 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import { registerOAuthInfos } from './inentity-manager'
+import { useRegisterOAuth } from './inentity-manager'
 import config from './config.json'
 import './style.css'
 defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
@@ -16,26 +16,30 @@ const Chart = () => {
 
 const Root = (props) => {
   const clientIdRef = React.useRef()
-  const [ready, setReady] = React.useState(false)
+  const portalUrlRef = React.useRef()
+  const [oAuthState, handleSignIn] = useRegisterOAuth()
   const [activated, setActivated] = React.useState('second')
 
-  const handleSignIn = () => {
+  const handleClickSignIn = () => {
     const clientId = clientIdRef.current.value
-    if (clientId) {
-      registerOAuthInfos('https://essorg.maps.arcgis.com', clientId).then(() => {
-        setReady(true)
-      }, () => {
-        setReady(false)
-      })
-    }
+    const portalUrl = portalUrlRef.current.value
+    handleSignIn(clientId, portalUrl)
   }
 
   return (
     <div>
-        <input type='tex' value='https://essorg.maps.arcgis.com' disabled />
-        <input ref={clientIdRef} type='tex' />
-        <button onClick={handleSignIn}>Sign in</button>
-      {ready && (
+      {oAuthState === 'not_ready' && <div>
+        <label>
+          Portal URL:
+          <input style={{ width: 200 }} ref={portalUrlRef} type='text' value='https://essorg.maps.arcgis.com' disabled />
+        </label>
+        <label>
+          <a href='https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/' target='_blank'>ClientId:</a>
+          <input ref={clientIdRef} type='password' />
+        </label>
+        <button onClick={handleClickSignIn}>Sign in</button>
+      </div>}
+      {oAuthState === 'ready' && (
         <div className='container border'>
           <div
             className='header border-bottom'
@@ -68,7 +72,6 @@ const Root = (props) => {
               style={{ display: activated === 'second' ? 'block' : 'none' }}
             >
               <Chart />
-              test
             </div>
           </div>
         </div>
