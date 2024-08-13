@@ -1,81 +1,66 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
+import { ArcgisChartsBarChart } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import { useRegisterOAuth } from './inentity-manager'
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
 import config from './config.json'
+import fakerLayer from './faker-layer.json'
 import './style.css'
 defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
 const Chart = () => {
-  const chartRef = React.useRef()
+  const [layer, setLayer] = React.useState(null)
+  
   React.useEffect(() => {
-    chartRef.current.config = config
+    const layer = new FeatureLayer({
+      objectIdField: "FID",
+      fields: fakerLayer.fields,
+      source: fakerLayer.features
+    })
+    setLayer(layer)
   }, [])
-  return <arcgis-charts-bar-chart ref={chartRef} />
+
+  return <ArcgisChartsBarChart layer={layer} config={config} />
 }
 
 const Root = (props) => {
-  const clientIdRef = React.useRef()
-  const portalUrlRef = React.useRef()
-  const [oAuthState, handleSignIn] = useRegisterOAuth()
   const [activated, setActivated] = React.useState('second')
 
-  const handleClickSignIn = () => {
-    const clientId = clientIdRef.current.value
-    const portalUrl = portalUrlRef.current.value
-    handleSignIn(clientId, portalUrl)
-  }
-
   return (
-    <div>
-      {oAuthState === 'not_ready' && <div>
-        <label>
-          Portal URL:
-          <input style={{ width: 200 }} ref={portalUrlRef} type='text' value='https://essorg.maps.arcgis.com' disabled />
-        </label>
-        <label>
-          <a href='https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/' target='_blank'>ClientId:</a>
-          <input ref={clientIdRef} type='password' />
-        </label>
-        <button onClick={handleClickSignIn}>Sign in</button>
-      </div>}
-      {oAuthState === 'ready' && (
-        <div className='container border'>
-          <div
-            className='header border-bottom'
-            style={{ width: '100%', display: 'flex' }}
-          >
-            <button
-              className={activated === 'first' ? 'activated' : ''}
-              style={{ width: '50%' }}
-              onClick={() => setActivated('first')}
-            >
-              First
-            </button>
-            <button
-              className={activated === 'second' ? 'activated' : ''}
-              style={{ width: '50%' }}
-              onClick={() => setActivated('second')}
-            >
-              Second
-            </button>
-          </div>
-          <div className='contents'>
-            <div
-              className='content first-content'
-              style={{ display: activated === 'first' ? 'block' : 'none' }}
-            >
-              Please switch to the second tab content
-            </div>
-            <div
-              className='content second-content'
-              style={{ display: activated === 'second' ? 'block' : 'none' }}
-            >
-              <Chart />
-            </div>
-          </div>
+    <div className='container border'>
+      <div
+        className='header border-bottom'
+        style={{ width: '100%', display: 'flex' }}
+      >
+        <button
+          className={activated === 'first' ? 'activated' : ''}
+          style={{ width: '50%' }}
+          onClick={() => setActivated('first')}
+        >
+          First
+        </button>
+        <button
+          className={activated === 'second' ? 'activated' : ''}
+          style={{ width: '50%' }}
+          onClick={() => setActivated('second')}
+        >
+          Second
+        </button>
+      </div>
+      <div className='contents'>
+        <div
+          className='content first-content'
+          style={{ display: activated === 'first' ? 'block' : 'none' }}
+        >
+          Please switch to the second tab content
         </div>
-      )}
+        <div
+          className='content second-content'
+          style={{ display: activated === 'second' ? 'block' : 'none' }}
+        >
+          <Chart />
+        </div>
+      </div>
     </div>
   )
 }
