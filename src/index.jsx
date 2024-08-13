@@ -22,6 +22,7 @@ const Root = (props) => {
     createSubGroupSubLayer(SubGroupLayerURL).then((layer) => {
       chartRef.current.layer = layer
       chartRef.current.config = config
+      chartRef.current.returnSelectionOIDs = false
     })
   }, [])
 
