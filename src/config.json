@@ -1,15 +1,4 @@
 {
-  "dataSource": {
-    "type": "layer",
-    "layer": {
-      "url": "https://services9.arcgis.com/LMjydzYxR6YFiqk8/arcgis/rest/services/03680577_test_layer2/FeatureServer/0",
-      "layerType": "ArcGISFeatureLayer",
-      "id": 0,
-      "layerDefinition": {
-        "id": 0
-      }
-    }
-  },
   "version": "9.7.0",
   "id": "widget_5-stacked-column",
   "type": "chart",
