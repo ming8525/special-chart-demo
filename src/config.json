@@ -11,17 +11,17 @@
     }
   },
   "version": "9.4.0",
-  "id": "widget_1-column",
+  "id": "widget_2-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
   "rotated": false,
   "series": [
     {
       "type": "barSeries",
-      "id": "FID",
-      "name": "FID",
+      "id": "District",
+      "name": "District Alias",
       "x": "Year",
-      "y": "count_of_FID",
+      "y": "sum_of_District",
       "colorType": "singleColor",
       "stackedType": "sideBySide",
       "fillSymbol": {
@@ -68,6 +68,7 @@
         }
       },
       "rotated": false,
+      "hideOversizedStackedLabels": false,
       "dataTooltipVisible": true,
       "query": {
         "groupByFieldsForStatistics": [
@@ -75,13 +76,13 @@
         ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID"
+            "statisticType": "sum",
+            "onStatisticField": "District",
+            "outStatisticFieldName": "sum_of_District"
           }
         ],
         "orderByFields": [
-          "Year DESC"
+          "Year ASC"
         ]
       }
     }
@@ -149,6 +150,17 @@
           255
         ],
         "width": 1
+      },
+      "grid": {
+        "type": "esriSLS",
+        "style": "esriSLSDash",
+        "color": [
+          213,
+          213,
+          213,
+          255
+        ],
+        "width": 0
       }
     },
     {
@@ -218,6 +230,17 @@
           255
         ],
         "width": 1
+      },
+      "grid": {
+        "type": "esriSLS",
+        "style": "esriSLSDash",
+        "color": [
+          213,
+          213,
+          213,
+          255
+        ],
+        "width": 0
       }
     }
   ],
