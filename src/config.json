@@ -1,29 +1,84 @@
 {
-  "dataSource": {
-    "type": "layer",
-    "layer": {
-      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
-      "layerType": "ArcGISFeatureLayer",
-      "id": 0,
-      "layerDefinition": {
-        "id": 0
-      }
-    }
-  },
   "version": "9.4.0",
-  "id": "widget_2-column",
+  "id": "widget_2-histogram",
   "type": "chart",
   "sortLabelsBy": "originalValue",
-  "rotated": false,
   "series": [
     {
-      "type": "barSeries",
-      "id": "District",
-      "name": "District Alias",
-      "x": "Year",
-      "y": "sum_of_District",
+      "type": "histogramSeries",
       "colorType": "singleColor",
-      "stackedType": "sideBySide",
+      "id": "width",
+      "name": "width",
+      "x": "width",
+      "binCount": 15,
+      "overlays": {
+        "type": "chartOverlays",
+        "mean": {
+          "type": "chartOverlay",
+          "visible": true,
+          "created": false,
+          "symbol": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              166,
+              206,
+              227,
+              255
+            ],
+            "width": 1
+          }
+        },
+        "median": {
+          "type": "chartOverlay",
+          "visible": true,
+          "created": false,
+          "symbol": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              51,
+              160,
+              44,
+              255
+            ],
+            "width": 1
+          }
+        },
+        "standardDeviation": {
+          "type": "chartOverlay",
+          "visible": true,
+          "created": false,
+          "symbol": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              178,
+              223,
+              138,
+              255
+            ],
+            "width": 1
+          }
+        },
+        "comparisonDistribution": {
+          "type": "chartOverlay",
+          "visible": true,
+          "created": false,
+          "symbol": {
+            "type": "esriSLS",
+            "style": "esriSLSDash",
+            "color": [
+              227,
+              26,
+              28,
+              255
+            ],
+            "width": 1
+          }
+        }
+      },
+      "dataTransformationType": "none",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
@@ -64,27 +119,11 @@
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "top"
+          "verticalAlignment": "middle"
         }
       },
       "rotated": false,
-      "hideOversizedStackedLabels": false,
-      "dataTooltipVisible": true,
-      "query": {
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
-        "outStatistics": [
-          {
-            "statisticType": "sum",
-            "onStatisticField": "District",
-            "outStatisticFieldName": "sum_of_District"
-          }
-        ],
-        "orderByFields": [
-          "Year ASC"
-        ]
-      }
+      "dataTooltipVisible": true
     }
   ],
   "axes": [
@@ -137,8 +176,13 @@
         }
       },
       "valueFormat": {
-        "type": "category",
-        "characterLimit": 11
+        "type": "number",
+        "intlOptions": {
+          "style": "decimal",
+          "notation": "standard",
+          "minimumFractionDigits": 0,
+          "maximumFractionDigits": 2
+        }
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -215,7 +259,7 @@
         "type": "number",
         "intlOptions": {
           "style": "decimal",
-          "useGrouping": true,
+          "notation": "standard",
           "minimumFractionDigits": 0,
           "maximumFractionDigits": 0
         }

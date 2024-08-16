@@ -1,28 +1,28 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import { applyPolyfills, defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import defaultConfig from './config.json'
-import lodash from 'lodash'
+import SuptypeGroupLayer from '@arcgis/core/layers/SubtypeGroupLayer'
+import config from './config.json'
 import './style.css'
 
 applyPolyfills().then(() => {
   defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 })
 
+const SubGroupLayerURL = 'https://services1.arcgis.com/oC086ufSSQ6Avnw2/arcgis/rest/services/Subtype_group_layer_unique_value_using_material_and_width_field1_WFL1/FeatureServer/0'
+
+const createSubGroupSubLayer = (url) => {
+  return new SuptypeGroupLayer({ url })
+}
+
 const Root = (props) => {
   const chartRef = React.useRef()
-  const [config, setConfig] = React.useState(defaultConfig)
 
   React.useEffect(() => {
+    const layer = createSubGroupSubLayer(SubGroupLayerURL)
+    chartRef.current.layer = layer
     chartRef.current.config = config
-  }, [config])
-
-  const handleClick = () => {
-    const isASC = config.series[0].query.orderByFields[0].includes('ASC')
-    const orderByFields = [`Year ${isASC ? 'DESC' : 'ASC'}`]
-    const newConfig = lodash.set(config, 'series[0].query.orderByFields', orderByFields)
-    setConfig(lodash.cloneDeep(newConfig))
-  }
+  }, [])
 
   return (
     <div className='d-flex'>
@@ -30,9 +30,8 @@ const Root = (props) => {
         style={{ height: 600, width: 600 }}
         className='border'
       >
-        <arcgis-charts-bar-chart ref={chartRef} />
+        <arcgis-charts-histogram ref={chartRef} />
       </div>
-      <button onClick={handleClick}>{config.series[0].query.orderByFields[0]}</button>
     </div>
   )
 }
