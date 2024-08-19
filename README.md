@@ -4,7 +4,7 @@ This repository is used to provide some demos about arcgis charts problems that 
 
 # How to start
 
-- Clone this repo and switch to branch `f-enterprise-11.4-histogram`
+- Clone this repo and switch to branch `f-enterprise-11.4-returnSelectionOIDs`
 
 - Run `npm ci`
 
