@@ -28,8 +28,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@arcgis/charts-components": "https:///olympus.esri.com:443/artifactory/api/npm/npm-repo/@arcgis/charts-components/-/@arcgis/charts-components-4.30.2-enterprise-11.4.0.1.tgz",
-    "@arcgis/core": "^4.30.0-next.20240416",
+    "@arcgis/charts-components-react": "4.31.0-next.49",
+    "@arcgis/core": "next",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

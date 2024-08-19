@@ -1,5 +1,6 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
+import { ArcgisChartsBarChart } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import SuptypeGroupLayer from '@arcgis/core/layers/SubtypeGroupLayer'
 import config from './config.json'
@@ -17,19 +18,17 @@ const createSubGroupSubLayer = (url) => {
 }
 
 const Root = (props) => {
-  const chartRef = React.useRef()
+  const [layer, setLayer] = React.useState(null)
 
   React.useEffect(() => {
     createSubGroupSubLayer(SubGroupLayerURL).then((layer) => {
-      chartRef.current.layer = layer
-      chartRef.current.config = config
-      chartRef.current.returnSelectionOIDs = true
+      setLayer(layer)
     })
   }, [])
 
   return (
     <div style={{ height: 600, width: 600 }} className='border'>
-      <arcgis-charts-bar-chart ref={chartRef} />
+      <ArcgisChartsBarChart layer={layer} config={config} />
     </div>
   )
 }
