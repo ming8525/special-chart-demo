@@ -1,84 +1,18 @@
 {
-  "version": "9.4.0",
-  "id": "widget_2-histogram",
+  "version": "9.7.0",
+  "id": "widget_1-column",
   "type": "chart",
   "sortLabelsBy": "originalValue",
+  "rotated": false,
+  "colorMatch": false,
+  "stackedType": "sideBySide",
   "series": [
     {
-      "type": "histogramSeries",
-      "colorType": "singleColor",
-      "id": "width",
-      "name": "width",
-      "x": "width",
-      "binCount": 15,
-      "overlays": {
-        "type": "chartOverlays",
-        "mean": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              166,
-              206,
-              227,
-              255
-            ],
-            "width": 1
-          }
-        },
-        "median": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              51,
-              160,
-              44,
-              255
-            ],
-            "width": 1
-          }
-        },
-        "standardDeviation": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              178,
-              223,
-              138,
-              255
-            ],
-            "width": 1
-          }
-        },
-        "comparisonDistribution": {
-          "type": "chartOverlay",
-          "visible": true,
-          "created": false,
-          "symbol": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              227,
-              26,
-              28,
-              255
-            ],
-            "width": 1
-          }
-        }
-      },
-      "dataTransformationType": "none",
+      "type": "barSeries",
+      "id": "OBJECTID",
+      "name": "OBJECTID",
+      "x": "TYPE",
+      "y": "count_of_OBJECTID",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
@@ -119,11 +53,26 @@
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "top"
         }
       },
-      "rotated": false,
-      "dataTooltipVisible": true
+      "hideOversizedStackedLabels": false,
+      "dataTooltipVisible": true,
+      "query": {
+        "groupByFieldsForStatistics": [
+          "TYPE"
+        ],
+        "outStatistics": [
+          {
+            "statisticType": "count",
+            "onStatisticField": "OBJECTID",
+            "outStatisticFieldName": "count_of_OBJECTID"
+          }
+        ],
+        "orderByFields": [
+          "TYPE ASC"
+        ]
+      }
     }
   ],
   "axes": [
@@ -176,13 +125,8 @@
         }
       },
       "valueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "decimal",
-          "notation": "standard",
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 2
-        }
+        "type": "category",
+        "characterLimit": 11
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -259,7 +203,7 @@
         "type": "number",
         "intlOptions": {
           "style": "decimal",
-          "notation": "standard",
+          "useGrouping": true,
           "minimumFractionDigits": 0,
           "maximumFractionDigits": 0
         }
