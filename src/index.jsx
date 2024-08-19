@@ -12,16 +12,20 @@ applyPolyfills().then(() => {
 const SubGroupLayerURL = 'https://services1.arcgis.com/oC086ufSSQ6Avnw2/arcgis/rest/services/Subtype_group_layer_unique_value_using_material_and_width_field1_WFL1/FeatureServer/0'
 
 const createSubGroupSubLayer = (url) => {
-  return new SuptypeGroupLayer({ url })
+  const layer = new SuptypeGroupLayer({ url })
+  return layer.loadAll(() => {
+    return layer
+  })
 }
 
 const Root = (props) => {
   const chartRef = React.useRef()
 
   React.useEffect(() => {
-    const layer = createSubGroupSubLayer(SubGroupLayerURL)
-    chartRef.current.layer = layer
-    chartRef.current.config = config
+    createSubGroupSubLayer(SubGroupLayerURL).then((layer) => {
+      chartRef.current.layer = layer
+      chartRef.current.config = config
+    })
   }, [])
 
   return (
