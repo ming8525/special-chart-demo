@@ -28,7 +28,7 @@ const Root = (props) => {
 
   return (
     <div style={{ height: 600, width: 600 }} className='border'>
-      <ArcgisChartsBarChart layer={layer} config={config} />
+      <ArcgisChartsBarChart layer={layer} config={config} returnSelectionOIDs={true} />
     </div>
   )
 }
