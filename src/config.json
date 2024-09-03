@@ -1,25 +1,33 @@
 {
-  "version": "9.7.0",
-  "id": "widget_1-column",
+  "dataSource": {
+    "type": "layer",
+    "layer": {
+      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+      "layerType": "ArcGISFeatureLayer",
+      "id": 0,
+      "layerDefinition": {
+        "id": 0
+      }
+    }
+  },
+  "version": "15.0.0",
+  "id": "widget_4-column",
   "type": "chart",
-  "sortLabelsBy": "originalValue",
   "rotated": false,
-  "colorMatch": false,
-  "stackedType": "sideBySide",
   "series": [
     {
       "type": "barSeries",
-      "id": "OBJECTID",
-      "name": "OBJECTID",
-      "x": "TYPE",
-      "y": "count_of_OBJECTID",
+      "id": "value",
+      "name": "Sum of Value",
+      "x": "name",
+      "y": "value",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
         "color": [
-          94,
-          143,
-          208,
+          119,
+          180,
+          132,
           255
         ],
         "outline": {
@@ -59,18 +67,22 @@
       "hideOversizedStackedLabels": false,
       "dataTooltipVisible": true,
       "query": {
-        "groupByFieldsForStatistics": [
-          "TYPE"
-        ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "OBJECTID",
-            "outStatisticFieldName": "count_of_OBJECTID"
+            "statisticType": "sum",
+            "onStatisticField": "District",
+            "outStatisticFieldName": "District"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Ward",
+            "outStatisticFieldName": "Ward"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Community",
+            "outStatisticFieldName": "Community"
           }
-        ],
-        "orderByFields": [
-          "TYPE ASC"
         ]
       }
     }
@@ -326,5 +338,14 @@
       "text": ""
     },
     "position": "right"
+  },
+  "colorMatch": false,
+  "stackedType": "sideBySide",
+  "orderOptions": {
+    "data": {
+      "orderType": "arcgis-charts-category",
+      "orderBy": "ASC",
+      "preferLabel": false
+    }
   }
 }

@@ -2,33 +2,27 @@ import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import { ArcgisChartsBarChart } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import SuptypeGroupLayer from '@arcgis/core/layers/SubtypeGroupLayer'
+import { JsonEditor } from './json-editor'
 import config from './config.json'
 import './style.css'
 
 defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
-const SubGroupLayerURL = 'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/MarineLife/FeatureServer/0'
-
-const createSubGroupSubLayer = (url) => {
-  const layer = new SuptypeGroupLayer({ url })
-  return layer.loadAll().then(() => {
-    return layer.sublayers.find((layer) => layer.title === 'Echinoderm')
-  })
-}
 
 const Root = (props) => {
-  const [layer, setLayer] = React.useState(null)
+  const editorRef = React.useRef(null)
+  const [webChart, setWebChart] = React.useState()
 
-  React.useEffect(() => {
-    createSubGroupSubLayer(SubGroupLayerURL).then((layer) => {
-      setLayer(layer)
-    })
-  }, [])
+  const handleUpdate = () => {
+    setWebChart(editorRef.current.get())
+  }
 
   return (
-    <div style={{ height: 600, width: 600 }} className='border'>
-      <ArcgisChartsBarChart layer={layer} config={config} returnSelectionOIDs={true} />
+    <div style={{ height: 800, width: 1600, display: 'flex' }}>
+      <ArcgisChartsBarChart config={webChart} style={{ height: 800, width: 800 }} className='border' />
+      <div style={{ height: 800, width: 800 }} className='border'>
+        <JsonEditor ref={editorRef} defaultValue={config} onUpdate={handleUpdate} />
+      </div>
     </div>
   )
 }
