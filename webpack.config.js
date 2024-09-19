@@ -2,10 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const toBeCopied = [
-    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/t9n', to: './arcgis-charts/t9n'}
-  ]
-
+const toBeCopied = [{ from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/assets', to: './arcgis-charts/assets'}
+    
+]
 module.exports = {
     entry: path.join(__dirname, "src", "index.jsx"),
     output: {
