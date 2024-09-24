@@ -13,13 +13,14 @@
 }
 
 #app {
+  position: relative;
   width: 1280px;
   height: 800px;
 }
 
 .container {
-  min-width: 16px;
-  min-height: 148px;
+  min-width: 100px;
+  min-height: 100px;
   position: absolute;
   left: 10.8%;
   top: 10.5%;
