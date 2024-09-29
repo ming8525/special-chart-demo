@@ -1,33 +1,30 @@
 {
-  "dataSource": {
-    "type": "layer",
-    "layer": {
-      "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
-      "layerType": "ArcGISFeatureLayer",
-      "id": 0,
-      "layerDefinition": {
-        "id": 0
-      }
+  "iLayer": {
+    "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+    "layerType": "ArcGISFeatureLayer",
+    "id": 0,
+    "layerDefinition": {
+      "id": 0
     }
   },
-  "version": "15.0.0",
-  "id": "widget_4-column",
+  "version": "17.0.0",
+  "id": "widget_1-column",
   "type": "chart",
   "rotated": false,
   "series": [
     {
       "type": "barSeries",
-      "id": "value",
-      "name": "Sum of Value",
-      "x": "name",
-      "y": "value",
+      "id": "FID",
+      "name": "FID",
+      "x": "Date",
+      "y": "count_of_FID",
       "fillSymbol": {
         "type": "esriSFS",
         "style": "esriSFSSolid",
         "color": [
-          119,
-          180,
-          132,
+          94,
+          143,
+          208,
           255
         ],
         "outline": {
@@ -64,24 +61,23 @@
           "verticalAlignment": "top"
         }
       },
+      "binTemporalData": true,
       "hideOversizedStackedLabels": false,
       "dataTooltipVisible": true,
+      "timeIntervalSize": 1,
+      "timeIntervalUnits": "esriTimeUnitsMonths",
+      "timeAggregationType": "equalIntervalsFromStartTime",
+      "trimIncompleteTimeInterval": false,
+      "nullPolicy": "null",
       "query": {
+        "groupByFieldsForStatistics": [
+          "Date"
+        ],
         "outStatistics": [
           {
-            "statisticType": "sum",
-            "onStatisticField": "District",
-            "outStatisticFieldName": "District"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Ward",
-            "outStatisticFieldName": "Ward"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Community",
-            "outStatisticFieldName": "Community"
+            "statisticType": "count",
+            "onStatisticField": "FID",
+            "outStatisticFieldName": "count_of_FID"
           }
         ]
       }
@@ -137,8 +133,8 @@
         }
       },
       "valueFormat": {
-        "type": "category",
-        "characterLimit": 11
+        "type": "date",
+        "intlOptions": {}
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -269,7 +265,7 @@
         "decoration": "none"
       },
       "horizontalAlignment": "center",
-      "text": ""
+      "text": "Count of Date"
     }
   },
   "footer": {
@@ -342,10 +338,8 @@
   "colorMatch": false,
   "stackedType": "sideBySide",
   "orderOptions": {
-    "data": {
-      "orderType": "arcgis-charts-category",
-      "orderBy": "ASC",
-      "preferLabel": false
-    }
+    "orderByFields": [
+      "Date ASC"
+    ]
   }
 }
