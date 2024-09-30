@@ -8,9 +8,11 @@
     }
   },
   "version": "17.0.0",
-  "id": "widget_1-column",
+  "id": "widget_12-column",
   "type": "chart",
   "rotated": false,
+  "colorMatch": true,
+  "stackedType": "sideBySide",
   "series": [
     {
       "type": "barSeries",
@@ -61,14 +63,9 @@
           "verticalAlignment": "top"
         }
       },
-      "binTemporalData": true,
+      "binTemporalData": false,
       "hideOversizedStackedLabels": false,
       "dataTooltipVisible": true,
-      "timeIntervalSize": 1,
-      "timeIntervalUnits": "esriTimeUnitsMonths",
-      "timeAggregationType": "equalIntervalsFromStartTime",
-      "trimIncompleteTimeInterval": false,
-      "nullPolicy": "null",
       "query": {
         "groupByFieldsForStatistics": [
           "Date"
@@ -123,7 +120,7 @@
           ],
           "font": {
             "family": "Avenir Next",
-            "size": 14,
+            "size": 12,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
@@ -198,7 +195,7 @@
           ],
           "font": {
             "family": "Avenir Next",
-            "size": 14,
+            "size": 12,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
@@ -259,7 +256,7 @@
       ],
       "font": {
         "family": "Avenir Next",
-        "size": 24,
+        "size": 16,
         "style": "normal",
         "weight": "normal",
         "decoration": "none"
@@ -281,7 +278,7 @@
       ],
       "font": {
         "family": "Avenir Next",
-        "size": 14,
+        "size": 12,
         "style": "normal",
         "weight": "normal",
         "decoration": "none"
@@ -292,7 +289,7 @@
   },
   "legend": {
     "type": "chartLegend",
-    "visible": false,
+    "visible": true,
     "title": {
       "type": "chartText",
       "visible": true,
@@ -306,7 +303,7 @@
         ],
         "font": {
           "family": "Avenir Next",
-          "size": 20,
+          "size": 14,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
@@ -325,7 +322,7 @@
       ],
       "font": {
         "family": "Avenir Next",
-        "size": 14,
+        "size": 12,
         "style": "normal",
         "weight": "normal",
         "decoration": "none"
@@ -333,10 +330,8 @@
       "horizontalAlignment": "center",
       "text": ""
     },
-    "position": "right"
+    "position": "bottom"
   },
-  "colorMatch": false,
-  "stackedType": "sideBySide",
   "orderOptions": {
     "orderByFields": [
       "Date ASC"
