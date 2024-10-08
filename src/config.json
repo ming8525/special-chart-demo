@@ -8,38 +8,28 @@
     }
   },
   "version": "17.0.0",
-  "id": "widget_12-column",
+  "id": "widget_2-line",
   "type": "chart",
   "rotated": false,
   "colorMatch": true,
   "stackedType": "sideBySide",
   "series": [
     {
-      "type": "barSeries",
+      "type": "lineSeries",
       "id": "FID",
       "name": "FID",
-      "x": "Date",
+      "x": "Year",
       "y": "count_of_FID",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
         "color": [
           94,
           143,
           208,
           255
         ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
+        "width": 2
       },
       "dataLabels": {
         "type": "chartText",
@@ -64,11 +54,35 @@
         }
       },
       "binTemporalData": false,
-      "hideOversizedStackedLabels": false,
+      "lineSmoothed": false,
+      "showArea": false,
+      "markerVisible": true,
+      "markerSymbol": {
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
+        "color": [
+          94,
+          143,
+          208,
+          255
+        ],
+        "size": 6,
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            130,
+            130,
+            130,
+            255
+          ],
+          "width": 0
+        }
+      },
       "dataTooltipVisible": true,
       "query": {
         "groupByFieldsForStatistics": [
-          "Date"
+          "Year"
         ],
         "outStatistics": [
           {
@@ -130,8 +144,13 @@
         }
       },
       "valueFormat": {
-        "type": "date",
-        "intlOptions": {}
+        "type": "number",
+        "intlOptions": {
+          "style": "decimal",
+          "useGrouping": false,
+          "minimumFractionDigits": 0,
+          "maximumFractionDigits": 0
+        }
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -262,7 +281,7 @@
         "decoration": "none"
       },
       "horizontalAlignment": "center",
-      "text": "Count of Date"
+      "text": "Count of Year Alias"
     }
   },
   "footer": {
@@ -334,7 +353,7 @@
   },
   "orderOptions": {
     "orderByFields": [
-      "Date ASC"
+      "Year ASC"
     ]
   }
 }
