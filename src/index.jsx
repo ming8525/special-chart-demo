@@ -1,8 +1,7 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { ArcgisChartsBarChart, ArcgisChartsLineChart, ArcgisChartsPieChart } from '@arcgis/charts-components-react'
+import { ArcgisChartsLineChart } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import { JsonEditor } from './json-editor'
 import config from './config.json'
 import './style.css'
 
@@ -11,21 +10,31 @@ defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
 const Root = (props) => {
   const editorRef = React.useRef(null)
-  const [webChart, setWebChart] = React.useState()
-  const seriesType = webChart?.series[0]?.type ?? 'barSeries'
+  const [selectionData, setSelectionData] = React.useState({ selectionItems: [] })
 
-  const handleUpdate = () => {
-    setWebChart(editorRef.current.get())
+  const handleUpdateSelectionData = () => {
+    setSelectionData({
+      selectionItems: [
+        {
+          Date: 1266854400000,
+          count_of_FID: 4
+        }
+      ]
+    })
+  }
+
+  const handleDataProcessComplete = () => {
+    console.log('The arcgisDataProcessComplete event was triggered.')
   }
 
   return (
-    <div style={{ height: 800, width: 1600, display: 'flex' }}>
-      {seriesType === 'barSeries' && <ArcgisChartsBarChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'lineSeries' && <ArcgisChartsLineChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'lpieSeries' && <ArcgisChartsPieChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      <div style={{ height: 800, width: 800 }} className='border'>
-        <JsonEditor ref={editorRef} defaultValue={config} onUpdate={handleUpdate} />
-      </div>
+    <div style={{ height: 500, width: 500 }}>
+      <ArcgisChartsLineChart
+        className='border'
+        config={config}
+        selectionData={selectionData}
+        onArcgisDataProcessComplete={handleDataProcessComplete} />
+      <button onClick={handleUpdateSelectionData}>Update selectionData</button>
     </div>
   )
 }
