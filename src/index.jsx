@@ -1,6 +1,6 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { ArcgisChartsBarChart, ArcgisChartsLineChart, ArcgisChartsPieChart } from '@arcgis/charts-components-react'
+import { ArcgisChartsBarChart, ArcgisChartsLineChart, ArcgisChartsPieChart, ArcgisChartsHistogram, ArcgisChartsScatterPlot } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import { JsonEditor } from './json-editor'
 import config from './config.json'
@@ -22,7 +22,9 @@ const Root = (props) => {
     <div style={{ height: 800, width: 1600, display: 'flex' }}>
       {seriesType === 'barSeries' && <ArcgisChartsBarChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
       {seriesType === 'lineSeries' && <ArcgisChartsLineChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'lpieSeries' && <ArcgisChartsPieChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'pieSeries' && <ArcgisChartsPieChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'scatterSeries' && <ArcgisChartsScatterPlot config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'histogramSeries' && <ArcgisChartsHistogram config={webChart} style={{ height: 800, width: 800 }} className='border' />}
       <div style={{ height: 800, width: 800 }} className='border'>
         <JsonEditor ref={editorRef} defaultValue={config} onUpdate={handleUpdate} />
       </div>
