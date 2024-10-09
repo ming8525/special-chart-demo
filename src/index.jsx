@@ -9,15 +9,14 @@ defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
 
 const Root = (props) => {
-  const editorRef = React.useRef(null)
   const [selectionData, setSelectionData] = React.useState({ selectionItems: [] })
 
   const handleUpdateSelectionData = () => {
     setSelectionData({
       selectionItems: [
         {
-          Date: 1266854400000,
-          count_of_FID: 4
+          count_of_FID: 31,
+          Year: 2011
         }
       ]
     })
