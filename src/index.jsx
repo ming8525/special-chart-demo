@@ -1,35 +1,32 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { ArcgisChartsBarChart } from '@arcgis/charts-components-react'
+import { ArcgisChartsBarChart, ArcgisChartsLineChart, ArcgisChartsPieChart, ArcgisChartsHistogram, ArcgisChartsScatterPlot } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
+import { JsonEditor } from './json-editor'
 import config from './config.json'
-import fakerLayer from './faker-layer.json'
-import Resizable from './resizable'
 import './style.css'
 defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
-const Chart = () => {
-  const [layer, setLayer] = React.useState(null)
-
-  React.useEffect(() => {
-    const layer = new FeatureLayer({
-      objectIdField: "FID",
-      fields: fakerLayer.fields,
-      source: fakerLayer.features
-    })
-    setLayer(layer)
-  }, [])
-
-  return <ArcgisChartsBarChart layer={layer} config={config} />
-}
 
 const Root = (props) => {
+  const editorRef = React.useRef(null)
+  const [webChart, setWebChart] = React.useState()
+  const seriesType = webChart?.series[0]?.type ?? 'barSeries'
+
+  const handleUpdate = () => {
+    setWebChart(editorRef.current.get())
+  }
+
   return (
-    <div className='container border'>
-      <Resizable>
-        <Chart />
-      </Resizable>
+    <div style={{ height: 700, width: 1400, display: 'flex' }}>
+      {seriesType === 'barSeries' && <ArcgisChartsBarChart config={webChart} style={{ width: 700 }} className='border' />}
+      {seriesType === 'lineSeries' && <ArcgisChartsLineChart config={webChart} style={{ width: 700 }} className='border' />}
+      {seriesType === 'pieSeries' && <ArcgisChartsPieChart config={webChart} style={{ width: 700 }} className='border' />}
+      {seriesType === 'scatterSeries' && <ArcgisChartsScatterPlot config={webChart} style={{ width: 700 }} className='border' />}
+      {seriesType === 'histogramSeries' && <ArcgisChartsHistogram config={webChart} style={{ width: 700 }} className='border' />}
+      <div style={{ height: 700, width: 700 }} className='border'>
+        <JsonEditor ref={editorRef} defaultValue={config} onUpdate={handleUpdate} />
+      </div>
     </div>
   )
 }
