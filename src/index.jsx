@@ -8,37 +8,31 @@ import './style.css'
 
 defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
+const chartLimits = {
+  maxCategoryCount: 3,
+  behaviorAfterLimit: 'renderUpToTheLimit'
+}
 
 const Root = (props) => {
   const editorRef = React.useRef(null)
-  const [chartLimits, setChartLimits] = React.useState({
-    maxCategoryCount: 3,
-    behaviorAfterLimit: 'renderUpToTheLimit'
-  })
+
   const [webChart, setWebChart] = React.useState()
   const seriesType = webChart?.series[0]?.type ?? 'barSeries'
 
   const handleUpdate = () => {
     setWebChart(editorRef.current.get())
   }
-  const handleUpdateChartLimits = () => {
-    setChartLimits({
-      maxCategoryCount: 2,
-      behaviorAfterLimit: 'renderUpToTheLimit'
-    })
-  }
 
   return (
     <div style={{ height: 800, width: 1600, display: 'flex' }}>
       {seriesType === 'barSeries' && <ArcgisChartsBarChart chartLimits={chartLimits} config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'lineSeries' && <ArcgisChartsLineChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'pieSeries' && <ArcgisChartsPieChart config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'scatterSeries' && <ArcgisChartsScatterPlot config={webChart} style={{ height: 800, width: 800 }} className='border' />}
-      {seriesType === 'histogramSeries' && <ArcgisChartsHistogram config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'lineSeries' && <ArcgisChartsLineChart chartLimits={chartLimits} config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'pieSeries' && <ArcgisChartsPieChart chartLimits={chartLimits} config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'scatterSeries' && <ArcgisChartsScatterPlot chartLimits={chartLimits} config={webChart} style={{ height: 800, width: 800 }} className='border' />}
+      {seriesType === 'histogramSeries' && <ArcgisChartsHistogram chartLimits={chartLimits} config={webChart} style={{ height: 800, width: 800 }} className='border' />}
       <div style={{ height: 800, width: 800 }} className='border'>
         <JsonEditor ref={editorRef} defaultValue={config} onUpdate={handleUpdate} />
       </div>
-      <button onClick={handleUpdateChartLimits}>UpdateChartLimits</button>
     </div>
   )
 }
