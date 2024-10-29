@@ -1,39 +1,57 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { ArcgisChartsBarChart } from '@arcgis/charts-components-react'
+import WebMap from '@arcgis/core/WebMap'
+import { ArcgisChartsLineChart } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import config from './config.json'
 import './style.css'
 
 defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
+const CacheLayers = {}
+const createMapLayer = (portalUrl, itemId) => {
+  return new Promise((resolve, reject) => {
+    if (!portalUrl || !itemId) return reject()
+    if (!CacheLayers[itemId]) {
+      const webMap = new WebMap({
+        portalItem: {
+          id: itemId,
+          portal: portalUrl
+        }
+      })
+      webMap.loadAll().then(() => {
+        const layers = webMap.layers.toArray()
+        const layer = layers[0]
+        CacheLayers[itemId] = layer
+        resolve(layer)
+      })
+    } else {
+      resolve(CacheLayers[itemId])
+    }
+  })
+}
+const portalUrl = 'https://www.arcgis.com/'
+const itemId = '9de91931156e4c9b97004a96a60e206d'
 
 const Root = (props) => {
-  const [selectionData, setSelectionData] = React.useState({ selectionItems: [] })
+  const [layer, setLayer] = React.useState(null)
 
-  const handleUpdateSelectionData = () => {
-    setSelectionData({
-      selectionItems: [
-        {
-          count_of_FID: 31,
-          Year: 2011
-        }
-      ]
+  React.useEffect(() => {
+    createMapLayer(portalUrl, itemId).then((layer) => {
+      setLayer(layer)
     })
-  }
-
-  const handleDataProcessComplete = () => {
-    console.log('The arcgisDataProcessComplete event was triggered.')
-  }
+  }, [])
 
   return (
     <div style={{ height: 500, width: 500 }}>
-      <ArcgisChartsBarChart
-        className='border'
-        config={config}
-        selectionData={selectionData}
-        onArcgisDataProcessComplete={handleDataProcessComplete} />
-      <button onClick={handleUpdateSelectionData}>Update selectionData</button>
+      {layer && (
+        <ArcgisChartsLineChart
+          className='border'
+          config={config}
+          layer={layer}
+          usePopupTemplateFieldsInfo={true}
+        />
+      )}
     </div>
   )
 }

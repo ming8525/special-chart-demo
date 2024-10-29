@@ -1,49 +1,29 @@
 {
-  "iLayer": {
-    "url": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
-    "layerType": "ArcGISFeatureLayer",
-    "id": 0,
-    "layerDefinition": {
-      "id": 0
-    }
-  },
   "version": "17.0.0",
-  "id": "widget_7-column",
+  "id": "widget_36-smooth-line",
   "type": "chart",
   "rotated": false,
-  "colorMatch": true,
-  "stackedType": "sideBySide",
   "series": [
     {
-      "type": "barSeries",
-      "id": "FID",
-      "name": "FID",
-      "x": "Year",
-      "y": "count_of_FID",
-      "fillSymbol": {
-        "type": "esriSFS",
-        "style": "esriSFSSolid",
+      "type": "lineSeries",
+      "id": "value",
+      "name": "Sum of Value",
+      "x": "name",
+      "y": "value",
+      "lineSymbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
         "color": [
-          94,
-          143,
-          208,
+          97,
+          8,
+          161,
           255
         ],
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            130,
-            130,
-            130,
-            255
-          ],
-          "width": 0
-        }
+        "width": 2
       },
       "dataLabels": {
         "type": "chartText",
-        "visible": false,
+        "visible": true,
         "content": {
           "type": "esriTS",
           "color": [
@@ -63,18 +43,73 @@
           "verticalAlignment": "top"
         }
       },
-      "binTemporalData": false,
-      "hideOversizedStackedLabels": false,
+      "lineSmoothed": true,
+      "showArea": false,
+      "markerVisible": true,
+      "markerSymbol": {
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
+        "color": [
+          97,
+          8,
+          161,
+          255
+        ],
+        "size": 6,
+        "outline": {
+          "type": "esriSLS",
+          "style": "esriSLSSolid",
+          "color": [
+            197,
+            197,
+            197,
+            255
+          ],
+          "width": 0
+        }
+      },
       "dataTooltipVisible": true,
       "query": {
-        "groupByFieldsForStatistics": [
-          "Year"
-        ],
         "outStatistics": [
           {
-            "statisticType": "count",
-            "onStatisticField": "FID",
-            "outStatisticFieldName": "count_of_FID"
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddel00",
+            "outStatisticFieldName": "Gemiddel00"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddeld_elektriciteitsverbr_4",
+            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_4"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddeld_elektriciteitsverbr_3",
+            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_3"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddeld_elektriciteitsverbr_2",
+            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_2"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddeld_elektriciteitsverbr_1",
+            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_1"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddeld_elektriciteitsverbrui",
+            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbrui"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemiddel02",
+            "outStatisticFieldName": "Gemiddel02"
+          },
+          {
+            "statisticType": "sum",
+            "onStatisticField": "Gemddeld_e",
+            "outStatisticFieldName": "Gemddeld_e"
           }
         ]
       }
@@ -98,13 +133,14 @@
           ],
           "font": {
             "family": "Avenir Next",
-            "size": 14,
+            "size": 12,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "labels": {
@@ -126,12 +162,13 @@
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "valueFormat": {
         "type": "category",
-        "characterLimit": 11
+        "characterLimit": 8
       },
       "lineSymbol": {
         "type": "esriSLS",
@@ -173,13 +210,14 @@
           ],
           "font": {
             "family": "Avenir Next",
-            "size": 14,
+            "size": 12,
             "style": "normal",
             "weight": "normal",
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "labels": {
@@ -201,7 +239,8 @@
             "decoration": "none"
           },
           "horizontalAlignment": "center",
-          "verticalAlignment": "middle"
+          "verticalAlignment": "middle",
+          "text": ""
         }
       },
       "valueFormat": {
@@ -233,7 +272,7 @@
           213,
           255
         ],
-        "width": 0
+        "width": 1
       }
     }
   ],
@@ -256,18 +295,18 @@
       ],
       "font": {
         "family": "Avenir Next",
-        "size": 16,
+        "size": 12,
         "style": "normal",
         "weight": "normal",
         "decoration": "none"
       },
       "horizontalAlignment": "center",
-      "text": "Count of Year Alias"
+      "text": "Gemiddeld elektriciteitsverbruik in Den Haag per jaar"
     }
   },
   "footer": {
     "type": "chartText",
-    "visible": true,
+    "visible": false,
     "content": {
       "type": "esriTS",
       "color": [
@@ -289,7 +328,7 @@
   },
   "legend": {
     "type": "chartLegend",
-    "visible": true,
+    "visible": false,
     "title": {
       "type": "chartText",
       "visible": true,
@@ -303,7 +342,7 @@
         ],
         "font": {
           "family": "Avenir Next",
-          "size": 14,
+          "size": 12,
           "style": "normal",
           "weight": "normal",
           "decoration": "none"
@@ -330,11 +369,15 @@
       "horizontalAlignment": "center",
       "text": ""
     },
-    "position": "bottom"
+    "position": "right"
   },
+  "colorMatch": false,
+  "stackedType": "sideBySide",
   "orderOptions": {
-    "orderByFields": [
-      "Year ASC"
-    ]
+    "data": {
+      "orderType": "arcgis-charts-category",
+      "orderBy": "ASC",
+      "preferLabel": true
+    }
   }
 }
