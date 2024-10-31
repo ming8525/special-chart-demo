@@ -1,383 +1,376 @@
 {
-  "version": "17.0.0",
-  "id": "widget_36-smooth-line",
-  "type": "chart",
-  "rotated": false,
-  "series": [
-    {
-      "type": "lineSeries",
-      "id": "value",
-      "name": "Sum of Value",
-      "x": "name",
-      "y": "value",
-      "lineSymbol": {
-        "type": "esriSLS",
-        "style": "esriSLSSolid",
-        "color": [
-          97,
-          8,
-          161,
-          255
-        ],
-        "width": 2
-      },
-      "dataLabels": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            54,
-            54,
-            54,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 10,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "top"
+    "version": "9.4.0",
+    "id": "widget_36-smooth-line",
+    "type": "chart",
+    "rotated": false,
+    "series": [
+        {
+            "type": "lineSeries",
+            "id": "value",
+            "name": "Sum of Value",
+            "x": "name",
+            "y": "value",
+            "lineSymbol": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                    97,
+                    8,
+                    161,
+                    255
+                ],
+                "width": 2
+            },
+            "dataLabels": {
+                "type": "chartText",
+                "visible": true,
+                "content": {
+                    "type": "esriTS",
+                    "color": [
+                        54,
+                        54,
+                        54,
+                        255
+                    ],
+                    "font": {
+                        "family": "Avenir Next",
+                        "size": 10,
+                        "style": "normal",
+                        "weight": "normal",
+                        "decoration": "none"
+                    },
+                    "horizontalAlignment": "center",
+                    "verticalAlignment": "top"
+                }
+            },
+            "lineSmoothed": true,
+            "showArea": false,
+            "markerVisible": true,
+            "markerSymbol": {
+                "type": "esriSMS",
+                "style": "esriSMSCircle",
+                "color": [
+                    97,
+                    8,
+                    161,
+                    255
+                ],
+                "size": 6,
+                "outline": {
+                    "type": "esriSLS",
+                    "style": "esriSLSSolid",
+                    "color": [
+                        197,
+                        197,
+                        197,
+                        255
+                    ],
+                    "width": 0
+                }
+            },
+            "dataTooltipVisible": true,
+            "query": {
+                "outStatistics": [
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddel00",
+                        "outStatisticFieldName": "Gemiddel00"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddeld_elektriciteitsverbr_4",
+                        "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_4"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddeld_elektriciteitsverbr_3",
+                        "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_3"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddeld_elektriciteitsverbr_2",
+                        "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_2"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddeld_elektriciteitsverbr_1",
+                        "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_1"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddeld_elektriciteitsverbrui",
+                        "outStatisticFieldName": "Gemiddeld_elektriciteitsverbrui"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemiddel02",
+                        "outStatisticFieldName": "Gemiddel02"
+                    },
+                    {
+                        "statisticType": "sum",
+                        "onStatisticField": "Gemddeld_e",
+                        "outStatisticFieldName": "Gemddeld_e"
+                    }
+                ]
+            }
         }
-      },
-      "lineSmoothed": true,
-      "showArea": false,
-      "markerVisible": true,
-      "markerSymbol": {
-        "type": "esriSMS",
-        "style": "esriSMSCircle",
-        "color": [
-          97,
-          8,
-          161,
-          255
-        ],
-        "size": 6,
-        "outline": {
-          "type": "esriSLS",
-          "style": "esriSLSSolid",
-          "color": [
-            197,
-            197,
-            197,
-            255
-          ],
-          "width": 0
-        }
-      },
-      "dataTooltipVisible": true,
-      "query": {
-        "outStatistics": [
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddel00",
-            "outStatisticFieldName": "Gemiddel00"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddeld_elektriciteitsverbr_4",
-            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_4"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddeld_elektriciteitsverbr_3",
-            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_3"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddeld_elektriciteitsverbr_2",
-            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_2"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddeld_elektriciteitsverbr_1",
-            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbr_1"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddeld_elektriciteitsverbrui",
-            "outStatisticFieldName": "Gemiddeld_elektriciteitsverbrui"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemiddel02",
-            "outStatisticFieldName": "Gemiddel02"
-          },
-          {
-            "statisticType": "sum",
-            "onStatisticField": "Gemddeld_e",
-            "outStatisticFieldName": "Gemddeld_e"
-          }
-        ]
-      }
-    }
-  ],
-  "axes": [
-    {
-      "type": "chartAxis",
-      "visible": true,
-      "isLogarithmic": false,
-      "title": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            24,
-            24,
-            24,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 12,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "middle",
-          "text": ""
-        }
-      },
-      "labels": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            68,
-            68,
-            68,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 12,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "middle",
-          "text": ""
-        }
-      },
-      "valueFormat": {
-        "type": "category",
-        "characterLimit": 8
-      },
-      "lineSymbol": {
-        "type": "esriSLS",
-        "style": "esriSLSSolid",
-        "color": [
-          139,
-          139,
-          139,
-          255
-        ],
-        "width": 1
-      },
-      "grid": {
-        "type": "esriSLS",
-        "style": "esriSLSDash",
-        "color": [
-          213,
-          213,
-          213,
-          255
-        ],
-        "width": 0
-      }
-    },
-    {
-      "type": "chartAxis",
-      "visible": true,
-      "isLogarithmic": false,
-      "title": {
-        "type": "chartText",
-        "visible": false,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            24,
-            24,
-            24,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 12,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "middle",
-          "text": ""
-        }
-      },
-      "labels": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            68,
-            68,
-            68,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 12,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "verticalAlignment": "middle",
-          "text": ""
-        }
-      },
-      "valueFormat": {
-        "type": "number",
-        "intlOptions": {
-          "style": "decimal",
-          "useGrouping": true,
-          "minimumFractionDigits": 0,
-          "maximumFractionDigits": 0
-        }
-      },
-      "lineSymbol": {
-        "type": "esriSLS",
-        "style": "esriSLSSolid",
-        "color": [
-          139,
-          139,
-          139,
-          255
-        ],
-        "width": 1
-      },
-      "grid": {
-        "type": "esriSLS",
-        "style": "esriSLSDash",
-        "color": [
-          213,
-          213,
-          213,
-          255
-        ],
-        "width": 1
-      }
-    }
-  ],
-  "background": [
-    0,
-    0,
-    0,
-    0
-  ],
-  "title": {
-    "type": "chartText",
-    "visible": true,
-    "content": {
-      "type": "esriTS",
-      "color": [
-        0,
-        0,
-        0,
-        255
-      ],
-      "font": {
-        "family": "Avenir Next",
-        "size": 12,
-        "style": "normal",
-        "weight": "normal",
-        "decoration": "none"
-      },
-      "horizontalAlignment": "center",
-      "text": "Gemiddeld elektriciteitsverbruik in Den Haag per jaar"
-    }
-  },
-  "footer": {
-    "type": "chartText",
-    "visible": false,
-    "content": {
-      "type": "esriTS",
-      "color": [
-        24,
-        24,
-        24,
-        255
-      ],
-      "font": {
-        "family": "Avenir Next",
-        "size": 12,
-        "style": "normal",
-        "weight": "normal",
-        "decoration": "none"
-      },
-      "horizontalAlignment": "center",
-      "text": ""
-    }
-  },
-  "legend": {
-    "type": "chartLegend",
-    "visible": false,
-    "title": {
-      "type": "chartText",
-      "visible": true,
-      "content": {
-        "type": "esriTS",
-        "color": [
-          24,
-          24,
-          24,
-          255
-        ],
-        "font": {
-          "family": "Avenir Next",
-          "size": 12,
-          "style": "normal",
-          "weight": "normal",
-          "decoration": "none"
+    ],
+    "axes": [
+        {
+            "type": "chartAxis",
+            "visible": true,
+            "isLogarithmic": false,
+            "title": {
+                "type": "chartText",
+                "visible": false,
+                "content": {
+                    "type": "esriTS",
+                    "color": [
+                        24,
+                        24,
+                        24,
+                        255
+                    ],
+                    "font": {
+                        "family": "Avenir Next",
+                        "size": 12,
+                        "style": "normal",
+                        "weight": "normal",
+                        "decoration": "none"
+                    },
+                    "horizontalAlignment": "center",
+                    "verticalAlignment": "middle",
+                    "text": ""
+                }
+            },
+            "labels": {
+                "type": "chartText",
+                "visible": true,
+                "content": {
+                    "type": "esriTS",
+                    "color": [
+                        68,
+                        68,
+                        68,
+                        255
+                    ],
+                    "font": {
+                        "family": "Avenir Next",
+                        "size": 12,
+                        "style": "normal",
+                        "weight": "normal",
+                        "decoration": "none"
+                    },
+                    "horizontalAlignment": "center",
+                    "verticalAlignment": "middle",
+                    "text": ""
+                }
+            },
+            "valueFormat": {
+                "type": "category",
+                "characterLimit": 8
+            },
+            "lineSymbol": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                    139,
+                    139,
+                    139,
+                    255
+                ],
+                "width": 1
+            },
+            "grid": {
+                "type": "esriSLS",
+                "style": "esriSLSDash",
+                "color": [
+                    213,
+                    213,
+                    213,
+                    255
+                ],
+                "width": 0
+            }
         },
-        "horizontalAlignment": "center",
-        "text": ""
-      }
+        {
+            "type": "chartAxis",
+            "visible": true,
+            "isLogarithmic": false,
+            "title": {
+                "type": "chartText",
+                "visible": false,
+                "content": {
+                    "type": "esriTS",
+                    "color": [
+                        24,
+                        24,
+                        24,
+                        255
+                    ],
+                    "font": {
+                        "family": "Avenir Next",
+                        "size": 12,
+                        "style": "normal",
+                        "weight": "normal",
+                        "decoration": "none"
+                    },
+                    "horizontalAlignment": "center",
+                    "verticalAlignment": "middle",
+                    "text": ""
+                }
+            },
+            "labels": {
+                "type": "chartText",
+                "visible": true,
+                "content": {
+                    "type": "esriTS",
+                    "color": [
+                        68,
+                        68,
+                        68,
+                        255
+                    ],
+                    "font": {
+                        "family": "Avenir Next",
+                        "size": 12,
+                        "style": "normal",
+                        "weight": "normal",
+                        "decoration": "none"
+                    },
+                    "horizontalAlignment": "center",
+                    "verticalAlignment": "middle",
+                    "text": ""
+                }
+            },
+            "valueFormat": {
+                "type": "number",
+                "intlOptions": {
+                    "style": "decimal",
+                    "useGrouping": true,
+                    "minimumFractionDigits": 0,
+                    "maximumFractionDigits": 0
+                }
+            },
+            "lineSymbol": {
+                "type": "esriSLS",
+                "style": "esriSLSSolid",
+                "color": [
+                    139,
+                    139,
+                    139,
+                    255
+                ],
+                "width": 1
+            },
+            "grid": {
+                "type": "esriSLS",
+                "style": "esriSLSDash",
+                "color": [
+                    213,
+                    213,
+                    213,
+                    255
+                ],
+                "width": 1
+            }
+        }
+    ],
+    "background": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "title": {
+        "type": "chartText",
+        "visible": true,
+        "content": {
+            "type": "esriTS",
+            "color": [
+                0,
+                0,
+                0,
+                255
+            ],
+            "font": {
+                "family": "Avenir Next",
+                "size": 12,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "text": "Gemiddeld elektriciteitsverbruik in Den Haag per jaar"
+        }
     },
-    "body": {
-      "type": "esriTS",
-      "color": [
-        24,
-        24,
-        24,
-        255
-      ],
-      "font": {
-        "family": "Avenir Next",
-        "size": 12,
-        "style": "normal",
-        "weight": "normal",
-        "decoration": "none"
-      },
-      "horizontalAlignment": "center",
-      "text": ""
+    "footer": {
+        "type": "chartText",
+        "visible": false,
+        "content": {
+            "type": "esriTS",
+            "color": [
+                24,
+                24,
+                24,
+                255
+            ],
+            "font": {
+                "family": "Avenir Next",
+                "size": 12,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "text": ""
+        }
     },
-    "position": "right"
-  },
-  "colorMatch": false,
-  "stackedType": "sideBySide",
-  "orderOptions": {
-    "data": {
-      "orderType": "arcgis-charts-category",
-      "orderBy": "ASC",
-      "preferLabel": true
-    }
-  }
+    "legend": {
+        "type": "chartLegend",
+        "visible": false,
+        "title": {
+            "type": "chartText",
+            "visible": true,
+            "content": {
+                "type": "esriTS",
+                "color": [
+                    24,
+                    24,
+                    24,
+                    255
+                ],
+                "font": {
+                    "family": "Avenir Next",
+                    "size": 12,
+                    "style": "normal",
+                    "weight": "normal",
+                    "decoration": "none"
+                },
+                "horizontalAlignment": "center",
+                "text": ""
+            }
+        },
+        "body": {
+            "type": "esriTS",
+            "color": [
+                24,
+                24,
+                24,
+                255
+            ],
+            "font": {
+                "family": "Avenir Next",
+                "size": 12,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+            },
+            "horizontalAlignment": "center",
+            "text": ""
+        },
+        "position": "right"
+    },
+    "colorMatch": false,
+    "stackedType": "sideBySide"
 }
