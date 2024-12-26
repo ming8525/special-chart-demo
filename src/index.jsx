@@ -1,7 +1,7 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import WebMap from '@arcgis/core/WebMap'
-import { ArcgisChartsLineChart } from '@arcgis/charts-components-react'
+import { ArcgisChart } from '@arcgis/charts-components-react'
 import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
 import config from './config.json'
 import './style.css'
@@ -45,7 +45,7 @@ const Root = (props) => {
   return (
     <div style={{ height: 500, width: 500 }}>
       {layer && (
-        <ArcgisChartsLineChart
+        <ArcgisChart
           className='border'
           config={config}
           layer={layer}

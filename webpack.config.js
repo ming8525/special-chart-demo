@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const toBeCopied = [
-    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/assets', to: './arcgis-charts/assets'}
-  ]
+    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/assets', to: './arcgis-charts/assets' }
+]
 
 module.exports = {
     entry: path.join(__dirname, "src", "index.jsx"),
@@ -20,6 +20,7 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         open: true,
+        hot: false,
         host: 'localhost',
     },
     module: {
@@ -28,7 +29,7 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
-            },{
+            }, {
                 test: /\.(css|scss)$/,
                 use: ["style-loader", "css-loader"],
             },
