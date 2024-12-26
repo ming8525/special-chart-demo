@@ -1,10 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const toBeCopied = [
-    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/assets', to: './arcgis-charts/assets'}
-  ]
 
 module.exports = {
     entry: path.join(__dirname, "src", "index.jsx"),
@@ -45,7 +40,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
-        }),
-        new CopyWebpackPlugin({ patterns: toBeCopied })
+        })
     ]
 };

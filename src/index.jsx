@@ -1,34 +1,29 @@
 import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { ArcgisChartsBarChart, ArcgisChartsLineChart, ArcgisChartsPieChart, ArcgisChartsHistogram, ArcgisChartsScatterPlot } from '@arcgis/charts-components-react'
-import { defineCustomElements } from '@arcgis/charts-components/dist/loader'
-import { JsonEditor } from './json-editor'
-import config from './config.json'
+import useResizeDetector from './react-resize';
 import './style.css'
-defineCustomElements(window, { resourcesUrl: '../arcgis-charts/' })
 
+const ReactResizeDetector = (props) => {
+  const { onResize, targetRef, refreshMode = 'debounce', refreshRate = 200, handleWidth = true, handleHeight } = props
+  const ref = React.useRef()
+
+  useResizeDetector({ onResize, targetRef, refreshMode, refreshRate, handleWidth, handleHeight })
+
+  return <div ref={ref} className='w-100 h-100'>1232</div>
+}
 
 const Root = (props) => {
-  const editorRef = React.useRef(null)
-  const [webChart, setWebChart] = React.useState()
-  const seriesType = webChart?.series[0]?.type ?? 'barSeries'
+  const ref = React.useRef()
+  const [width, setWidth] = React.useState('')
 
-  const handleUpdate = () => {
-    setWebChart(editorRef.current.get())
+  const onResize = ({ width }) => {
+    setWidth(width)
   }
 
-  return (
-    <div style={{ height: 700, width: 1400, display: 'flex' }}>
-      {seriesType === 'barSeries' && <ArcgisChartsBarChart config={webChart} style={{ width: 700 }} className='border' />}
-      {seriesType === 'lineSeries' && <ArcgisChartsLineChart config={webChart} style={{ width: 700 }} className='border' />}
-      {seriesType === 'pieSeries' && <ArcgisChartsPieChart config={webChart} style={{ width: 700 }} className='border' />}
-      {seriesType === 'scatterSeries' && <ArcgisChartsScatterPlot config={webChart} style={{ width: 700 }} className='border' />}
-      {seriesType === 'histogramSeries' && <ArcgisChartsHistogram config={webChart} style={{ width: 700 }} className='border' />}
-      <div style={{ height: 700, width: 700 }} className='border'>
-        <JsonEditor ref={editorRef} defaultValue={config} onUpdate={handleUpdate} />
-      </div>
-    </div>
-  )
+  return (<div ref={ref} className='border' style={{ height: '300px', width: '100%' }}> 
+    {width}
+    <ReactResizeDetector onResize={onResize} targetRef={ref} />
+  </div>)
 }
 
 const app = ReactDOMClient.createRoot(document.getElementById('app'))
